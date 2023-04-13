@@ -1,0 +1,4 @@
+sigma_app/migrations
+Pipfile
+Pipfile.lock
+db.sqlite3
