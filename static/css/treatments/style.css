@@ -1,0 +1,28 @@
+.exports-container {
+  text-align: center;
+}
+
+.exports-container button {
+  margin: 0 20px;
+}
+
+a.results-btn  {
+  font-weight: bold;
+  color: var(--blue);
+  font-size: 1.6rem;
+  cursor: pointer;
+}
+
+.exports-container {
+  margin-bottom: 40px;
+}
+
+[data-report="false"] {
+  display: none;
+}
+
+.play-selection a.disabled {
+  color: var(--dk-gray);
+  border-color: var(--dk-gray);
+}
+
