@@ -1,0 +1,168 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sigma HP</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/imports/style.css' %}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+</head>
+
+<body>
+    <div>
+        {% include 'header.html' %}
+        {% include 'modal.html' %}
+        <main>
+            <ul class="breadcrumb-nav">
+                <li><a href="/">Home page</a>>></li>
+                <li><span> data streaming </span></li>
+            </ul>
+            <section class="component">
+                <button><a class="btn btn-sm btn-info"><i class="fa fa-plus"></i></a></button>
+                
+                <table class="items-list">
+                    <thead>
+                        <tr>
+                            <td>Select</td>
+                            <th>DSP</th>
+                            <th>User</th>
+                            <th>Status</th>
+                            <th>Total Lines</th>
+                            <th>Valid Count</th>
+                            <th>Error Count</th>
+                            <th>Import Date</th>
+                            <th>Action</th>
+                            <th>Details</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="item filtered" data-filter-type="afaire" data-filter-type2="2023">
+                            <td>
+                                <label class="switch">
+                                    <span class="toggle-label-title">Sélectionner le batch</span>
+                                    <input type="checkbox">
+                                    <span class="slider round"></span>
+                                </label>
+                            </td>
+                            <td>DV360</td>
+                            <td>aba2s</td>
+                            <td>A faire</td>
+                            <th>25</th>
+                            <th>20</th>
+                            <th>5</th>
+                            <th>16-04-2023</th>
+                            <td>
+                                <button class="play-btn" aria-label="Importer les données du batch">
+                                    <i class="fa fa-play"></i>
+                                </button>
+                            </td>
+                            <td>
+                                <button type="button" class="btn btn-success" data-bs-toggle="modal"
+                                    data-bs-target="#exampleModalCenter">+
+                                </button>
+                            </td>
+                        </tr>
+                        <tr class="item filtered" data-filter-type="encours" data-filter-type2="2022">
+                            <td>
+                                <label class="switch" title="select-batch">
+                                    <span class="toggle-label-title">Select the batch</span>
+                                    <input type="checkbox">
+                                    <span class="slider round"></span>
+                                </label>
+                            </td>
+                            <td>Xandr</td>
+                            <td>aba2s</td>
+                            <td>A faire</td>
+                            <th>25</th>
+                            <th>20</th>
+                            <th>5</th>
+                            <th>16-04-2023</th>
+                            <td>
+                                <button class="play-btn" aria-label="Importer les données du batch">
+                                    <i class="fa fa-play"></i>
+                                </button>
+                            </td>
+                            <td>
+                                <button type="button" class="btn btn-success" data-bs-toggle="modal"
+                                    data-bs-target="#exampleModalCenter">+
+                                </button>
+                            </td>
+                        </tr>
+                        <tr class="item filtered" data-filter-type="acheve" data-filter-type2="2023">
+                            <td>
+                                <label class="switch">
+                                    <span class="toggle-label-title">Sélectionner le batch</span>
+                                    <input type="checkbox">
+                                    <span class="slider round"></span>
+                                </label>
+                            </td>
+                            <td>FreWheel</td>
+                            <td>aba2s</td>
+                            <td>Terminé</td>
+                            <th>25</th>
+                            <th>20</th>
+                            <th>5</th>
+                            <th>16-04-2023</th>
+                            <td><button class="play-btn" aria-label="Importer les données du batch">
+                                <i class="fa fa-play"></i></button></td>
+                            <td>
+                                <button type="button" class="btn btn-success" data-bs-toggle="modal"
+                                    data-bs-target="#exampleModalCenter">+
+                                </button>
+                            </td>
+                        </tr>
+                        <tr class="item filtered" data-filter-type="acheve" data-filter-type2="2023">
+                            <td>
+                                <label class="switch">
+                                    <span class="toggle-label-title">Sélectionner le batch</span>
+                                    <input type="checkbox">
+                                    <span class="slider round"></span>
+                                </label>
+                            </td>
+                            <td>Dynamic</td>
+                            <td>aba2s</td>
+                            <td>A faire</td>
+                            <th>25</th>
+                            <th>20</th>
+                            <th>5</th>
+                            <th>16-04-2023</th>
+                            <td><button class="play-btn" aria-label="Importer les données du batch">
+                                <i class="fa fa-play"></i></button></td>
+                            <td>
+                                <button type="button" class="btn btn-success" data-bs-toggle="modal"
+                                    data-bs-target="#exampleModalCenter">+
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            <div class="play-selection">
+                <button>Bulk batchs</button>
+            </div>
+        </main>
+
+        <div class="stats-popin">
+            <div class="popin-content">
+                <span class="popin-close">X</span>
+                <h1>Statistiques qualité du batch</h1>
+                <div class="stats">
+                </div>
+                <div class="export"><button>Exporter</button></div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+        crossorigin="anonymous">
+    </script>
+    <!--script type="text/javascript" src="{% static 'js/imports/index.js' %}"></script-->
+</body>
+
+</html>
