@@ -3,5 +3,6 @@ from .views import *
 
 urlpatterns = [
     path('', landing_page, name='landing_page'),
-    path('imports/data-streams/', data_streams, name='data-streams')
+    path('data-streams/batchs', data_streams, name='data-streams'),
+    path('modal/', status_details, name='status_details')
 ]

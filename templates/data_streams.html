@@ -1,11 +1,14 @@
 {% load static %}
+
 <!DOCTYPE html>
 <html lang="fr">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lancement des batchs d’import</title>
+    <title>Sigma HP</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <link rel="stylesheet" href="{% static 'css/imports/style.css' %}">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
@@ -13,25 +16,8 @@
 
 <body>
     <div>
-        <div class="stats-popin">
-            <div class="popin-content">
-                <span class="popin-close">X</span>
-                <h1>Statistiques qualité du batch</h1>
-                <div class="stats">
-                    <p>Taux de données manquantes: <span class="missing-data">10%</span><span class="positive"><i
-                                class="fa fa-play"></i></span></p>
-                    <p>Ordre de grandeur: <span class="lines-numb">10 000 lignes</span><span class="equal">=</span></p>
-                    <p>Conformité nomemclature: <span class="columns-name">OK</span><span class="positive"><i
-                                class="fa fa-play"></i></span></p>
-                    <p>Doublons parfaits: <span class="perfect-duplicates">50</span><span class="positive"><i
-                                class="fa fa-play"></i></span></p>
-                    <p>Doublons imparfaits: <span class="duplicates">30</span><span class="negative"><i
-                                class="fa fa-play"></i></span></p>
-                </div>
-                <div class="export"><button>Exporter</button></div>
-            </div>
-        </div>
         {% include 'header.html' %}
+        {% include 'modal.html' %}
         <main>
             <ul class="breadcrumb-nav">
                 <li><a href="/">Home page</a>>></li>
@@ -51,7 +37,6 @@
                             <th>Valid Count</th>
                             <th>Error Count</th>
                             <th>Import Date</th>
-                            <th>File Name</th>
                             <th>Action</th>
                             <th>Details</th>
                         </tr>
@@ -71,15 +56,22 @@
                             <th>25</th>
                             <th>20</th>
                             <th>5</th>
-                            <th>16-04-2023 08:19</th>
-                            <th>DV360 import - 16042023</th>
-                            <td><button class="play-btn" aria-label="Importer les données du batch">
-                                <i class="fa fa-play"></i></button></td>
+                            <th>16-04-2023</th>
+                            <td>
+                                <button class="play-btn" aria-label="Importer les données du batch">
+                                    <i class="fa fa-play"></i>
+                                </button>
+                            </td>
+                            <td>
+                                <button type="button" class="btn btn-success" data-bs-toggle="modal"
+                                    data-bs-target="#exampleModalCenter">+
+                                </button>
+                            </td>
                         </tr>
                         <tr class="item filtered" data-filter-type="encours" data-filter-type2="2022">
                             <td>
                                 <label class="switch" title="select-batch">
-                                    <span class="toggle-label-title">Sélectionner le batch</span>
+                                    <span class="toggle-label-title">Select the batch</span>
                                     <input type="checkbox">
                                     <span class="slider round"></span>
                                 </label>
@@ -90,10 +82,17 @@
                             <th>25</th>
                             <th>20</th>
                             <th>5</th>
-                            <th>16-04-2023 08:19</th>
-                            <th>Xandr import - 16042023</th>
-                            <td><button class="play-btn" aria-label="Importer les données du batch">
-                                <i class="fa fa-play"></i></button></td>
+                            <th>16-04-2023</th>
+                            <td>
+                                <button class="play-btn" aria-label="Importer les données du batch">
+                                    <i class="fa fa-play"></i>
+                                </button>
+                            </td>
+                            <td>
+                                <button type="button" class="btn btn-success" data-bs-toggle="modal"
+                                    data-bs-target="#exampleModalCenter">+
+                                </button>
+                            </td>
                         </tr>
                         <tr class="item filtered" data-filter-type="acheve" data-filter-type2="2023">
                             <td>
@@ -105,20 +104,18 @@
                             </td>
                             <td>FreWheel</td>
                             <td>aba2s</td>
-                            <td>A faire</td>
+                            <td>Terminé</td>
                             <th>25</th>
                             <th>20</th>
                             <th>5</th>
-                            <th>16-04-2023 08:19</th>
-                            <th>FreeWheel import - 16042023</th>
+                            <th>16-04-2023</th>
                             <td><button class="play-btn" aria-label="Importer les données du batch">
                                 <i class="fa fa-play"></i></button></td>
-                            <td><button class="stats-btn" aria-label="View stats"><svg
-                                        xmlns="http://www.w3.org/2000/svg" height="33" viewBox="0 96 960 960"
-                                        width="33">
-                                        <path
-                                            d="M279.915 637.462q8.7 0 15.124-6.338 6.423-6.339 6.423-15.039t-6.338-15.124q-6.339-6.423-15.039-6.423t-15.124 6.338q-6.423 6.339-6.423 15.039t6.338 15.124q6.339 6.423 15.039 6.423Zm0-160q8.7 0 15.124-6.338 6.423-6.339 6.423-15.039t-6.338-15.124q-6.339-6.423-15.039-6.423t-15.124 6.338q-6.423 6.339-6.423 15.039t6.338 15.124q6.339 6.423 15.039 6.423Zm84.7 153.923H700v-30.77H364.615v30.77Zm0-160H700v-30.77H364.615v30.77Zm0 424.615v-80H175.384q-23.057 0-39.221-16.163Q120 783.673 120 760.616V311.384q0-23.057 16.163-39.221Q152.327 256 175.384 256h609.232q23.057 0 39.221 16.163Q840 288.327 840 311.384v449.232q0 23.057-16.163 39.221Q807.673 816 784.616 816H595.385v80h-230.77ZM175.384 785.231h609.232q9.23 0 16.923-7.692 7.692-7.693 7.692-16.923V311.384q0-9.23-7.692-16.923-7.693-7.692-16.923-7.692H175.384q-9.23 0-16.923 7.692-7.692 7.693-7.692 16.923v449.232q0 9.23 7.692 16.923 7.693 7.692 16.923 7.692Zm-24.615 0V286.769 785.231Z" />
-                                    </svg></button></td>
+                            <td>
+                                <button type="button" class="btn btn-success" data-bs-toggle="modal"
+                                    data-bs-target="#exampleModalCenter">+
+                                </button>
+                            </td>
                         </tr>
                         <tr class="item filtered" data-filter-type="acheve" data-filter-type2="2023">
                             <td>
@@ -134,16 +131,14 @@
                             <th>25</th>
                             <th>20</th>
                             <th>5</th>
-                            <th>16-04-2023 08:19</th>
-                            <th>Dynamic import - 16042023</th>
+                            <th>16-04-2023</th>
                             <td><button class="play-btn" aria-label="Importer les données du batch">
                                 <i class="fa fa-play"></i></button></td>
-                            <td><button class="stats-btn" aria-label="View stats"><svg
-                                        xmlns="http://www.w3.org/2000/svg" height="33" viewBox="0 96 960 960"
-                                        width="33">
-                                        <path
-                                            d="M279.915 637.462q8.7 0 15.124-6.338 6.423-6.339 6.423-15.039t-6.338-15.124q-6.339-6.423-15.039-6.423t-15.124 6.338q-6.423 6.339-6.423 15.039t6.338 15.124q6.339 6.423 15.039 6.423Zm0-160q8.7 0 15.124-6.338 6.423-6.339 6.423-15.039t-6.338-15.124q-6.339-6.423-15.039-6.423t-15.124 6.338q-6.423 6.339-6.423 15.039t6.338 15.124q6.339 6.423 15.039 6.423Zm84.7 153.923H700v-30.77H364.615v30.77Zm0-160H700v-30.77H364.615v30.77Zm0 424.615v-80H175.384q-23.057 0-39.221-16.163Q120 783.673 120 760.616V311.384q0-23.057 16.163-39.221Q152.327 256 175.384 256h609.232q23.057 0 39.221 16.163Q840 288.327 840 311.384v449.232q0 23.057-16.163 39.221Q807.673 816 784.616 816H595.385v80h-230.77ZM175.384 785.231h609.232q9.23 0 16.923-7.692 7.692-7.693 7.692-16.923V311.384q0-9.23-7.692-16.923-7.693-7.692-16.923-7.692H175.384q-9.23 0-16.923 7.692-7.692 7.693-7.692 16.923v449.232q0 9.23 7.692 16.923 7.693 7.692 16.923 7.692Zm-24.615 0V286.769 785.231Z" />
-                                    </svg></button></td>
+                            <td>
+                                <button type="button" class="btn btn-success" data-bs-toggle="modal"
+                                    data-bs-target="#exampleModalCenter">+
+                                </button>
+                            </td>
                         </tr>
                     </tbody>
                 </table>
@@ -152,8 +147,22 @@
                 <button>Bulk batchs</button>
             </div>
         </main>
+
+        <div class="stats-popin">
+            <div class="popin-content">
+                <span class="popin-close">X</span>
+                <h1>Statistiques qualité du batch</h1>
+                <div class="stats">
+                </div>
+                <div class="export"><button>Exporter</button></div>
+            </div>
+        </div>
     </div>
-    <!---script type="text/javascript" src="{% static 'js/imports/index.js' %}"></script-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+        crossorigin="anonymous">
+    </script>
+    <!--script type="text/javascript" src="{% static 'js/imports/index.js' %}"></script-->
 </body>
 
 </html>
