@@ -29,7 +29,7 @@
                 <table class="items-list">
                     <thead>
                         <tr>
-                            <td>Select</td>
+                            <th>Select</th>
                             <th>DSP</th>
                             <th>User</th>
                             <th>Status</th>
@@ -38,11 +38,10 @@
                             <th>Valid Count</th>
                             <th>Date</th>
                             <th>Action</th>
-                            <th>History</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr class="item filtered" data-filter-type="afaire" data-filter-type2="2023">
+                        <tr class="item filtered accordion-toggle" data-filter-type="afaire" data-toggle="collapse" data-target=".demo1">
                             <td>
                                 <label class="switch">
                                     <span class="toggle-label-title">Sélectionner le batch</span>
@@ -58,21 +57,94 @@
                                     data-bs-target="#exampleModalCenter">+
                                 </button>
                             </td>
-                            <th>25</th>
-                            <th>20</th>
-                            <th>16-04-2023</th>
+                            <td>25</td>
+                            <td>20</td>
+                            <td>16-04-2023</td>
                             <td>
                                 <button class="play-btn" aria-label="Importer les données du batch">
                                     <i class="fa fa-play"></i>
                                 </button>
                             </td>
-                            <td>
-                                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                    data-bs-target="#exampleModalCenter">+
-                                </button>
+                        </tr>
+                        <tr>
+                            <td class="hiddenRow">
+                                <div class="accordian-body collapse demo1"></div>
+                            </td>
+                            <td class="hiddenRow">
+                                <div class="accordian-body collapse demo1">demo1</div>
+                            </td>
+                            <td class="hiddenRow">
+                                <div class="accordian-body collapse demo1">demo1</div>
+                            </td>
+                            <td class="hiddenRow">
+                                <div class="accordian-body collapse text-success demo1">success</div>
+                            </td>
+                            <td class="hiddenRow">
+                                <div class="accordian-body collapse demo1">demo1</div>
+                            </td>
+                            <td class="hiddenRow">
+                                <div class="accordian-body collapse demo1">demo1</div>
+                            </td>
+                            <td class="hiddenRow">
+                                <div class="accordian-body collapse demo1">demo1</div>
+                            </td>
+                            <td class="hiddenRow">
+                                <div class="accordian-body collapse demo1">demo1</div>
                             </td>
                         </tr>
-                        <tr class="item filtered" data-filter-type="encours" data-filter-type2="2022">
+                        <tr>
+                            <td class="hiddenRow">
+                                <div class="accordian-body collapse demo1"></div>
+                            </td>
+                            <td class="hiddenRow">
+                                <div class="accordian-body collapse demo1">demo1</div>
+                            </td>
+                            <td class="hiddenRow">
+                                <div class="accordian-body collapse demo1">demo1</div>
+                            </td>
+                            <td class="hiddenRow">
+                                <div class="accordian-body collapse text-danger demo1">error</div>
+                            </td>
+                            <td class="hiddenRow">
+                                <div class="accordian-body collapse demo1">demo1</div>
+                            </td>
+                            <td class="hiddenRow">
+                                <div class="accordian-body collapse demo1">demo1</div>
+                            </td>
+                            <td class="hiddenRow">
+                                <div class="accordian-body collapse demo1">demo1</div>
+                            </td>
+                            <td class="hiddenRow">
+                                <div class="accordian-body collapse demo1">demo1</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="hiddenRow">
+                                <div class="accordian-body collapse demo1"></div>
+                            </td>
+                            <td class="hiddenRow">
+                                <div class="accordian-body collapse demo1">demo1</div>
+                            </td>
+                            <td class="hiddenRow">
+                                <div class="accordian-body collapse demo1">demo1</div>
+                            </td>
+                            <td class="hiddenRow">
+                                <div class="accordian-body collapse text-warning demo1">warning</div>
+                            </td>
+                            <td class="hiddenRow">
+                                <div class="accordian-body collapse demo1">demo1</div>
+                            </td>
+                            <td class="hiddenRow">
+                                <div class="accordian-body collapse demo1">demo1</div>
+                            </td>
+                            <td class="hiddenRow">
+                                <div class="accordian-body collapse demo1">demo1</div>
+                            </td>
+                            <td class="hiddenRow">
+                                <div class="accordian-body collapse demo1">demo1</div>
+                            </td>
+                        </tr>
+                        <tr class="item filtered" data-filter-type="encours">
                             <td>
                                 <label class="switch" title="select-batch">
                                     <span class="toggle-label-title">Select the batch</span>
@@ -88,21 +160,16 @@
                                     data-bs-target="#exampleModalCenter">+
                                 </button>
                             </td>
-                            <th>25</th>
-                            <th>20</th>
-                            <th>16-04-2023</th>
+                            <td>25</td>
+                            <td>20</td>
+                            <td>16-04-2023</td>
                             <td>
                                 <button class="play-btn" aria-label="Importer les données du batch">
                                     <i class="fa fa-play"></i>
                                 </button>
                             </td>
-                            <td>
-                                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                    data-bs-target="#exampleModalCenter">+
-                                </button>
-                            </td>
                         </tr>
-                        <tr class="item filtered" data-filter-type="acheve" data-filter-type2="2023">
+                        <tr class="item filtered" data-filter-type="acheve">
                             <td>
                                 <label class="switch">
                                     <span class="toggle-label-title">Sélectionner le batch</span>
@@ -118,20 +185,15 @@
                                     data-bs-target="#exampleModalCenter">+
                                 </button>
                             </td>
-                            <th>25</th>
-                            <th>20</th>
-                            <th>16-04-2023</th>
+                            <td>25</td>
+                            <td>20</td>
+                            <td>16-04-2023</td>
                             <td><button class="play-btn" aria-label="Importer les données du batch">
                                     <i class="fa fa-play"></i>
                                 </button>
                             </td>
-                            <td>
-                                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                    data-bs-target="#exampleModalCenter">+
-                                </button>
-                            </td>
                         </tr>
-                        <tr class="item filtered" data-filter-type="acheve" data-filter-type2="2023">
+                        <tr class="item filtered" data-filter-type="acheve">
                             <td>
                                 <label class="switch">
                                     <span class="toggle-label-title">Sélectionner le batch</span>
@@ -147,16 +209,11 @@
                                     data-bs-target="#exampleModalCenter">+
                                 </button>
                             </td>
-                            <th>25</th>
-                            <th>20</th>
-                            <th>16-04-2023</th>
+                            <td>25</td>
+                            <td>20</td>
+                            <td>16-04-2023</td>
                             <td><button class="play-btn" aria-label="Importer les données du batch">
                                     <i class="fa fa-play"></i>
-                                </button>
-                            </td>
-                            <td>
-                                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                    data-bs-target="#exampleModalCenter">+
                                 </button>
                             </td>
                         </tr>
@@ -182,6 +239,9 @@
         integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
         crossorigin="anonymous">
     </script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"></script>
     <!--script type="text/javascript" src="{% static 'js/imports/index.js' %}"></script-->
 </body>
 

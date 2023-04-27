@@ -111,3 +111,7 @@ td {
 .play-btn svg path {
   fill: var(--green);
 }
+
+.hiddenRow {
+  padding: 0 !important;
+}
