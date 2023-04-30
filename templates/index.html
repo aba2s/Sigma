@@ -1,61 +1,27 @@
 {% load static %}
+
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Landing page</title>
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <link rel="stylesheet" href="{% static 'css/home/style.css' %}">
+    <title>Sigma HP</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/imports/style.css' %}">
 </head>
 
 <body>
-    <div>
-        {% include 'header.html' %}
-        <main>
-            <h1>Welcome to Sigma, a platform of monitoring and setting
-                real time bidding campaigns.</h1>
-            <section class="component">
-                <ul>
-                    <li><a href="{% url 'data-streams' %}">
-                            <div>
-                                <div class="play-btn" alt="icone play import batch">
-                                    <i class="fa fa-play"></i>
-                                </div>
-                            </div>
-                            <h2>Data Streams</h2>
-                        </a></li>
-                    <li><a>
-                            <div><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="100" height="100">
-                                    <path fill="none" d="M0 0h24v24H0z" />
-                                    <path d="M2 13h6v8H2v-8zM9 3h6v18H9V3zm7 5h6v13h-6V8z" fill="rgba(255,255,255,1)" />
-                                </svg></div>
-                            <h2>Data Processing</h2>
-                        </a></li>
-                    <li><a>
-                            <div><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="100" height="100">
-                                    <path fill="none" d="M0 0h24v24H0z" />
-                                    <path
-                                        d="M6.17 18a3.001 3.001 0 0 1 5.66 0H22v2H11.83a3.001 3.001 0 0 1-5.66 0H2v-2h4.17zm6-7a3.001 3.001 0 0 1 5.66 0H22v2h-4.17a3.001 3.001 0 0 1-5.66 0H2v-2h10.17zm-6-7a3.001 3.001 0 0 1 5.66 0H22v2H11.83a3.001 3.001 0 0 1-5.66 0H2V4h4.17zM9 6a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm6 7a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-6 7a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"
-                                        fill="rgba(255,255,255,1)" />
-                                </svg></div>
-                            <h2>Parameters</h2>
-                        </a></li>
-                    <li><a>
-                            <div><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="100" height="100">
-                                    <path fill="none" d="M0 0h24v24H0z" />
-                                    <path
-                                        d="M14 14.252v2.09A6 6 0 0 0 6 22l-2-.001a8 8 0 0 1 10-7.748zM12 13c-3.315 0-6-2.685-6-6s2.685-6 6-6 6 2.685 6 6-2.685 6-6 6zm0-2c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm6 6v-3h2v3h3v2h-3v3h-2v-3h-3v-2h3z"
-                                        fill="rgba(255,255,255,1)" />
-                                </svg></div>
-                            <h2>Users Management</h2>
-                        </a></li>
-                </ul>
-            </section>
-        </main>
-    </div>
+    {% include 'header.html' %}
+    {% include 'modal.html' %}
+
+    {% block content %}
+    {% endblock %}
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+    <!---script type="text/javascript" src="{% static 'js/imports/index.js' %}"></script-->
 </body>
 
 </html>
