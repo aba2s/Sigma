@@ -28,16 +28,16 @@ body {
 }
 
 header {
-    box-shadow: 0 4px 10px 0 rgb(126 138 204 / 20%);
+  box-shadow: 0 4px 10px 0 rgb(126 138 204 / 20%);
 }
 
 .logo {
-    max-width: 170px;
+  max-width: 170px;
 }
 
 main {
-    padding: 0 40px;
-    font-size: 1.6rem;
+  padding: 0 40px;
+  font-size: 1.6rem;
 }
 
 :root {
@@ -114,4 +114,5 @@ td {
 
 .hiddenRow {
   padding: 0 !important;
+  background-color:white
 }
