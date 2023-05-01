@@ -379,6 +379,64 @@ class InsertionOrdersRealSpents(InsertionOrdersCommonFields):
         db_table = 'InserstionOrdersRealSpents'''
 
 
+class AsynchroneTask(models.Model):
+    INPROGRESS = 0
+    FINISHED = 1
+    FAILED = 2
+    STATUS_CHOICES = (
+        (INPROGRESS, 'In-progress'),
+        (FINISHED, 'Finished'),
+        (FAILED, 'Failed'),
+    )
+    id = models.UUIDField(primary_key=True)
+    start_date = models.DateTimeField(auto_now_add=True)
+    end_date = models.DateTimeField(auto_now_add=True)
+    time_taken = models.DurationField(null=True)
+    status = models.SmallIntegerField(default=0, choices=STATUS_CHOICES)
+    status_result = models.TextField(null=True, blank=True)
+    dv360 = models.ForeignKey(DV360, on_delete=models.CASCADE, null=True)
+    xandr = models.ForeignKey(Xandr, on_delete=models.CASCADE, null=True)
+    dynamic = models.ForeignKey(Dynamic, on_delete=models.CASCADE, null=True)
+    freewheel = models.ForeignKey(FreeWheel, on_delete=models.CASCADE, null=True)
+    
+    def get_status(self):
+        return self.STATUS_CHOICES[self.status][1]
+    
+    def __str__(self):
+        if self.dv360:
+            return "{} - ".format(self.dv360, self.status)
+        
+        elif self.xandr:
+            return "{} - {}".format(self.xandr, self.status)
+        elif self.dynamic:
+            return "{} - {}".format(self.dynamic, self.status)
+        elif self.freewheel:
+            return "{} - {}".format(self.freewheel, self.status)
+        else:
+            return "Inconnu - {}".format(self.status)
+
+
+    class Meta:
+        db_table = 'AsynchroneTask'
+
+
+class BatchName(models.Model):
+    id = models.UUIDField(primary_key=True)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    dsp = models.CharField(max_length=50)
+    status = models.ForeignKey(AsynchroneTask, on_delete=models.CASCADE)
+    total_rows = models.PositiveIntegerField()
+    valid_rows = models.PositiveIntegerField()
+    invalid_rows = models.PositiveBigIntegerField()
+    file_name = models.CharField(max_length=300)
+
+    def __str__(self):
+        return "{} - {}".format(self.dsp, self.file_name)
+    
+    class Meta:
+        db_table = 'BatchName'
+
+
 '''class Manager(User):
     """Managers have to add users under their management to their account.
     Doing this allows them to have access of these users's campaigns
