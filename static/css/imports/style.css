@@ -6,10 +6,10 @@ table {
 }
 
 thead {
-    padding: 3px;
-    font-weight: bold;
-    color: white;
-    background: var(--blue);
+  padding: 3px;
+  font-weight: bold;
+  color: white;
+  background: var(--blue);
 }
 
 th {
