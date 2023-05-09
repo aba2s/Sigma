@@ -117,3 +117,10 @@ td {
   padding: 0 !important;
   background-color:white
 }
+
+.hello-msg {
+  font-size: 18px;
+  color: #16033f;
+  background: var(--cyan);;
+  margin-right: -10px;
+}
