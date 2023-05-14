@@ -50,7 +50,6 @@ alphanumeric = RegexValidator(
     message='Only alphanumeric characters are allowed.',
     code='Invalid advertiser name')
 
-
 def validate_name(value):
     if len(value) < 3:
         raise ValidationError(
@@ -308,7 +307,9 @@ class DV360(InsertionOrdersCommonFields):
     
     class Meta:
         db_table = 'DV360'
-
+        # verbose_name_plural = "companies" his simply makes
+        # sure that in our admin panel the class is called companies
+        # in the plural and not companys
 
 class Xandr(InsertionOrdersCommonFields):
     dsp = models.CharField('Xandr', max_length=20)
