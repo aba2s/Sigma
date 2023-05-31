@@ -1,7 +1,7 @@
 from django.shortcuts import render
 
 
-def landing_page(request):
+def home(request):
     return render(request, 'home.html')
 
 def data_streams(request):

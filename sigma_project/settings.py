@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     # Local app
-    'sigma_app'
+    'sigma_app',
+    'accounts'
 ]
 
 MIDDLEWARE = [

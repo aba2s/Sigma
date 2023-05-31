@@ -1,6 +1,20 @@
 {% load static %}
+
+
 <header>
     <div>
-        <a href="/"><img src="{% static 'images/logo.jpeg' %}" alt="Retour à l'accueil" class="logo" /></a>
+        <a href="/"><img src="{% static 'images/logo.jpeg' %}" 
+            alt="Retour à l'accueil" class="logo" />
+        </a>
+
+        <div class="hello-msg">
+
+            {% if request.user.is_authenticated %}
+                <span> Hello, {{request.user}}</span>
+                <span>
+                    <a href="{% url 'logout' %}"><i class="fa fa-power-off"></i></a>
+                </span>
+            {% endif %}
+        </div>
     </div>
 </header>
