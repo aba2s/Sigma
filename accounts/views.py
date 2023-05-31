@@ -31,21 +31,26 @@ def register(request):
 					messages.error(request, e)
 					return redirect('register')	
 				else:
-					msg = "Email: <<{}>> or username: <<{}>> \
-						already exists.".format(email, username)
-					messages.error(request, msg)
-					return redirect('register')
+					if username:
+						msg = "Username <{}> already exists.".format(
+							username
+						)
+						messages.error(request, msg)
+						return redirect('register')
+					if email:
+						msg = "Email <{}> already exists.".format(
+							username
+						)
+						messages.error(request, msg)
 			elif data['password1'] != data['password2']:
 				msg = "Passwords do NOT match."
 				messages.error(request, msg)
 				return redirect('register')			
 			else:
-				msg1 =	"Your password must contain at least 8 characters."
-				msg2 = "Your password cant'be a commonly used password."
-				msg3 = "Your password can't be entirely numeric"
-				msg4 = "Your password can't be too similar to your other personal."
+				msg2 = "Password cant'be a commonly used password."
+				msg3 = "Password can't be entirely numeric"
+				msg4 = "Password can't be too similar to your other personal."
 				# To have each message in separate li balise:
-				messages.error(request, msg1)
 				messages.error(request, msg2)
 				messages.error(request, msg3)
 				messages.error(request, msg4)
@@ -55,7 +60,7 @@ def register(request):
 		context = {
 			'form': form
 		}
-		return render(request, 'registration/register.html', context )
+		return render(request, 'accounts/register.html', context )
 
 def login_view(request):
 	if request.method == 'POST':
@@ -68,9 +73,9 @@ def login_view(request):
 			# return redirect('user_insertion_orders', pk=request.user.id)
 		else:
 			messages.error(request, 'Your login is wrong')
-			return render(request, 'registration/login.html')
+			return render(request, 'accounts/login.html')
 	context={}
-	return render(request, 'registration/login.html', context)
+	return render(request, 'accounts/login.html', context)
 
 def logout_view(request):
     logout(request)
