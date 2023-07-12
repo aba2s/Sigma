@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="fr">
 
-<head>    
+<head> 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Homme page</title>
@@ -12,14 +12,14 @@
 </head>
 
 <body>
+    {% include 'header.html' %}
     <div>
-        {% include 'header.html' %}
         <main>
             <h1>Welcome to Sigma, a platform of monitoring and setting
                 real time bidding campaigns.</h1>
             <section class="component">
                 <ul>
-                    <li><a href="{% url 'data-streams' %}">
+                    <li><a href="{% url 'imports' %}">
                             <div>
                                 <div class="play-btn" alt="icone play import batch">
                                     <i class="fa fa-play"></i>
@@ -32,17 +32,19 @@
                             <div><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="100" height="100">
                                     <path fill="none" d="M0 0h24v24H0z" />
                                     <path d="M2 13h6v8H2v-8zM9 3h6v18H9V3zm7 5h6v13h-6V8z" fill="rgba(255,255,255,1)" />
-                                </svg></div>
+                                </svg>
+                            </div>
                             <h2>Data Processing</h2>
                         </a></li>
-                    <li><a>
+                    <li><a href="{% url 'user_insertion_orders' user.pk %}">
                             <div><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="100" height="100">
                                     <path fill="none" d="M0 0h24v24H0z" />
                                     <path
                                         d="M6.17 18a3.001 3.001 0 0 1 5.66 0H22v2H11.83a3.001 3.001 0 0 1-5.66 0H2v-2h4.17zm6-7a3.001 3.001 0 0 1 5.66 0H22v2h-4.17a3.001 3.001 0 0 1-5.66 0H2v-2h10.17zm-6-7a3.001 3.001 0 0 1 5.66 0H22v2H11.83a3.001 3.001 0 0 1-5.66 0H2V4h4.17zM9 6a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm6 7a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-6 7a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"
                                         fill="rgba(255,255,255,1)" />
-                                </svg></div>
-                            <h2>Parameters</h2>
+                                </svg>
+                            </div>
+                            <h2>User Insertion Orders</h2>
                         </a></li>
                     <li><a>
                             <div><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="100" height="100">

@@ -1,0 +1,47 @@
+{% extends 'insertion_orders/index.html' %}
+{% block content %}
+	{% include './status.html' %}
+	<div class="row">
+		<div class="col-md-12">
+			<h5>{{insertion_order}}</h5>
+			<hr>
+			<div class="card card-body">
+				<table class="table table-sm">
+					<tr>
+						<th></th>
+						<th>DSP</th>
+						<th>Budget</th>
+						<th>Spent budget</th>
+						<th>% delivery</th>
+						<th>Impressions</th>
+						<th>Clicks</th>
+						<th>Click rate</th>
+						<th>Arrival rate</th>
+
+					</tr>
+					{% for pt in pivot_table %}
+						<tr>
+							<td><a class="btn btn-sm btn-primary" href="">+</a></td>
+							<td>{{pt.dsp}}</td>
+							<td>{{pt.budget}}</td>
+							<td>{{pt.spent_budget}}</td>
+							<td>{{pt.delivery|floatformat}}%</td>
+							<td>{{pt.impressions}}</td>
+							<td>{{pt.clicks}}</td>
+							<td>{{pt.click_rate|floatformat:2}}%</td>
+							<td>{{pt.arrival_rate|floatformat:2}}%</td>
+							<td><a class="btn btn-sm btn-success" href=""> <i class="fa fa-pencil"></i></a></td>
+							<td><a class="btn btn-sm btn-danger" href=""><i class="fa fa-trash-o"></i></a></td>
+						</tr>
+					{% endfor %}
+				</table>
+			</div>
+		</div>
+	</div>
+
+	<div class="row"> 
+		<div class="col" id='pivot-table-container' data-url = "#"></div>
+		<div class="col" id="pivot-chart-container"></div>
+	</div>
+
+{% endblock content %}

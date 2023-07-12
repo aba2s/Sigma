@@ -40,6 +40,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.core.validators import RegexValidator
 from django.core.exceptions import ValidationError
+import datetime
 
 # How to Create a Date Form Field in a Django form
 # birth_date= forms.DateField(label='What is your birth date?',
@@ -55,6 +56,12 @@ def validate_name(value):
         raise ValidationError(
             '{} is too sort for an advertiser name'.format(value)
         )
+    
+def uploaded_files_directory(instance, filename):
+    return 'files/{}/{}_{}'.format(
+        instance.dsp, filename, datetime.datetime
+    )
+
 
 """Incoming camapaigns table"""
 
@@ -233,7 +240,7 @@ class UserInsertionOrder(models.Model):
 User Insertion Orders By DSP table
 ----------------------------------
 """
-class UserInsertionOrderByDSP(models.Model):
+class UserInsertionOrderByDsp(models.Model):
     """
     Here we split the signed budget filled in **User Insertion Orders table**
     between DSP or partners. At the end campaing the whole budget must be
@@ -261,8 +268,8 @@ class UserInsertionOrderByDSP(models.Model):
         ('Oath', 'Oath')
     )
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    insertion_order = models.ForeignKey(UserInsertionOrder,
-                                        on_delete=models.CASCADE)
+    insertion_order = models.ForeignKey(
+        UserInsertionOrder, on_delete=models.CASCADE)
     dsp = models.CharField(max_length=30, choices=dsp_choices)
     budget = models.DecimalField(max_digits=20, decimal_places=2)
     # optionel, on prend par defaut celui de InsertionOrder
@@ -282,7 +289,9 @@ class InsertionOrdersCommonFields(models.Model):
     date = models.DateField('Date')
     advertiser = models.CharField('Advertiser', max_length=100)
     insertion_order = models.ForeignKey(UserInsertionOrder,
-        on_delete=models.CASCADE)
+        on_delete=models.CASCADE,
+        db_column='insertion_order'
+    )
     dsp = models.CharField(max_length=20)
     strategy = models.CharField('Strategy Name', max_length=300)
     creative = models.CharField('Creative Name', max_length=400)
@@ -292,14 +301,10 @@ class InsertionOrdersCommonFields(models.Model):
     conversions = models.IntegerField()
     post_clicks_conversions = models.IntegerField()
     post_views_conversions = models.IntegerField()
-
-    def __str__(self):
-        return "{} - [{}]".format(self.insertion_order, self.dsp)
-
-
+ 
     class Meta:
         abstract = True # this tells Django, not to create
-        # a database table for the corresponding models.
+                        # a database table for the corresponding models.
 
 
 class DV360(InsertionOrdersCommonFields):
@@ -307,9 +312,11 @@ class DV360(InsertionOrdersCommonFields):
     
     class Meta:
         db_table = 'DV360'
+        verbose_name_plural = "DV360"
         # verbose_name_plural = "companies" his simply makes
         # sure that in our admin panel the class is called companies
         # in the plural and not companys
+
 
 class Xandr(InsertionOrdersCommonFields):
     dsp = models.CharField('Xandr', max_length=20)
@@ -377,7 +384,12 @@ class InsertionOrdersRealSpents(InsertionOrdersCommonFields):
         # return "{}".format(self.insertion_order)
 
     class Meta:
-        db_table = 'InserstionOrdersRealSpents'''
+        db_table = 'InserstionOrdersRealSpents'
+        unique_together = ['date', 'advertiser', 'dsp',
+            'insertion_order', 'impressions']
+        # unique_together = [field.name for field in \
+        #     InsertionOrdersCommonFields._meta.fields \
+        #     if field.name != "id"]
 
 
 class AsynchroneTask(models.Model):
@@ -399,6 +411,9 @@ class AsynchroneTask(models.Model):
     xandr = models.ForeignKey(Xandr, on_delete=models.CASCADE, null=True)
     dynamic = models.ForeignKey(Dynamic, on_delete=models.CASCADE, null=True)
     freewheel = models.ForeignKey(FreeWheel, on_delete=models.CASCADE, null=True)
+    # file_path = models.FilePathField(
+    #     path=uploaded_files_directory, match='*.xls'
+    # )
     
     def get_status(self):
         return self.STATUS_CHOICES[self.status][1]
@@ -423,19 +438,38 @@ class AsynchroneTask(models.Model):
 
 class BatchName(models.Model):
     id = models.UUIDField(primary_key=True)
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
     dsp = models.CharField(max_length=50)
-    status = models.ForeignKey(AsynchroneTask, on_delete=models.CASCADE)
-    total_rows = models.PositiveIntegerField()
-    valid_rows = models.PositiveIntegerField()
-    invalid_rows = models.PositiveBigIntegerField()
-    file_name = models.CharField(max_length=300)
-
+    
     def __str__(self):
-        return "{} - {}".format(self.dsp, self.file_name)
+        return "{}".format(self.dsp) 
     
     class Meta:
         db_table = 'BatchName'
+
+
+class File(models.Model):
+    """File uploader or streamed of the corresponding batch.
+    :task AsynchroneTask: the task the file belongs to.
+    :title str: Title of the file, as shown on the interface.
+    :location FileField: Location of the file on the server.
+    """
+    task = models.ForeignKey(
+        AsynchroneTask, on_delete=models.CASCADE
+    )
+    name = models.CharField(
+        max_length=240, help_text='Name of the file')
+    # Location of the file on the server.
+    file_location = models.FileField( 
+        verbose_name='File',
+        upload_to=uploaded_files_directory
+    )
+    def __str__(self):
+        return "{} - {}".format(
+            self.name, self.task
+        )
+
+    class Meta:
+        db_table = 'File'
 
 
 '''class Manager(User):

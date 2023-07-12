@@ -1,7 +1,7 @@
 table {
     width: 100%; 
     border-collapse: collapse; 
-    color: var(--blue);
+    color: var(--info);
     background: #F5F5F5;
 }
 
@@ -9,7 +9,7 @@ thead {
   padding: 3px;
   font-weight: bold;
   color: white;
-  background: var(--blue);
+  background: var(--info);
 }
 
 th {
@@ -21,8 +21,8 @@ tr {
 }
 
 td {
-    text-align: center;
-    padding: 1.1rem 1.4rem;
+  text-align: center;
+  padding: 1.1rem 1.4rem;
 }
 
 .switch {

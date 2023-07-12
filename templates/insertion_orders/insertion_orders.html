@@ -1,0 +1,55 @@
+{% extends 'index.html' %}
+{% block title %} Accueil {% endblock title %}
+
+{% block content %}
+<br>
+<div class="row">
+    <div class="col">
+        <div class="card card-body">
+            <form class="#" method="get" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{filter.form}}
+                <button class="btn btn-primary" type="submit">Search</button>
+                <a class="btn btn-success"
+                   href="{% url 'user_insertion_orders' request.user.pk %}">Reset</a>
+            </form>
+        </div>
+    </div>
+</div>
+<br>
+    <div class="row">
+        <div class="col-md">
+            <h5>CAMPAIGNS</h5>
+            <div class="card card-body">
+                <table class="table table-sm">
+                    <tr>
+                        <th></th>
+                        <th>Insertion order name</th>
+                        <th>Start date</th>
+                        <th>End date</th>
+                        <th>Budget</th>
+                        <th>KPI</th>
+                        <th>Goal value</th>
+                    </tr>
+                    {% for insertion_order in insertion_orders %}
+                      <tr>
+                        <td><a class="btn btn-sm btn-success" 
+                            href="{% url 'user_insertion_order_details' insertion_order.pk %}">
+                            <i class="fas fa-plus-circle"></i></td>
+                        <td>{{insertion_order.campaign_naming_tool}}</td>
+                        <td>{{insertion_order.start_date}}</td>
+                        <td>{{insertion_order.end_date}}</td>
+                        <td>{{insertion_order.budget}}</td>
+                        <td>{{insertion_order.kpi}}</td>
+                        <td>{{insertion_order.goal_value}}</td>
+                        <td><a class="btn btn-sm btn-secondary" href="#">
+                            <i class="fas fa-pencil-alt"></i></a></td>
+                        <td><a class="btn btn-sm btn-danger"
+                            href="#"><i class="far fa-trash-alt"></i></a></td>
+                      <tr>
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
+    </div>
+{% endblock %}

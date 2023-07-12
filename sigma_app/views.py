@@ -1,8 +1,21 @@
-from django.shortcuts import render
-
+from django.shortcuts import render, redirect
+from django.contrib import messages
+from .models import *
 
 def home(request):
-    return render(request, 'home.html')
+    if request.user.is_authenticated:
+        return render(request, 'home.html')
+    else:
+        msg = 'You are not logged. Please log in first !'
+        messages.error(request, msg)
+        return redirect('login')
+
+def imports(request):
+    batchs = BatchName.objects.all()
+    context = {
+        'batchs': batchs
+    }
+    return render(request, 'imports.html' , context)
 
 def data_streams(request):
     batchs = [
