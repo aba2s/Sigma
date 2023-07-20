@@ -44,9 +44,11 @@ INSTALLED_APPS = [
     'accounts',
 
     # Third party
+    'django_q',
     'django_filters',
     'crispy_forms',
     'django.contrib.humanize',
+    
 ]
 
 MIDDLEWARE = [
@@ -119,9 +121,11 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Europe/Paris'
 
 USE_I18N = True
+
+
 
 USE_TZ = True
 
@@ -138,3 +142,23 @@ STATIC_ROOT = str(BASE_DIR.joinpath('staticfiles'))
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 CRISPY_TEMPLATE_PACK = "bootstrap4"
+IMPORTS_PATH = 'data/imports/'
+
+DATE_INPUT_FORMATS = "%d-%m-%Y"
+
+# Job Queues and Workers in Django (using Django)
+Q_CLUSTER = {
+    'name': 'myproject',
+    'workers': 8,
+    'recycle': 500,
+    'timeout': 60,
+    'compress': True,
+    'save_limit': 250,
+    'queue_limit': 500,
+    'cpu_affinity': 1,
+    'label': 'Django Q',
+    'redis': {
+        'host': '127.0.0.1',
+        'port': 6379,
+        'db': 0, }
+} 

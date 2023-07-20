@@ -71,28 +71,28 @@
 01/07/2023;FBX;FR - Pandas;2023-07 - FR - Pandas - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.79;4687526;6053;37;12;12;-162 273;-148 807;-138 404;-129 987
 02/07/2023;FBX;FR - Pandas;2023-07 - FR - Pandas - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.80;4754142;6139;38;12;12;-164683,3333;-151016,6667;-140459,1667;-131917,5
 03/07/2020;FBX;FR - Pandas;2023-07 - FR - Pandas - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.81;4820757;6225;38;12;12;-167093,3333;-153226,6667;-142514,6667;-133848
-01/07/2023;FBX;FR - Docker;2023-07 - FR - Docker - Réouverture 2020 - Multi-device - Vid. pre-roll - CPM;Socio;Pave;1300.82;4887373;6311;39;12;12;-169 503;-155 437;-144 570;-135 779
-02/07/2023;FBX;FR - Docker;2023-07 - FR - Docker - Réouverture 2020 - Multi-device - Vid. pre-roll - CPM;Socio;Pave;1300.83;4953988;6397;39;12;12;-171913,3333;-157646,6667;-146625,6667;-137709
-03/07/2020;FBX;FR - Docker;2023-07 - FR - Docker - Réouverture 2020 - Multi-device - Vid. pre-roll - CPM;Socio;Pave;1300.84;5020604;6483;40;12;12;-174323,3333;-159856,6667;-148681,1667;-139639,5
-01/07/2023;FBX;FR - Docker;2023-07 - FR - Docker - Réouverture 2020 - Multi-device - Vid. pre-roll - CPM;Socio;Pave;1300.85;5087219;6569;40;12;12;-176 733;-162 067;-150 737;-141 570
-02/07/2023;FBX;FR - Docker;2023-07 - FR - Docker - Réouverture 2020 - Multi-device - Vid. pre-roll - CPM;Socio;Pave;1300.86;5153835;6655;41;12;12;-179143,3333;-164276,6667;-152792,1667;-143500,5
-03/07/2020;FBX;FR - Docker;2023-07 - FR - Docker - Réouverture 2020 - Multi-device - Vid. pre-roll - CPM;Socio;Pave;1300.87;5220450;6741;41;12;12;-181553,3333;-166486,6667;-154847,6667;-145431
-01/07/2023;FBX;FR - Docker;2023-07 - FR - Docker - Réouverture 2020 - Multi-device - Vid. pre-roll - CPM;Socio;Pave;1300.88;5287066;6827;42;12;12;-183 963;-168 697;-156 903;-147 362
-02/07/2023;FBX;FR - Docker;2023-07 - FR - Docker - Réouverture 2020 - Multi-device - Vid. pre-roll - CPM;Socio;Pave;1300.89;5353681;6913;42;12;12;-186373,3333;-170906,6667;-158958,6667;-149292
-03/07/2020;FBX;FR - Docker;2023-07 - FR - Docker - Réouverture 2020 - Multi-device - Vid. pre-roll - CPM;Socio;Pave;1300.90;5420297;6999;43;12;12;-188783,3333;-173116,6667;-161014,1667;-151222,5
-01/07/2023;FBX;FR - Docker;2023-07 - FR - Docker - Réouverture 2020 - Multi-device - Vid. pre-roll - CPM;Socio;Pave;1300.91;5486912;7085;43;12;12;-191 193;-175 327;-163 070;-153 153
-02/07/2023;FBX;FR - Docker;2023-07 - FR - Docker - Réouverture 2020 - Multi-device - Vid. pre-roll - CPM;Socio;Pave;1300.92;5553528;7171;44;12;12;-193603,3333;-177536,6667;-165125,1667;-155083,5
-03/07/2020;FBX;FR - Docker;2023-07 - FR - Docker - Réouverture 2020 - Multi-device - Vid. pre-roll - CPM;Socio;Pave;1300.93;5620143;7257;44;12;12;-196013,3333;-179746,6667;-167180,6667;-157014
-01/07/2023;Xandr;FR - Docker;2023-07 - FR - Docker - Réouverture 2020 - Multi-device - Vid. pre-roll - CPM;Socio;Pave;1300.94;5686759;7343;45;12;12;-198 423;-181 957;-169 236;-158 945
-02/07/2023;Xandr;FR - Docker;2023-07 - FR - Docker - Réouverture 2020 - Multi-device - Vid. pre-roll - CPM;Socio;Pave;1300.95;5753374;7429;45;12;12;-200833,3333;-184166,6667;-171291,6667;-160875
-03/07/2020;Xandr;FR - Docker;2023-07 - FR - Docker - Réouverture 2020 - Multi-device - Vid. pre-roll - CPM;Socio;Pave;1300.96;5819990;7515;46;12;12;-203243,3333;-186376,6667;-173347,1667;-162805,5
-01/07/2023;Xandr;FR - Docker;2023-07 - FR - Docker - Réouverture 2020 - Multi-device - Vid. pre-roll - CPM;Socio;Pave;1300.97;5886605;7601;46;12;12;-205 653;-188 587;-175 403;-164 736
-02/07/2023;Xandr;FR - Docker;2023-07 - FR - Docker - Réouverture 2020 - Multi-device - Vid. pre-roll - CPM;Socio;Pave;1300.98;5953221;7687;47;s;12;-208063,3333;-190796,6667;-177458,1667;-166666,5
-03/07/2020;Xandr;FR - Docker;2023-07 - FR - Docker - Réouverture 2020 - Multi-device - Vid. pre-roll - CPM;Socio;Pave;1300.99;6019836;7773;47;12;12;-210473,3333;-193006,6667;-179513,6667;-168597
-01/07/2023;Xandr;FR - Docker;2023-07 - FR - Docker - Réouverture 2020 - Multi-device - Vid. pre-roll - CPM;Socio;Pave;1300.100;6086452;7859;48;12;12;-212 883;-195 217;-181 569;-170 528
-02/07/2023;Xandr;FR - Docker;2023-07 - FR - Docker - Réouverture 2020 - Multi-device - Vid. pre-roll - CPM;Socio;Pave;1300.101;6153067;7945;48;12;12;-215293,3333;-197426,6667;-183624,6667;-172458
-03/07/2020;Xandr;FR - Docker;2023-07 - FR - Docker - Réouverture 2020 - Multi-device - Vid. pre-roll - CPM;Socio;Pave;1300.102;6219683;8031;49;12;12;-217703,3333;-199636,6667;-185680,1667;-174388,5
-01/07/2023;Xandr;FR - Docker;2023-07 - FR - Docker - Réouverture 2020 - Multi-device - Vid. pre-roll - CPM;Socio;Pave;1300.103;6286298;8117;49;12;12;-220 113;-201 847;-187 736;-176 319
+01/07/2023;FBX;FR - Docker;2023-07 - FR - Docker - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.82;4887373;6311;39;12;12;-169 503;-155 437;-144 570;-135 779
+02/07/2023;FBX;FR - Docker;2023-07 - FR - Docker - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.83;4953988;6397;39;12;12;-171913,3333;-157646,6667;-146625,6667;-137709
+03/07/2020;FBX;FR - Docker;2023-07 - FR - Docker - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.84;5020604;6483;40;12;12;-174323,3333;-159856,6667;-148681,1667;-139639,5
+01/07/2023;FBX;FR - Docker;2023-07 - FR - Docker - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.85;5087219;6569;40;12;12;-176 733;-162 067;-150 737;-141 570
+02/07/2023;FBX;FR - Docker;2023-07 - FR - Docker - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.86;5153835;6655;41;12;12;-179143,3333;-164276,6667;-152792,1667;-143500,5
+03/07/2020;FBX;FR - Docker;2023-07 - FR - Docker - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.87;5220450;6741;41;12;12;-181553,3333;-166486,6667;-154847,6667;-145431
+01/07/2023;FBX;FR - Docker;2023-07 - FR - Docker - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.88;5287066;6827;42;12;12;-183 963;-168 697;-156 903;-147 362
+02/07/2023;FBX;FR - Docker;2023-07 - FR - Docker - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.89;5353681;6913;42;12;12;-186373,3333;-170906,6667;-158958,6667;-149292
+03/07/2020;FBX;FR - Docker;2023-07 - FR - Docker - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.90;5420297;6999;43;12;12;-188783,3333;-173116,6667;-161014,1667;-151222,5
+01/07/2023;FBX;FR - Docker;2023-07 - FR - Docker - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.91;5486912;7085;43;12;12;-191 193;-175 327;-163 070;-153 153
+02/07/2023;FBX;FR - Docker;2023-07 - FR - Docker - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.92;5553528;7171;44;12;12;-193603,3333;-177536,6667;-165125,1667;-155083,5
+03/07/2020;FBX;FR - Docker;2023-07 - FR - Docker - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.93;5620143;7257;44;12;12;-196013,3333;-179746,6667;-167180,6667;-157014
+01/07/2023;Xandr;FR - Docker;2023-07 - FR - Docker - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.94;5686759;7343;45;12;12;-198 423;-181 957;-169 236;-158 945
+02/07/2023;Xandr;FR - Docker;2023-07 - FR - Docker - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.95;5753374;7429;45;12;12;-200833,3333;-184166,6667;-171291,6667;-160875
+03/07/2020;Xandr;FR - Docker;2023-07 - FR - Docker - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.96;5819990;7515;46;12;12;-203243,3333;-186376,6667;-173347,1667;-162805,5
+01/07/2023;Xandr;FR - Docker;2023-07 - FR - Docker - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.97;5886605;7601;46;12;12;-205 653;-188 587;-175 403;-164 736
+02/07/2023;Xandr;FR - Docker;2023-07 - FR - Docker - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.98;5953221;7687;47;12;12;-208063,3333;-190796,6667;-177458,1667;-166666,5
+03/07/2020;Xandr;FR - Docker;2023-07 - FR - Docker - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.99;6019836;7773;47;12;12;-210473,3333;-193006,6667;-179513,6667;-168597
+01/07/2023;Xandr;FR - Docker;2023-07 - FR - Docker - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.100;6086452;7859;48;12;12;-212 883;-195 217;-181 569;-170 528
+02/07/2023;Xandr;FR - Docker;2023-07 - FR - Docker - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.101;6153067;7945;48;12;12;-215293,3333;-197426,6667;-183624,6667;-172458
+03/07/2020;Xandr;FR - Docker;2023-07 - FR - Docker - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.102;6219683;8031;49;12;12;-217703,3333;-199636,6667;-185680,1667;-174388,5
+01/07/2023;Xandr;FR - Docker;2023-07 - FR - Docker - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.103;6286298;8117;49;12;12;-220 113;-201 847;-187 736;-176 319
 02/07/2023;Xandr;FR - Sphinx;2023-07 - FR - Sphinx - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.104;6352914;8203;50;12;12;-222523,3333;-204056,6667;-189791,1667;-178249,5
 03/07/2020;Xandr;FR - Sphinx;2023-07 - FR - Sphinx - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.105;6419529;8289;50;12;12;-224933,3333;-206266,6667;-191846,6667;-180180
 01/07/2023;Xandr;FR - Sphinx;2023-07 - FR - Sphinx - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.106;6486145;8375;51;12;12;-227 343;-208 477;-193 902;-182 111

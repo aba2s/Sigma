@@ -1,15 +1,20 @@
+from datetime import date
 from sqlalchemy.types import Integer
 from sqlalchemy.types import Float
 from sqlalchemy.types import String
 from sqlalchemy.types import Date
-from datetime import datetime
 import pandas as pd
 from sigma_app.models import *
 from django.conf import settings
+from django.http import JsonResponse
 from django.shortcuts import redirect
+from django.shortcuts import get_object_or_404
 from django.contrib import messages
 from sqlalchemy import create_engine
 from sqlalchemy.exc import IntegrityError
+from django_q.tasks import async_task
+from sigma_app import q_services
+import traceback
 # from django.db import IntegrityError # django ORM
 
 # DEFINE THE DATABASE CREDENTIALS
@@ -39,11 +44,15 @@ try:
 except Exception as e:
     print("Connection could not be made due to the following error: \n", e)
 
-def upload_io_real_spents(request):
+
+def import_files(path, cols, dtype, etc):
+    pass
+
+def task_upload_io_real_spents(file_path):
     '''
     Insertion orders real spents
     '''
-    file_path = '/Users/sigma/Desktop/campaigns/data/imports/dbm.csv'
+    # file_path = settings.IMPORTS_PATH + 'dbm.csv'
     cols = [
         'date',
         'dsp',
@@ -86,7 +95,7 @@ def upload_io_real_spents(request):
         'post_clicks_conversions': Integer,
         'post_views_conversions': Integer
     }
-
+    
     # Read file with pandas.
     try:
         df = pd.read_csv(
@@ -98,22 +107,21 @@ def upload_io_real_spents(request):
         )
     except Exception as e:
         msg = "Cannot read file.\n\nError message:\n{}".format(e)
-        messages.error(request, msg)
-        return redirect('imports')
+        raise Exception(msg)
     else:
         df.rename(columns_to_rename, inplace=True)
-        
      # Check that all mandatory keys are here.
     if not all(field in df.columns for field in cols):
         msg = "Cannot import file.\n\nError message:\nThe following fields \
             are mandatory: {}".format(", ".join(cols))
-        messages.error(request, msg)
-        return redirect('imports')
+        raise Exception(msg)
 
-    message = ''
+    msg = ''
     if not len(df):
-        message += 'No valid line to import.\n'
-        return message
+        msg += 'No valid line to import.\n'
+        raise Exception(msg)
+        
+    
     # Get user insertion orders data
     user_insertion_orders = UserInsertionOrder.objects.all()
     user_insertion_orders_instances =[
@@ -130,6 +138,11 @@ def upload_io_real_spents(request):
     df.rename({'insertion_order_id': 'insertion_order'}, axis=1, inplace=True)
    
     df = df[~df['insertion_order'].isna()]
+    if df.empty:
+        msg = "Dataframe is Empty. No insertion order is uploaded"
+        # return msg
+        print(traceback.print_exception)
+        raise Exception(msg)
 
     try:
         df.to_sql(
@@ -137,24 +150,49 @@ def upload_io_real_spents(request):
             if_exists='append',
             index=False,
             dtype=dtype,
+            chunksize=1000,
             con=engine
         )
     except IntegrityError as e:
+        # qs = InsertionOrdersRealSpents.objects.all()
+        # df_qs = pd.DataFrame(qs.values(*cols))
+        # df.to_sql(
+        #     InsertionOrdersRealSpents._meta.db_table,
+        #     if_exists='append',
+        #     index=False,
+        #     dtype=dtype,
+        #     chunksize=1000,
+        #     con=engine
+        # )
         msg = "Duplicated rows are not authorized"
-        messages.error(request, msg) # e._message
-      
-        # C'est ici par la suite qu'il faudra gérer les lignes identiques
-        # pour ne garder que celle qui est la plus à jour (impressions 
-        # ou dépenses plus élevées)
-        return redirect('imports')
+        raise Exception(msg)
+       
     except Exception as e:
-        messages.error(request, e.__cause__) # e.__class__
-        return redirect('imports')
+        msg = e.__cause__
+        raise Exception(msg)
     else:
-        message += "Data successfully imported {} nodes."
-        messages.success(request, message)
-        return redirect('imports')
+        msg += "Data successfully imported {} insertions orders.".format(
+            df.shape[0]
+        )
+        raise Exception(msg)
+    
 
-
-# def task_upload_io_real_spents(request):
-#     pass
+def upload_io_real_spents(request):
+    batch_name = get_object_or_404(BatchName,
+        pk="00000000-0000-0000-0000-000000000001"
+     )
+    file_path = settings.IMPORTS_PATH + 'dbm.csv'
+    task_id = async_task(
+        task_upload_io_real_spents,
+        file_path,
+        hook=q_services.str_hook,
+    )
+    asynchrone_task = AsynchroneTask(
+        id=task_id,
+        title= 'Importing Consolidated DSPs data',
+        dsp=batch_name,
+        user=request.user
+    )
+    asynchrone_task.save() 
+    messages.success(request, "Task successfully started.")
+    return redirect('imports')

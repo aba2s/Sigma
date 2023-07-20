@@ -9,7 +9,9 @@ urlpatterns = [
     path('', home, name='home'),
     path('imports/', imports, name='imports'),
     # path('modal/', status_details, name='status_details'),
-    path('data/', io_real_spents.upload_io_real_spents, name='data'),
+    path('data/', io_real_spents.upload_io_real_spents,
+        name='import-consolidated-dsp'),
+    path('task/<uuid:task_id>/', fetch_task, name='fetch_task'),
     path('user/<str:pk>/insertion_orders/', insertion_orders.user_insertion_orders,
         name='user_insertion_orders'),
     path('create_user_insertion_order', insertion_orders.create_user_insertion_order,
@@ -23,4 +25,5 @@ urlpatterns = [
     path('insertion_order/<str:pk>/details/',
         insertion_orders.user_insertion_order_details,
         name='user_insertion_order_details'),
+    
 ]

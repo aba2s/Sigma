@@ -3,7 +3,7 @@
         "model": "sigma_app.BatchName",
         "pk": 1,
         "fields": {
-            "dsp": "DV360"
+            "dsp": "DSPs"
         }
     },
     {
