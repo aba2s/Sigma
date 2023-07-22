@@ -11,11 +11,11 @@ strong_password = RegexValidator(
     code='Invalid password format')
 
 class RegisterForm(UserCreationForm):
-	# email = forms.EmailField()
-	password1 = forms.CharField(min_length=8,
-		widget=forms.PasswordInput, validators=[strong_password])
-	password2 = forms.CharField(min_length=8,
-		widget=forms.PasswordInput, validators=[strong_password])
+	email = forms.EmailField()
+	# password1 = forms.CharField(min_length=8,
+	# 	widget=forms.PasswordInput, validators=[strong_password])
+	# password2 = forms.CharField(min_length=8,
+	# 	widget=forms.PasswordInput, validators=[strong_password])
 	
 	class Meta:
 		model = User

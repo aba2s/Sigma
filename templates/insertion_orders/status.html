@@ -1,0 +1,84 @@
+ {% load humanize %}
+<br>
+<div class="row">
+
+    <div class="col">
+        <div class="col-md">
+            <div class="card text-center text-white mb-3" id="total-orders">
+                <div class="card-header bg-danger">
+                    <h5 class="card-title">Delivery</h5>
+                </div>
+                <div class="card-body bg-danger">
+                    <h3 class="card-title">{{delivery_rate|floatformat:0}}% vs {{theorical_delivery|floatformat:0}}%</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="col">
+        <div class="col-md">
+            <div class="card text-center text-white mb-3" id="total-orders">
+                <div class="card-header bg-danger">
+                    <h5 class="card-title">Budget</h5>
+                </div>
+                <div class="card-body bg-danger">
+                    <h3 class="card-title">{{insertion_order.budget}} €</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col">
+        <div class="col-md">
+            <div class="card text-center text-white mb-3" id="total-orders">
+                <div class="card-header bg-danger">
+                    <h5 class="card-title">Spent budget</h5>
+                </div>
+                <div class="card-body bg-danger">
+                    <h3 class="card-title">{{total.spent_budget}} €</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col">
+        <div class="col-md">
+            <div class="card text-center text-white mb-3" id="orders-delivered">
+                <div class="card-header bg-danger">
+                    <h5 class="card-title">Impressions</h5>
+                </div>
+                <div class="card-body bg-danger">
+                    <h3 class="card-title">{{total.impressions}}</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col">
+        <div class="col-md">
+            <div class="card text-center text-white mb-3" id="orders-pending">
+                <div class="card-header bg-danger">
+                    <h5 class="card-title">Clicks</h5>
+                </div>
+                <div class="card-body bg-danger">
+                    <h3 class="card-title">{{total.clicks}}</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col">
+        <div class="col-md">
+            <div class="card text-center text-white mb-3" id="orders-pending">
+                <div class="card-header bg-danger">
+                    <h5 class="card-title">Conversions</h5>
+                </div>
+                <div class="card-body bg-danger">
+                    <h3 class="card-title">{{total.conversions}}</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

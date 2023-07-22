@@ -14,7 +14,8 @@ from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
+# Fixitures path(at project level)
+FIXTURE_DIRS = [str(BASE_DIR.joinpath('fixtures'))]
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
@@ -40,7 +41,14 @@ INSTALLED_APPS = [
 
     # Local app
     'sigma_app',
-    'accounts'
+    'accounts',
+
+    # Third party
+    'django_q',
+    'django_filters',
+    'crispy_forms',
+    'django.contrib.humanize',
+    
 ]
 
 MIDDLEWARE = [
@@ -113,9 +121,11 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Europe/Paris'
 
 USE_I18N = True
+
+
 
 USE_TZ = True
 
@@ -131,3 +141,24 @@ STATIC_ROOT = str(BASE_DIR.joinpath('staticfiles'))
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+CRISPY_TEMPLATE_PACK = "bootstrap4"
+IMPORTS_PATH = 'data/imports/'
+
+DATE_INPUT_FORMATS = "%d-%m-%Y"
+
+# Job Queues and Workers in Django (using Django)
+Q_CLUSTER = {
+    'name': 'myproject',
+    'workers': 8,
+    'recycle': 500,
+    'timeout': 60,
+    'compress': True,
+    'save_limit': 250,
+    'queue_limit': 500,
+    'cpu_affinity': 1,
+    'label': 'Django Q',
+    'redis': {
+        'host': '127.0.0.1',
+        'port': 6379,
+        'db': 0, }
+} 

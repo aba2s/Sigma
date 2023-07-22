@@ -1,0 +1,51 @@
+<div class="container my-4 post-wrapper" id="advanced-filter" style="display:none">
+
+  <div class="jumbotron border shadow">
+    <div class="row">
+      <div class="col-md">
+        <form class="#" method="get" enctype="multipart/form-data">
+          <div class="input-group">
+            {% csrf_token %}
+            {{user_cnts_advanced_filter.form}}
+            <button class="btn btn-dark btn-lg" type="submit" id="advanced_filter_search_icon_id">
+              <i class="fa fa-search" aria-hidden="true"></i></button>
+            <a class="btn btn-success" href="{% url 'user_campaign_naming_tools' %}">
+              <i class="fa fa-eraser" aria-hidden="true"></i>
+            </a>
+            <button class="btn btn-info btn-lg" id="btn-advanced-filter">
+              <i class="fa fa-caret-square-o-left" aria-hidden="true"></i></button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <br>
+
+  <div class="row">
+    <h5>CREATED CAMPAIGNS NAMING TOOLS</h5>
+    <div class="col-md">
+      <div class="card card-body">
+        <table class="table table-sm">
+          <tr>
+            <th>Insertion order name</th>
+            <th>Date created</th>
+          </tr>
+
+          {% for cnt in cnts %}
+          <tr>
+            <td>{{cnt}}</td>
+            <td>{{cnt.created_date}}</td>
+            <td><a class="btn btn-sm btn-success" href="#">
+                <i class="fa fa-copy"></i></a></td>
+            <td><a class="btn btn-sm btn-success" href="">
+              <i class="fas fa-pencil-alt"></i></a></td>
+            <td><a class="btn btn-sm btn-danger" href="">
+                <i class="fa fa-trash-o"></i></a></td>
+          <tr>
+            {% endfor %}
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

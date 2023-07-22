@@ -1,0 +1,16 @@
+{% extends 'index.html' %}
+
+{% block title %} Accueil {% endblock title %}
+
+{% block content %}
+
+  <!-- Full text search filter -->
+  {% if user_cnts_full_text_search %}
+    {% include 'cnt/full_text_search_filter.html' %}
+  {% endif %}
+
+  <!-- advanced filter -->
+  {% if user_cnts_advanced_filter %}
+    {% include 'cnt/advanced_filter.html'%}
+  {% endif %}
+{% endblock %}

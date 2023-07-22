@@ -1,0 +1,30 @@
+[
+    {
+        "model": "sigma_app.BatchName",
+        "pk": 1,
+        "fields": {
+            "dsp": "DSPs"
+        }
+    },
+    {
+        "model": "sigma_app.BatchName",
+        "pk": 2,
+        "fields": {
+            "dsp": "Xandr"
+        }
+    },
+    {
+        "model": "sigma_app.BatchName",
+        "pk": 3,
+        "fields": {
+            "dsp": "FreeWhell"
+        }
+    },
+    {
+        "model": "sigma_app.BatchName",
+        "pk": 4,
+        "fields": {
+            "dsp": "Dynamic"
+        }
+    }
+]

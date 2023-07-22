@@ -41,6 +41,7 @@ main {
 }
 
 :root {
+    --info: #5bc0de;
     --blue: #29335C;
     --green: #339989;
     --red: #D1495B;
@@ -120,7 +121,12 @@ td {
 
 .hello-msg {
   font-size: 18px;
-  color: #16033f;
-  background: var(--cyan);;
-  margin-right: -10px;
+  margin-right: 20px;
+}
+
+.nav-link {
+  font-size: 15px;
+  padding: 3px;
+  color: white;
+  font-weight: bold;
 }

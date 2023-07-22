@@ -11,6 +11,7 @@ def register(request):
 	if request.method == 'POST':
 		# Let's create a form instance from POST data
 		form = RegisterForm(request.POST)
+		print(form.is_valid())
 		if form.is_valid():
 			form.save()	
 			username = form.cleaned_data.get('username')
@@ -21,6 +22,7 @@ def register(request):
 			data = request.POST.dict() # form fields value
 			user = User.objects.filter(
 				Q(username=data['username']) | Q(email=data['email']))
+			# If the user already exists
 			if user.exists():
 				# Check if username or email adress has already been taken
 				try:
@@ -42,11 +44,14 @@ def register(request):
 							username
 						)
 						messages.error(request, msg)
+			# If passwords didn't match
 			elif data['password1'] != data['password2']:
 				msg = "Passwords do NOT match."
 				messages.error(request, msg)
-				return redirect('register')			
+				return redirect('register')
+			# if any others trouble		
 			else:
+				print(request.POST)
 				msg2 = "Password cant'be a commonly used password."
 				msg3 = "Password can't be entirely numeric"
 				msg4 = "Password can't be too similar to your other personal."

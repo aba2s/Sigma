@@ -36,10 +36,13 @@ data types. Here is an exellent book about this topic
 https://www.webforefront.com/django/setuprelationshipsdjangomodels.html
 
 """
+import datetime
+import time
 from django.db import models
 from django.contrib.auth.models import User
 from django.core.validators import RegexValidator
 from django.core.exceptions import ValidationError
+
 
 # How to Create a Date Form Field in a Django form
 # birth_date= forms.DateField(label='What is your birth date?',
@@ -55,6 +58,12 @@ def validate_name(value):
         raise ValidationError(
             '{} is too sort for an advertiser name'.format(value)
         )
+    
+def uploaded_files_directory(instance, filename):
+    return 'files/{}/{}_{}'.format(
+        instance.dsp, filename, datetime.datetime
+    )
+
 
 """Incoming camapaigns table"""
 
@@ -67,7 +76,12 @@ class IncomingCampaigns(models.Model):
     Push notification de la part du consultant à ou vers l'account qui
     gere la campagne.
     """
-    pass
+    class Meta:
+        db_table = 'IncomingCampaigns'
+        verbose_name_plural = 'IncomingCampaigns'
+    
+    def __str__(self) -> str:
+        return 'Incoming'
 
 
 """
@@ -91,17 +105,13 @@ class CampaignNamingTool(models.Model):
 
     Parameters
     ----------
-    user                          : owner or in charge of the campaign.
-    year, month                   : year and month when launching
-                                    campaign online.
-    advertiser                    : advertiser of the campaign.
-    name                          : name of the campaign.
-    device                        : device the campaign must be served
-                                    (Desktop, Mobile, tablette).
-    type_of_format                : format that campaign must be served
-                                    (IAB, Video, etc)
-    kpi                           : KPI of the campaign (CPM, CPC, CPV,
-                                    CPA, etc)
+    user                : owner or in charge of the campaign.
+    year, month         : year and month when launching campaign online.
+    advertiser          : advertiser of the campaign.
+    name                : name of the campaign.
+    device              : device campaign must be served (Desktop, Mobile, tablette).
+    type_of_format      : format that campaign must be served (IAB, Video, etc)
+    kpi                 : KPI of the campaign (CPM, CPC, CPV, CPA, etc)
 
     Returns
     -------
@@ -158,6 +168,14 @@ class CampaignNamingTool(models.Model):
     kpi = models.CharField(max_length=10, choices=kpi_choices, default='CPM')
     created_date = models.DateTimeField(auto_now_add=True)
 
+    class Meta:
+        db_table = 'CampaignNamingTool'
+        unique_together = [
+            'year', 'month', 'advertiser',
+            'name', 'kpi', 'type_of_format',
+            'device'
+        ]
+
     def __str__(self):
         """String for representing the Model object."""
         return "{}-{} - {} - {} - {} - {} - {}".format(
@@ -165,13 +183,6 @@ class CampaignNamingTool(models.Model):
             self.advertiser.strip(), self.name.strip(),
             self.device.strip(), self.type_of_format.strip(),
             self.kpi.strip())
-
-    class Meta:
-        db_table = 'CampaignNamingTool'
-        unique_together = ['year', 'month', 'advertiser',
-                           'name', 'kpi', 'type_of_format',
-                           'device']
-
 
 """
 User Insertion Orders table
@@ -220,20 +231,19 @@ class UserInsertionOrder(models.Model):
     created_date = models.DateTimeField(
         auto_now_add=True, blank=True, null=True)
 
-    def __str__(self):
-        return "%s" % self.campaign_naming_tool
-        # return "{} - [{}]".format(self.insertion_order, self.user)
-
     class Meta:
         db_table = 'UserInsertionOrder'
         unique_together = ['campaign_naming_tool']
+
+    def __str__(self):
+        return "%s" % self.campaign_naming_tool
 
 
 """
 User Insertion Orders By DSP table
 ----------------------------------
 """
-class UserInsertionOrderByDSP(models.Model):
+class UserInsertionOrderByDsp(models.Model):
     """
     Here we split the signed budget filled in **User Insertion Orders table**
     between DSP or partners. At the end campaing the whole budget must be
@@ -261,8 +271,8 @@ class UserInsertionOrderByDSP(models.Model):
         ('Oath', 'Oath')
     )
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    insertion_order = models.ForeignKey(UserInsertionOrder,
-                                        on_delete=models.CASCADE)
+    insertion_order = models.ForeignKey(
+        UserInsertionOrder, on_delete=models.CASCADE)
     dsp = models.CharField(max_length=30, choices=dsp_choices)
     budget = models.DecimalField(max_digits=20, decimal_places=2)
     # optionel, on prend par defaut celui de InsertionOrder
@@ -270,19 +280,21 @@ class UserInsertionOrderByDSP(models.Model):
     end_date = models.DateField()
     created_date = models.DateField(auto_now_add=True, blank=True, null=True)
 
-    def __str__(self):
-        return "{} - [{}]".format(self.insertion_order, self.dsp)
-
     class Meta:
         db_table = 'UserInsertionOrderByDSP'
         unique_together = ['insertion_order', 'dsp']
+
+    def __str__(self):
+        return "{} - [{}]".format(self.insertion_order, self.dsp)
 
 
 class InsertionOrdersCommonFields(models.Model):
     date = models.DateField('Date')
     advertiser = models.CharField('Advertiser', max_length=100)
     insertion_order = models.ForeignKey(UserInsertionOrder,
-        on_delete=models.CASCADE)
+        on_delete=models.CASCADE,
+        db_column='insertion_order'
+    )
     dsp = models.CharField(max_length=20)
     strategy = models.CharField('Strategy Name', max_length=300)
     creative = models.CharField('Creative Name', max_length=400)
@@ -292,11 +304,7 @@ class InsertionOrdersCommonFields(models.Model):
     conversions = models.IntegerField()
     post_clicks_conversions = models.IntegerField()
     post_views_conversions = models.IntegerField()
-
-    def __str__(self):
-        return "{} - [{}]".format(self.insertion_order, self.dsp)
-
-
+ 
     class Meta:
         abstract = True # this tells Django, not to create
         # a database table for the corresponding models.
@@ -307,9 +315,11 @@ class DV360(InsertionOrdersCommonFields):
     
     class Meta:
         db_table = 'DV360'
+        verbose_name_plural = "DV360"
         # verbose_name_plural = "companies" his simply makes
         # sure that in our admin panel the class is called companies
         # in the plural and not companys
+
 
 class Xandr(InsertionOrdersCommonFields):
     dsp = models.CharField('Xandr', max_length=20)
@@ -377,65 +387,98 @@ class InsertionOrdersRealSpents(InsertionOrdersCommonFields):
         # return "{}".format(self.insertion_order)
 
     class Meta:
-        db_table = 'InserstionOrdersRealSpents'''
+        db_table = 'InserstionOrdersRealSpents'
+        unique_together = ['date', 'advertiser', 'dsp',
+            'insertion_order', 'impressions']
+        # unique_together = [field.name for field in \
+        #     InsertionOrdersCommonFields._meta.fields \
+        #     if field.name != "id"]
 
+class BatchName(models.Model):
+    id = models.UUIDField(primary_key=True)
+    dsp = models.CharField(max_length=50)
+    
+    def __str__(self):
+        return "{}".format(self.dsp) 
+    
+    class Meta:
+        db_table = 'BatchName'
 
 class AsynchroneTask(models.Model):
     INPROGRESS = 0
-    FINISHED = 1
+    SUCCESSED = 1
     FAILED = 2
     STATUS_CHOICES = (
         (INPROGRESS, 'In-progress'),
-        (FINISHED, 'Finished'),
+        (SUCCESSED, 'Sucessed'),
         (FAILED, 'Failed'),
     )
     id = models.UUIDField(primary_key=True)
     start_date = models.DateTimeField(auto_now_add=True)
-    end_date = models.DateTimeField(auto_now_add=True)
+    title = models.CharField(max_length=200, null=True)
     time_taken = models.DurationField(null=True)
-    status = models.SmallIntegerField(default=0, choices=STATUS_CHOICES)
-    status_result = models.TextField(null=True, blank=True)
-    dv360 = models.ForeignKey(DV360, on_delete=models.CASCADE, null=True)
-    xandr = models.ForeignKey(Xandr, on_delete=models.CASCADE, null=True)
-    dynamic = models.ForeignKey(Dynamic, on_delete=models.CASCADE, null=True)
-    freewheel = models.ForeignKey(FreeWheel, on_delete=models.CASCADE, null=True)
-    
-    def get_status(self):
-        return self.STATUS_CHOICES[self.status][1]
-    
-    def __str__(self):
-        if self.dv360:
-            return "{} - ".format(self.dv360, self.status)
-        
-        elif self.xandr:
-            return "{} - {}".format(self.xandr, self.status)
-        elif self.dynamic:
-            return "{} - {}".format(self.dynamic, self.status)
-        elif self.freewheel:
-            return "{} - {}".format(self.freewheel, self.status)
-        else:
-            return "Inconnu - {}".format(self.status)
-
+    status = models.SmallIntegerField(
+        default=0, choices=STATUS_CHOICES)
+    result = models.TextField(null=True, blank=True)
+    total_rows = models.PositiveBigIntegerField(null=True)
+    valid_rows = models.PositiveBigIntegerField(null=True)
+    dsp = models.ForeignKey(
+        BatchName, db_column='dsp',
+        on_delete=models.CASCADE, null=True)
+    user = models.ForeignKey(
+        User, db_column='user',
+        on_delete=models.CASCADE)
+    # file_path = models.FilePathField(
+    #     path=uploaded_files_directory, match='*.xls'
+    # )
 
     class Meta:
         db_table = 'AsynchroneTask'
 
-
-class BatchName(models.Model):
-    id = models.UUIDField(primary_key=True)
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
-    dsp = models.CharField(max_length=50)
-    status = models.ForeignKey(AsynchroneTask, on_delete=models.CASCADE)
-    total_rows = models.PositiveIntegerField()
-    valid_rows = models.PositiveIntegerField()
-    invalid_rows = models.PositiveBigIntegerField()
-    file_name = models.CharField(max_length=300)
-
-    def __str__(self):
-        return "{} - {}".format(self.dsp, self.file_name)
+    def instance(self):
+        if self.dsp:
+            return self.dsp
     
+    def get_status(self):
+        return self.STATUS_CHOICES[self.status][1]
+
+    def get_time_taken(self):
+        td_in_seconds = self.time_taken.total_seconds()
+        hours, remainder = divmod(td_in_seconds, 3600)
+        minutes, seconds = divmod(remainder, 60)
+        hours = int(hours)
+        minutes = int(minutes)
+        seconds = int(seconds)
+        if minutes < 10:
+            minutes = "0{}".format(minutes)
+        if seconds < 10:
+            seconds = "0{}".format(seconds)
+        return "{}:{}:{}".format(hours, minutes,seconds)
+
+
+class File(models.Model):
+    """File uploader or streamed of the corresponding batch.
+    :task AsynchroneTask: the task the file belongs to.
+    :title str: Title of the file, as shown on the interface.
+    :location FileField: Location of the file on the server.
+    """
+    task = models.ForeignKey(
+        AsynchroneTask, on_delete=models.CASCADE
+    )
+    name = models.CharField(
+        max_length=240, help_text='Name of the file')
+    # Location of the file on the server.
+    file_location = models.FileField( 
+        verbose_name='File',
+        upload_to=uploaded_files_directory
+    )
+    def __str__(self):
+        return "{} - {}".format(
+            self.name, self.task
+        )
+
     class Meta:
-        db_table = 'BatchName'
+        db_table = 'File'
 
 
 '''class Manager(User):

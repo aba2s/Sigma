@@ -22,7 +22,7 @@ li {
 }
 
 li a {
-    background: var(--blue);
+    background: var(--info);
     color: white;
     display: flex;
     position: absolute;

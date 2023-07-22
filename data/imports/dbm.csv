@@ -1,0 +1,223 @@
+﻿date;dsp;advertiser;insertion_order;strategy;creative;budget;impressions;clicks;conversions;post_clicks_conversions;post_views_conversions;Vues 25%;Vues 50%;Vues 75%;Vues 100%
+01/07/2023;DBM;FR - Django;2023-07 - FR - Django - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.10;5819;26;0;12;12;4 820;4 420;4 111;3 861
+02/07/2023;DBM;FR - Django;2023-07 - FR - Django - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.11;328148;390;8;12;12;0;0;0;0
+03/07/2020;DBM;FR - Django;2023-07 - FR - Django - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.12;139050;198;1;12;12;0;0;0;0
+01/07/2023;Mediamath;FR - Django;2023-07 - FR - Django - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.13;290903;377;4;12;12;-3 213;-2 947;-2 741;-2 574
+02/07/2023;Mediamath;FR - Django;2023-07 - FR - Django - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.14;357519;463;5;12;12;-5623,333333;-5156,666667;-4796,166667;-4504,5
+03/07/2020;Mediamath;FR - Django;2023-07 - FR - Django - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.15;424134;549;5;12;12;-8033,333333;-7366,666667;-6851,666667;-6435
+01/07/2023;Mediamath;FR - Django;2023-07 - FR - Django - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.16;490750;635;6;12;12;-10 443;-9 577;-8 907;-8 366
+02/07/2023;Mediamath;FR - Python;2023-07 - FR - Python - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.17;557365;721;6;12;12;-12853,33333;-11786,66667;-10962,66667;-10296
+03/07/2020;Mediamath;FR - Python;2023-07 - FR - Python - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.18;623981;807;7;12;12;-15263,33333;-13996,66667;-13018,16667;-12226,5
+01/07/2023;Mediamath;FR - Python;2023-07 - FR - Python - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.19;690596;893;7;12;12;-17 673;-16 207;-15 074;-14 157
+02/07/2023;Mediamath;FR - Python;2023-07 - FR - Python - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.20;757212;979;8;12;12;-20083,33333;-18416,66667;-17129,16667;-16087,5
+03/07/2020;Mediamath;FR - Python;2023-07 - FR - Python - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.21;823827;1065;8;12;12;-22493,33333;-20626,66667;-19184,66667;-18018
+01/07/2023;TubeMogul;FR - Python;2023-07 - FR - Python - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.22;890443;1151;9;12;12;-24 903;-22 837;-21 240;-19 949
+02/07/2023;TubeMogul;FR - Python;2023-07 - FR - Python - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.23;957058;1237;9;12;12;-27313,33333;-25046,66667;-23295,66667;-21879
+03/07/2020;TubeMogul;FR - Python;2023-07 - FR - Python - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.24;1023674;1323;10;12;12;-29723,33333;-27256,66667;-25351,16667;-23809,5
+01/07/2023;TubeMogul;FR - Python;2023-07 - FR - Python - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.25;1090289;1409;10;12;12;-32 133;-29 467;-27 407;-25 740
+02/07/2023;TubeMogul;FR - Python;2023-07 - FR - Python - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.26;1156905;1495;11;12;12;-34543,33333;-31676,66667;-29462,16667;-27670,5
+03/07/2020;TubeMogul;FR - Java;2023-07 - FR - Java - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.27;1223520;1581;11;12;12;-36953,33333;-33886,66667;-31517,66667;-29601
+01/07/2023;TubeMogul;FR - Java;2023-07 - FR - Java - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.28;1290136;1667;12;12;12;-39 363;-36 097;-33 573;-31 532
+02/07/2023;TubeMogul;FR - Java;2023-07 - FR - Java - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.29;1356751;1753;12;12;12;-41773,33333;-38306,66667;-35628,66667;-33462
+03/07/2020;TubeMogul;FR - Java;2023-07 - FR - Java - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.30;1423367;1839;13;12;12;-44183,33333;-40516,66667;-37684,16667;-35392,5
+01/07/2023;TubeMogul;FR - Java;2023-07 - FR - Java - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.31;1489982;1925;13;12;12;-46 593;-42 727;-39 740;-37 323
+02/07/2023;TubeMogul;FR - Java;2023-07 - FR - Java - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.32;1556598;2011;14;12;12;-49003,33333;-44936,66667;-41795,16667;-39253,5
+03/07/2020;TubeMogul;FR - Java;2023-07 - FR - Java - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.33;1623213;2097;14;12;12;-51413,33333;-47146,66667;-43850,66667;-41184
+01/07/2023;TubeMogul;FR - Java;2023-07 - FR - Java - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.34;1689829;2183;15;12;12;-53 823;-49 357;-45 906;-43 115
+02/07/2023;TubeMogul;FR - Java;2023-07 - FR - Java - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.35;1756444;2269;15;12;12;-56233,33333;-51566,66667;-47961,66667;-45045
+03/07/2020;TubeMogul;FR - Java;2023-07 - FR - Java - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.36;1823060;2355;16;12;12;-58643,33333;-53776,66667;-50017,16667;-46975,5
+01/07/2023;TubeMogul;FR - Java;2023-07 - FR - Java - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.37;1889675;2441;16;12;12;-61 053;-55 987;-52 073;-48 906
+02/07/2023;TubeMogul;FR - Java;2023-07 - FR - Java - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.38;1956291;2527;17;12;12;-63463,33333;-58196,66667;-54128,16667;-50836,5
+03/07/2020;FBX;FR - Java;2023-07 - FR - Java - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.39;2022906;2613;17;12;12;-65873,33333;-60406,66667;-56183,66667;-52767
+01/07/2023;FBX;FR - Java;2023-07 - FR - Java - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.40;2089522;2699;18;12;12;-68 283;-62 617;-58 239;-54 698
+02/07/2023;FBX;FR - Java;2023-07 - FR - Java - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.41;2156137;2785;18;12;12;-70693,33333;-64826,66667;-60294,66667;-56628
+03/07/2020;FBX;FR - Java;2023-07 - FR - Java - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.42;2222753;2871;19;12;12;-73103,33333;-67036,66667;-62350,16667;-58558,5
+01/07/2023;FBX;FR - Java;2023-07 - FR - Java - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.43;2289368;2957;19;12;12;-75 513;-69 247;-64 406;-60 489
+02/07/2023;FBX;FR - Java;2023-07 - FR - Java - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.44;2355984;3043;20;12;12;-77923,33333;-71456,66667;-66461,16667;-62419,5
+03/07/2020;FBX;FR - Java;2023-07 - FR - Java - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.45;2422599;3129;20;12;12;-80333,33333;-73666,66667;-68516,66667;-64350
+01/07/2023;FBX;FR - Java;2023-07 - FR - Java - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.46;2489215;3215;21;12;12;-82 743;-75 877;-70 572;-66 281
+02/07/2023;FBX;FR - Java;2023-07 - FR - Java - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.47;2555830;3301;21;12;12;-85153,33333;-78086,66667;-72627,66667;-68211
+03/07/2020;FBX;FR - Java;2023-07 - FR - Java - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.48;2622446;3387;22;12;12;-87563,33333;-80296,66667;-74683,16667;-70141,5
+01/07/2023;FBX;FR - Java;2023-07 - FR - Java - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.49;2689061;3473;22;12;12;-89 973;-82 507;-76 739;-72 072
+02/07/2023;FBX;FR - Pandas;2023-07 - FR - Pandas - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.50;2755677;3559;23;12;12;-92383,33333;-84716,66667;-78794,16667;-74002,5
+03/07/2020;FBX;FR - Pandas;2023-07 - FR - Pandas - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.51;2822292;3645;23;12;12;-94793,33333;-86926,66667;-80849,66667;-75933
+01/07/2023;FBX;FR - Pandas;2023-07 - FR - Pandas - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.52;2888908;3731;24;12;12;-97 203;-89 137;-82 905;-77 864
+02/07/2023;FBX;FR - Pandas;2023-07 - FR - Pandas - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.53;2955523;3817;24;12;12;-99613,33333;-91346,66667;-84960,66667;-79794
+03/07/2020;FBX;FR - Pandas;2023-07 - FR - Pandas - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.54;3022139;3903;25;12;12;-102023,3333;-93556,66667;-87016,16667;-81724,5
+01/07/2023;FBX;FR - Pandas;2023-07 - FR - Pandas - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.55;3088754;3989;25;12;12;-104 433;-95 767;-89 072;-83 655
+02/07/2023;FBX;FR - Pandas;2023-07 - FR - Pandas - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.56;3155370;4075;26;12;12;-106843,3333;-97976,66667;-91127,16667;-85585,5
+03/07/2020;FBX;FR - Pandas;2023-07 - FR - Pandas - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.57;3221985;4161;26;12;12;-109253,3333;-100186,6667;-93182,66667;-87516
+01/07/2023;FBX;FR - Pandas;2023-07 - FR - Pandas - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.58;3288601;4247;27;12;12;-111 663;-102 397;-95 238;-89 447
+02/07/2023;FBX;FR - Pandas;2023-07 - FR - Pandas - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.59;3355216;4333;27;12;12;-114073,3333;-104606,6667;-97293,66667;-91377
+03/07/2020;FBX;FR - Pandas;2023-07 - FR - Pandas - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.60;3421832;4419;28;12;12;-116483,3333;-106816,6667;-99349,16667;-93307,5
+01/07/2023;FBX;FR - Pandas;2023-07 - FR - Pandas - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.61;3488447;4505;28;12;12;-118 893;-109 027;-101 405;-95 238
+02/07/2023;FBX;FR - Pandas;2023-07 - FR - Pandas - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.62;3555063;4591;29;12;12;-121303,3333;-111236,6667;-103460,1667;-97168,5
+03/07/2020;FBX;FR - Pandas;2023-07 - FR - Pandas - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.63;3621678;4677;29;12;12;-123713,3333;-113446,6667;-105515,6667;-99099
+01/07/2023;FBX;FR - Pandas;2023-07 - FR - Pandas - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.64;3688294;4763;30;12;12;-126 123;-115 657;-107 571;-101 030
+02/07/2023;FBX;FR - Pandas;2023-07 - FR - Pandas - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.65;3754909;4849;30;12;12;-128533,3333;-117866,6667;-109626,6667;-102960
+03/07/2020;FBX;FR - Pandas;2023-07 - FR - Pandas - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.66;3821525;4935;31;12;12;-130943,3333;-120076,6667;-111682,1667;-104890,5
+01/07/2023;FBX;FR - Pandas;2023-07 - FR - Pandas - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.67;3888140;5021;31;12;12;-133 353;-122 287;-113 738;-106 821
+02/07/2023;FBX;FR - Pandas;2023-07 - FR - Pandas - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.68;3954756;5107;32;12;12;-135763,3333;-124496,6667;-115793,1667;-108751,5
+03/07/2020;FBX;FR - Pandas;2023-07 - FR - Pandas - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.69;4021371;5193;32;12;12;-138173,3333;-126706,6667;-117848,6667;-110682
+01/07/2023;FBX;FR - Pandas;2023-07 - FR - Pandas - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.70;4087987;5279;33;12;12;-140 583;-128 917;-119 904;-112 613
+02/07/2023;FBX;FR - Pandas;2023-07 - FR - Pandas - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.71;4154602;5365;33;12;12;-142993,3333;-131126,6667;-121959,6667;-114543
+03/07/2020;FBX;FR - Pandas;2023-07 - FR - Pandas - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.72;4221218;5451;34;12;12;-145403,3333;-133336,6667;-124015,1667;-116473,5
+01/07/2023;FBX;FR - Pandas;2023-07 - FR - Pandas - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.73;4287833;5537;34;12;12;-147 813;-135 547;-126 071;-118 404
+02/07/2023;FBX;FR - Pandas;2023-07 - FR - Pandas - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.74;4354449;5623;35;12;12;-150223,3333;-137756,6667;-128126,1667;-120334,5
+03/07/2020;FBX;FR - Pandas;2023-07 - FR - Pandas - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.75;4421064;5709;35;12;12;-152633,3333;-139966,6667;-130181,6667;-122265
+01/07/2023;FBX;FR - Pandas;2023-07 - FR - Pandas - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.76;4487680;5795;36;12;12;-155 043;-142 177;-132 237;-124 196
+02/07/2023;FBX;FR - Pandas;2023-07 - FR - Pandas - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.77;4554295;5881;36;12;12;-157453,3333;-144386,6667;-134292,6667;-126126
+03/07/2020;FBX;FR - Pandas;2023-07 - FR - Pandas - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.78;4620911;5967;37;12;12;-159863,3333;-146596,6667;-136348,1667;-128056,5
+01/07/2023;FBX;FR - Pandas;2023-07 - FR - Pandas - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.79;4687526;6053;37;12;12;-162 273;-148 807;-138 404;-129 987
+02/07/2023;FBX;FR - Pandas;2023-07 - FR - Pandas - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.80;4754142;6139;38;12;12;-164683,3333;-151016,6667;-140459,1667;-131917,5
+03/07/2020;FBX;FR - Pandas;2023-07 - FR - Pandas - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.81;4820757;6225;38;12;12;-167093,3333;-153226,6667;-142514,6667;-133848
+01/07/2023;FBX;FR - Docker;2023-07 - FR - Docker - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.82;4887373;6311;39;12;12;-169 503;-155 437;-144 570;-135 779
+02/07/2023;FBX;FR - Docker;2023-07 - FR - Docker - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.83;4953988;6397;39;12;12;-171913,3333;-157646,6667;-146625,6667;-137709
+03/07/2020;FBX;FR - Docker;2023-07 - FR - Docker - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.84;5020604;6483;40;12;12;-174323,3333;-159856,6667;-148681,1667;-139639,5
+01/07/2023;FBX;FR - Docker;2023-07 - FR - Docker - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.85;5087219;6569;40;12;12;-176 733;-162 067;-150 737;-141 570
+02/07/2023;FBX;FR - Docker;2023-07 - FR - Docker - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.86;5153835;6655;41;12;12;-179143,3333;-164276,6667;-152792,1667;-143500,5
+03/07/2020;FBX;FR - Docker;2023-07 - FR - Docker - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.87;5220450;6741;41;12;12;-181553,3333;-166486,6667;-154847,6667;-145431
+01/07/2023;FBX;FR - Docker;2023-07 - FR - Docker - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.88;5287066;6827;42;12;12;-183 963;-168 697;-156 903;-147 362
+02/07/2023;FBX;FR - Docker;2023-07 - FR - Docker - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.89;5353681;6913;42;12;12;-186373,3333;-170906,6667;-158958,6667;-149292
+03/07/2020;FBX;FR - Docker;2023-07 - FR - Docker - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.90;5420297;6999;43;12;12;-188783,3333;-173116,6667;-161014,1667;-151222,5
+01/07/2023;FBX;FR - Docker;2023-07 - FR - Docker - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.91;5486912;7085;43;12;12;-191 193;-175 327;-163 070;-153 153
+02/07/2023;FBX;FR - Docker;2023-07 - FR - Docker - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.92;5553528;7171;44;12;12;-193603,3333;-177536,6667;-165125,1667;-155083,5
+03/07/2020;FBX;FR - Docker;2023-07 - FR - Docker - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.93;5620143;7257;44;12;12;-196013,3333;-179746,6667;-167180,6667;-157014
+01/07/2023;Xandr;FR - Docker;2023-07 - FR - Docker - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.94;5686759;7343;45;12;12;-198 423;-181 957;-169 236;-158 945
+02/07/2023;Xandr;FR - Docker;2023-07 - FR - Docker - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.95;5753374;7429;45;12;12;-200833,3333;-184166,6667;-171291,6667;-160875
+03/07/2020;Xandr;FR - Docker;2023-07 - FR - Docker - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.96;5819990;7515;46;12;12;-203243,3333;-186376,6667;-173347,1667;-162805,5
+01/07/2023;Xandr;FR - Docker;2023-07 - FR - Docker - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.97;5886605;7601;46;12;12;-205 653;-188 587;-175 403;-164 736
+02/07/2023;Xandr;FR - Docker;2023-07 - FR - Docker - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.98;5953221;7687;47;12;12;-208063,3333;-190796,6667;-177458,1667;-166666,5
+03/07/2020;Xandr;FR - Docker;2023-07 - FR - Docker - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.99;6019836;7773;47;12;12;-210473,3333;-193006,6667;-179513,6667;-168597
+01/07/2023;Xandr;FR - Docker;2023-07 - FR - Docker - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.100;6086452;7859;48;12;12;-212 883;-195 217;-181 569;-170 528
+02/07/2023;Xandr;FR - Docker;2023-07 - FR - Docker - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.101;6153067;7945;48;12;12;-215293,3333;-197426,6667;-183624,6667;-172458
+03/07/2020;Xandr;FR - Docker;2023-07 - FR - Docker - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.102;6219683;8031;49;12;12;-217703,3333;-199636,6667;-185680,1667;-174388,5
+01/07/2023;Xandr;FR - Docker;2023-07 - FR - Docker - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.103;6286298;8117;49;12;12;-220 113;-201 847;-187 736;-176 319
+02/07/2023;Xandr;FR - Sphinx;2023-07 - FR - Sphinx - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.104;6352914;8203;50;12;12;-222523,3333;-204056,6667;-189791,1667;-178249,5
+03/07/2020;Xandr;FR - Sphinx;2023-07 - FR - Sphinx - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.105;6419529;8289;50;12;12;-224933,3333;-206266,6667;-191846,6667;-180180
+01/07/2023;Xandr;FR - Sphinx;2023-07 - FR - Sphinx - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.106;6486145;8375;51;12;12;-227 343;-208 477;-193 902;-182 111
+02/07/2023;Xandr;FR - Sphinx;2023-07 - FR - Sphinx - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.107;6552760;8461;51;12;12;-229753,3333;-210686,6667;-195957,6667;-184041
+03/07/2020;Xandr;FR - Sphinx;2023-07 - FR - Sphinx - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.108;6619376;8547;52;12;12;-232163,3333;-212896,6667;-198013,1667;-185971,5
+01/07/2023;Xandr;FR - Sphinx;2023-07 - FR - Sphinx - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.109;6685991;8633;52;12;12;-234 573;-215 107;-200 069;-187 902
+02/07/2023;Xandr;FR - Sphinx;2023-07 - FR - Sphinx - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.110;6752607;8719;53;12;12;-236983,3333;-217316,6667;-202124,1667;-189832,5
+03/07/2020;Xandr;FR - Sphinx;2023-07 - FR - Sphinx - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.111;6819222;8805;53;12;12;-239393,3333;-219526,6667;-204179,6667;-191763
+01/07/2023;Xandr;FR - Sphinx;2023-07 - FR - Sphinx - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.112;6885838;8891;54;12;12;-241 803;-221 737;-206 235;-193 694
+02/07/2023;Xandr;FR - Sphinx;2023-07 - FR - Sphinx - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.113;6952453;8977;54;12;12;-244213,3333;-223946,6667;-208290,6667;-195624
+03/07/2020;Xandr;FR - Sphinx;2023-07 - FR - Sphinx - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.114;7019069;9063;55;12;12;-246623,3333;-226156,6667;-210346,1667;-197554,5
+01/07/2023;Xandr;FR - Sphinx;2023-07 - FR - Sphinx - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.115;7085684;9149;55;12;12;-249 033;-228 367;-212 402;-199 485
+02/07/2023;Xandr;FR - Sphinx;2023-07 - FR - Sphinx - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.116;7152300;9235;56;12;12;-251443,3333;-230576,6667;-214457,1667;-201415,5
+03/07/2020;Xandr;FR - Sphinx;2023-07 - FR - Sphinx - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.117;7218915;9321;56;12;12;-253853,3333;-232786,6667;-216512,6667;-203346
+01/07/2023;Xandr;FR - Sphinx;2023-07 - FR - Sphinx - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.118;7285531;9407;57;12;12;-256 263;-234 997;-218 568;-205 277
+02/07/2023;Xandr;FR - Sphinx;2023-07 - FR - Sphinx - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.119;7352146;9493;57;12;12;-258673,3333;-237206,6667;-220623,6667;-207207
+03/07/2020;Xandr;FR - Sphinx;2023-07 - FR - Sphinx - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.120;7418762;9579;58;12;12;-261083,3333;-239416,6667;-222679,1667;-209137,5
+01/07/2023;FreeWheel;FR - Sphinx;2023-07 - FR - Sphinx - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.121;7485377;9665;58;12;12;-263 493;-241 627;-224 735;-211 068
+02/07/2023;FreeWheel;FR - Sphinx;2023-07 - FR - Sphinx - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.122;7551993;9751;59;12;12;-265903,3333;-243836,6667;-226790,1667;-212998,5
+03/07/2020;FreeWheel;FR - Sphinx;2023-07 - FR - Sphinx - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.123;7618608;9837;59;12;12;-268313,3333;-246046,6667;-228845,6667;-214929
+01/07/2023;FreeWheel;FR - Sphinx;2023-07 - FR - Sphinx - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.124;7685224;9923;60;12;12;-270 723;-248 257;-230 901;-216 860
+02/07/2023;FreeWheel;FR - Sphinx;2023-07 - FR - Sphinx - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.125;7751839;10009;60;12;12;-273133,3333;-250466,6667;-232956,6667;-218790
+03/07/2020;FreeWheel;FR - Sphinx;2023-07 - FR - Sphinx - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.126;7818455;10095;61;12;12;-275543,3333;-252676,6667;-235012,1667;-220720,5
+01/07/2023;FreeWheel;FR - Sphinx;2023-07 - FR - Sphinx - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.127;7885070;10181;61;12;12;-277 953;-254 887;-237 068;-222 651
+02/07/2023;FreeWheel;FR - Sphinx;2023-07 - FR - Sphinx - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.128;7951686;10267;62;12;12;-280363,3333;-257096,6667;-239123,1667;-224581,5
+03/07/2020;FreeWheel;FR - Sphinx;2023-07 - FR - Sphinx - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.129;8018301;10353;62;12;12;-282773,3333;-259306,6667;-241178,6667;-226512
+01/07/2023;FreeWheel;FR - Sphinx;2023-07 - FR - Sphinx - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.130;8084917;10439;63;12;12;-285 183;-261 517;-243 234;-228 443
+02/07/2023;FreeWheel;FR - Sphinx;2023-07 - FR - Sphinx - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.131;8151532;10525;63;12;12;-287593,3333;-263726,6667;-245289,6667;-230373
+03/07/2020;FreeWheel;FR - Sphinx;2023-07 - FR - Sphinx - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.132;8218148;10611;64;12;12;-290003,3333;-265936,6667;-247345,1667;-232303,5
+01/07/2023;FreeWheel;FR - Sphinx;2023-07 - FR - Sphinx - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.133;8284763;10697;64;12;12;-292 413;-268 147;-249 401;-234 234
+02/07/2023;FreeWheel;FR - Sphinx;2023-07 - FR - Sphinx - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.134;8351379;10783;65;12;12;-294823,3333;-270356,6667;-251456,1667;-236164,5
+03/07/2020;FreeWheel;FR - Sphinx;2023-07 - FR - Sphinx - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.135;8417994;10869;65;12;12;-297233,3333;-272566,6667;-253511,6667;-238095
+01/07/2023;FreeWheel;FR - Sphinx;2023-07 - FR - Sphinx - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.136;8484610;10955;66;12;12;-299 643;-274 777;-255 567;-240 026
+02/07/2023;FreeWheel;FR - Sphinx;2023-07 - FR - Sphinx - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.137;8551225;11041;66;12;12;-302053,3333;-276986,6667;-257622,6667;-241956
+03/07/2020;FreeWheel;FR - Sphinx;2023-07 - FR - Sphinx - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.138;8617841;11127;67;12;12;-304463,3333;-279196,6667;-259678,1667;-243886,5
+01/07/2023;FreeWheel;FR - Sphinx;2023-07 - FR - Sphinx - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.139;8684456;11213;67;12;12;-306 873;-281 407;-261 734;-245 817
+02/07/2023;FreeWheel;FR - Sphinx;2023-07 - FR - Sphinx - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.140;8751072;11299;68;12;12;-309283,3333;-283616,6667;-263789,1667;-247747,5
+03/07/2020;FreeWheel;FR - Sphinx;2023-07 - FR - Sphinx - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.141;8817687;11385;68;12;12;-311693,3333;-285826,6667;-265844,6667;-249678
+01/07/2023;FreeWheel;FR - Sphinx;2023-07 - FR - Sphinx - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.142;8884303;11471;69;12;12;-314 103;-288 037;-267 900;-251 609
+02/07/2023;FreeWheel;FR - Sphinx;2023-07 - FR - Sphinx - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.143;8950918;11557;69;12;12;-316513,3333;-290246,6667;-269955,6667;-253539
+03/07/2020;FreeWheel;FR - Sphinx;2023-07 - FR - Sphinx - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.144;9017534;11643;70;12;12;-318923,3333;-292456,6667;-272011,1667;-255469,5
+01/07/2023;FreeWheel;FR - Sphinx;2023-07 - FR - Sphinx - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.145;9084149;11729;70;12;12;-321 333;-294 667;-274 067;-257 400
+02/07/2023;FreeWheel;FR - Sphinx;2023-07 - FR - Sphinx - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.146;9150765;11815;71;12;12;-323743,3333;-296876,6667;-276122,1667;-259330,5
+03/07/2020;FreeWheel;FR - Sphinx;2023-07 - FR - Sphinx - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.147;9217380;11901;71;12;12;-326153,3333;-299086,6667;-278177,6667;-261261
+01/07/2023;FreeWheel;FR - Sphinx;2023-07 - FR - Sphinx - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.148;9283996;11987;72;12;12;-328 563;-301 297;-280 233;-263 192
+02/07/2023;FreeWheel;FR - Sphinx;2023-07 - FR - Sphinx - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.149;9350611;12073;72;12;12;-330973,3333;-303506,6667;-282288,6667;-265122
+03/07/2020;FreeWheel;FR - Sphinx;2023-07 - FR - Sphinx - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.150;9417227;12159;73;12;12;-333383,3333;-305716,6667;-284344,1667;-267052,5
+01/07/2023;FreeWheel;FR - Sphinx;2023-07 - FR - Sphinx - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.151;9483842;12245;73;12;12;-335 793;-307 927;-286 400;-268 983
+02/07/2023;FreeWheel;FR - Sphinx;2023-07 - FR - Sphinx - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.152;9550458;12331;74;12;12;-338203,3333;-310136,6667;-288455,1667;-270913,5
+03/07/2020;FreeWheel;FR - Sphinx;2023-07 - FR - Sphinx - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.153;9617073;12417;74;12;12;-340613,3333;-312346,6667;-290510,6667;-272844
+01/07/2023;FreeWheel;FR - Sphinx;2023-07 - FR - Sphinx - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.154;9683689;12503;75;12;12;-343 023;-314 557;-292 566;-274 775
+02/07/2023;FreeWheel;FR - Sphinx;2023-07 - FR - Sphinx - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.155;9750304;12589;75;12;12;-345433,3333;-316766,6667;-294621,6667;-276705
+03/07/2020;FreeWheel;FR - Sphinx;2023-07 - FR - Sphinx - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.156;9816920;12675;76;12;12;-347843,3333;-318976,6667;-296677,1667;-278635,5
+01/07/2023;FreeWheel;FR - Sphinx;2023-07 - FR - Sphinx - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.157;9883535;12761;76;12;12;-350 253;-321 187;-298 733;-280 566
+02/07/2023;FreeWheel;FR - Sphinx;2023-07 - FR - Sphinx - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.158;9950151;12847;77;12;12;-352663,3333;-323396,6667;-300788,1667;-282496,5
+03/07/2020;FreeWheel;FR - Sphinx;2023-07 - FR - Sphinx - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.159;10016766;12933;77;12;12;-355073,3333;-325606,6667;-302843,6667;-284427
+01/07/2023;FreeWheel;FR - Sphinx;2023-07 - FR - Sphinx - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.160;10083382;13019;78;12;12;-357 483;-327 817;-304 899;-286 358
+02/07/2023;FreeWheel;FR - Sphinx;2023-07 - FR - Sphinx - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.161;10149997;13105;78;12;12;-359893,3333;-330026,6667;-306954,6667;-288288
+03/07/2020;FreeWheel;FR - Git;2023-07 - FR - Git - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.162;10216613;13191;79;12;12;-362303,3333;-332236,6667;-309010,1667;-290218,5
+01/07/2023;FreeWheel;FR - Git;2023-07 - FR - Git - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.163;10283228;13277;79;12;12;-364 713;-334 447;-311 066;-292 149
+02/07/2023;FreeWheel;FR - Git;2023-07 - FR - Git - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.164;10349844;13363;80;12;12;-367123,3333;-336656,6667;-313121,1667;-294079,5
+03/07/2020;FreeWheel;FR - Git;2023-07 - FR - Git - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.165;10416459;13449;80;12;12;-369533,3333;-338866,6667;-315176,6667;-296010
+01/07/2023;FreeWheel;FR - Git;2023-07 - FR - Git - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.166;10483075;13535;81;12;12;-371 943;-341 077;-317 232;-297 941
+02/07/2023;FreeWheel;FR - Git;2023-07 - FR - Git - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.167;10549690;13621;81;12;12;-374353,3333;-343286,6667;-319287,6667;-299871
+03/07/2020;FreeWheel;FR - Git;2023-07 - FR - Git - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.168;10616306;13707;82;12;12;-376763,3333;-345496,6667;-321343,1667;-301801,5
+01/07/2023;FreeWheel;FR - Git;2023-07 - FR - Git - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.169;10682921;13793;82;12;12;-379 173;-347 707;-323 399;-303 732
+02/07/2023;FreeWheel;FR - Git;2023-07 - FR - Git - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.170;10749537;13879;83;12;12;-381583,3333;-349916,6667;-325454,1667;-305662,5
+03/07/2020;FreeWheel;FR - Git;2023-07 - FR - Git - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.171;10816152;13965;83;12;12;-383993,3333;-352126,6667;-327509,6667;-307593
+01/07/2023;FreeWheel;FR - Git;2023-07 - FR - Git - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.172;10882768;14051;84;12;12;-386 403;-354 337;-329 565;-309 524
+02/07/2023;FreeWheel;FR - Git;2023-07 - FR - Git - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.173;10949383;14137;84;12;12;-388813,3333;-356546,6667;-331620,6667;-311454
+03/07/2020;FreeWheel;FR - Git;2023-07 - FR - Git - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.174;11015999;14223;85;12;12;-391223,3333;-358756,6667;-333676,1667;-313384,5
+01/07/2023;FreeWheel;FR - Git;2023-07 - FR - Git - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.175;11082614;14309;85;12;12;-393 633;-360 967;-335 732;-315 315
+02/07/2023;FreeWheel;FR - Git;2023-07 - FR - Git - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.176;11149230;14395;86;12;12;-396043,3333;-363176,6667;-337787,1667;-317245,5
+03/07/2020;FreeWheel;FR - Git;2023-07 - FR - Git - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.177;11215845;14481;86;12;12;-398453,3333;-365386,6667;-339842,6667;-319176
+01/07/2023;FreeWheel;FR - Git;2023-07 - FR - Git - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.178;11282461;14567;87;12;12;-400 863;-367 597;-341 898;-321 107
+02/07/2023;FreeWheel;FR - Git;2023-07 - FR - Git - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.179;11349076;14653;87;12;12;-403273,3333;-369806,6667;-343953,6667;-323037
+03/07/2020;FreeWheel;FR - Git;2023-07 - FR - Git - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.180;11415692;14739;88;12;12;-405683,3333;-372016,6667;-346009,1667;-324967,5
+01/07/2023;FreeWheel;FR - Git;2023-07 - FR - Git - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.181;11482307;14825;88;12;12;-408 093;-374 227;-348 065;-326 898
+02/07/2023;FreeWheel;FR - Git;2023-07 - FR - Git - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.182;11548923;14911;89;12;12;-410503,3333;-376436,6667;-350120,1667;-328828,5
+03/07/2020;FreeWheel;FR - Git;2023-07 - FR - Git - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.183;11615538;14997;89;12;12;-412913,3333;-378646,6667;-352175,6667;-330759
+01/07/2023;FreeWheel;FR - Git;2023-07 - FR - Git - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.184;11682154;15083;90;12;12;-415 323;-380 857;-354 231;-332 690
+02/07/2023;FreeWheel;FR - Git;2023-07 - FR - Git - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.185;11748769;15169;90;12;12;-417733,3333;-383066,6667;-356286,6667;-334620
+03/07/2020;FreeWheel;FR - Git;2023-07 - FR - Git - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.186;11815385;15255;91;12;12;-420143,3333;-385276,6667;-358342,1667;-336550,5
+01/07/2023;FreeWheel;FR - Git;2023-07 - FR - Git - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.187;11882000;15341;91;12;12;-422 553;-387 487;-360 398;-338 481
+02/07/2023;FreeWheel;FR - Git;2023-07 - FR - Git - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.188;11948616;15427;92;12;12;-424963,3333;-389696,6667;-362453,1667;-340411,5
+03/07/2020;FreeWheel;FR - Git;2023-07 - FR - Git - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.189;12015231;15513;92;12;12;-427373,3333;-391906,6667;-364508,6667;-342342
+01/07/2023;FreeWheel;FR - Git;2023-07 - FR - Git - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.190;12081847;15599;93;12;12;-429 783;-394 117;-366 564;-344 273
+02/07/2023;FreeWheel;FR - Git;2023-07 - FR - Git - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.191;12148462;15685;93;12;12;-432193,3333;-396326,6667;-368619,6667;-346203
+03/07/2020;FreeWheel;FR - Git;2023-07 - FR - Git - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.192;12215078;15771;94;12;12;-434603,3333;-398536,6667;-370675,1667;-348133,5
+01/07/2023;FreeWheel;FR - Git;2023-07 - FR - Git - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.193;12281693;15857;94;12;12;-437 013;-400 747;-372 731;-350 064
+02/07/2023;FreeWheel;FR - Git;2023-07 - FR - Git - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.194;12348309;15943;95;12;12;-439423,3333;-402956,6667;-374786,1667;-351994,5
+03/07/2020;FreeWheel;FR - Git;2023-07 - FR - Git - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.195;12414924;16029;95;12;12;-441833,3333;-405166,6667;-376841,6667;-353925
+01/07/2023;FreeWheel;FR - Git;2023-07 - FR - Git - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.196;12481540;16115;96;12;12;-444 243;-407 377;-378 897;-355 856
+02/07/2023;FreeWheel;FR - Git;2023-07 - FR - Git - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.197;12548155;16201;96;12;12;-446653,3333;-409586,6667;-380952,6667;-357786
+03/07/2020;FreeWheel;FR - Git;2023-07 - FR - Git - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.198;12614771;16287;97;12;12;-449063,3333;-411796,6667;-383008,1667;-359716,5
+01/07/2023;FreeWheel;FR - Git;2023-07 - FR - Git - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.199;12681386;16373;97;12;12;-451 473;-414 007;-385 064;-361 647
+02/07/2023;FreeWheel;FR - Git;2023-07 - FR - Git - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.200;12748002;16459;98;12;12;-453883,3333;-416216,6667;-387119,1667;-363577,5
+03/07/2020;FreeWheel;FR - Git;2023-07 - FR - Git - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.201;12814617;16545;98;12;12;-456293,3333;-418426,6667;-389174,6667;-365508
+01/07/2023;FreeWheel;FR - Git;2023-07 - FR - Git - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.202;12881233;16631;99;12;12;-458 703;-420 637;-391 230;-367 439
+02/07/2023;FreeWheel;FR - Git;2023-07 - FR - Git - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.203;12947848;16717;99;12;12;-461113,3333;-422846,6667;-393285,6667;-369369
+03/07/2020;FreeWheel;FR - Git;2023-07 - FR - Git - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.204;13014464;16803;100;12;12;-463523,3333;-425056,6667;-395341,1667;-371299,5
+01/07/2023;FreeWheel;FR - Git;2023-07 - FR - Git - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.205;13081079;16889;100;12;12;-465 933;-427 267;-397 397;-373 230
+02/07/2023;FreeWheel;FR - Git;2023-07 - FR - Git - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.206;13147695;16975;101;12;12;-468343,3333;-429476,6667;-399452,1667;-375160,5
+03/07/2020;FreeWheel;FR - Git;2023-07 - FR - Git - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.207;13214310;17061;101;12;12;-470753,3333;-431686,6667;-401507,6667;-377091
+01/07/2023;FreeWheel;FR - Git;2023-07 - FR - Git - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.208;13280926;17147;102;12;12;-473 163;-433 897;-403 563;-379 022
+02/07/2023;FreeWheel;FR - Git;2023-07 - FR - Git - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.209;13347541;17233;102;12;12;-475573,3333;-436106,6667;-405618,6667;-380952
+03/07/2020;FreeWheel;FR - Git;2023-07 - FR - Git - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.210;13414157;17319;103;12;12;-477983,3333;-438316,6667;-407674,1667;-382882,5
+01/07/2023;FreeWheel;FR - Git;2023-07 - FR - Git - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.211;13480772;17405;103;12;12;-480 393;-440 527;-409 730;-384 813
+02/07/2023;FreeWheel;FR - Git;2023-07 - FR - Git - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.212;13547388;17491;104;12;12;-482803,3333;-442736,6667;-411785,1667;-386743,5
+03/07/2020;FreeWheel;FR - Git;2023-07 - FR - Git - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.213;13614003;17577;104;12;12;-485213,3333;-444946,6667;-413840,6667;-388674
+01/07/2023;FreeWheel;FR - Git;2023-07 - FR - Git - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.214;13680619;17663;105;12;12;-487 623;-447 157;-415 896;-390 605
+02/07/2023;FreeWheel;FR - Git;2023-07 - FR - Git - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.215;13747234;17749;105;12;12;-490033,3333;-449366,6667;-417951,6667;-392535
+03/07/2020;FreeWheel;FR - Git;2023-07 - FR - Git - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.216;13813850;17835;106;12;12;-492443,3333;-451576,6667;-420007,1667;-394465,5
+01/07/2023;FreeWheel;FR - Git;2023-07 - FR - Git - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.217;13880465;17921;106;12;12;-494 853;-453 787;-422 063;-396 396
+02/07/2023;FreeWheel;FR - Git;2023-07 - FR - Git - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.218;13947081;18007;107;12;12;-497263,3333;-455996,6667;-424118,1667;-398326,5
+03/07/2020;FreeWheel;FR - Git;2023-07 - FR - Git - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.219;14013696;18093;107;12;12;-499673,3333;-458206,6667;-426173,6667;-400257
+01/07/2023;FreeWheel;FR - Git;2023-07 - FR - Git - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.220;14080312;18179;108;12;12;-502 083;-460 417;-428 229;-402 188
+02/07/2023;FreeWheel;FR - Git;2023-07 - FR - Git - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.221;14146927;18265;108;12;12;-504493,3333;-462626,6667;-430284,6667;-404118
+03/07/2020;FreeWheel;FR - Git;2023-07 - FR - Git - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.222;14213543;18351;109;12;12;-506903,3333;-464836,6667;-432340,1667;-406048,5
+01/07/2023;FreeWheel;FR - Git;2023-07 - FR - Git - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.223;14280158;18437;109;12;12;-509 313;-467 047;-434 396;-407 979
+02/07/2023;FreeWheel;FR - Git;2023-07 - FR - Git - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.224;14346774;18523;110;12;12;-511723,3333;-469256,6667;-436451,1667;-409909,5
+03/07/2020;FreeWheel;FR - Git;2023-07 - FR - Git - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.225;14413389;18609;110;12;12;-514133,3333;-471466,6667;-438506,6667;-411840
+01/07/2023;FreeWheel;FR - Git;2023-07 - FR - Git - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.226;14480005;18695;111;12;12;-516 543;-473 677;-440 562;-413 771
+02/07/2023;FreeWheel;FR - Git;2023-07 - FR - Git - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.227;14546620;18781;111;12;12;-518953,3333;-475886,6667;-442617,6667;-415701
+03/07/2020;FreeWheel;FR - Git;2023-07 - FR - Git - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.228;14613236;18867;112;12;12;-521363,3333;-478096,6667;-444673,1667;-417631,5
+01/07/2023;FreeWheel;FR - Git;2023-07 - FR - Git - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.229;14679851;18953;112;12;12;-523 773;-480 307;-446 729;-419 562
+02/07/2023;FreeWheel;FR - Git;2023-07 - FR - Git - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.230;14746467;19039;113;12;12;-526183,3333;-482516,6667;-448784,1667;-421492,5
+03/07/2020;FreeWheel;FR - Git;2023-07 - FR - Git - Réouverture 2020 - Multi-device - IAB - CPM;Socio;Pave;1300.231;14813082;19125;113;12;12;-528593,3333;-484726,6667;-450839,6667;-423423
