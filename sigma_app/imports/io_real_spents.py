@@ -44,16 +44,7 @@ try:
 except Exception as e:
     print("Connection could not be made due to the following error: \n", e)
 
-
-def import_files(path, cols, dtype, etc):
-    pass
-
-def task_upload_io_real_spents(file_path):
-    '''
-    Insertion orders real spents
-    '''
-    # file_path = settings.IMPORTS_PATH + 'dbm.csv'
-    cols = [
+cols = [
         'date',
         'dsp',
         'advertiser',
@@ -67,7 +58,7 @@ def task_upload_io_real_spents(file_path):
         'post_clicks_conversions',
         'post_views_conversions',
     ]
-    columns_to_rename = {
+columns_to_rename = {
         'date': 'date',
         'dsp': 'dsp',
         'advertiser': 'advertiser',
@@ -81,7 +72,7 @@ def task_upload_io_real_spents(file_path):
         'cv pc': 'post_clicks_conversions',
         'cv pv': 'post_views_conversions',
     }
-    dtype = {
+dtype = {
         'date': Date,
         'dsp': String,
         'advertiser': String,
@@ -96,9 +87,17 @@ def task_upload_io_real_spents(file_path):
         'post_views_conversions': Integer
     }
     
+def import_files(path, cols, dtype, etc):
+    pass
+
+def task_upload_io_real_spents(file_path):
+    '''
+    Insertion orders real spents
+    '''
+
     # Read file with pandas.
     try:
-        df = pd.read_csv(
+        df_import = pd.read_csv(
             file_path, sep=';',
             header=0,
             usecols=cols,
@@ -109,19 +108,18 @@ def task_upload_io_real_spents(file_path):
         msg = "Cannot read file.\n\nError message:\n{}".format(e)
         raise Exception(msg)
     else:
-        df.rename(columns_to_rename, inplace=True)
+        df_import.rename(columns_to_rename, inplace=True)
      # Check that all mandatory keys are here.
-    if not all(field in df.columns for field in cols):
+    if not all(field in df_import.columns for field in cols):
         msg = "Cannot import file.\n\nError message:\nThe following fields \
             are mandatory: {}".format(", ".join(cols))
         raise Exception(msg)
 
     msg = ''
-    if not len(df):
+    if not len(df_import):
         msg += 'No valid line to import.\n'
         raise Exception(msg)
         
-    
     # Get user insertion orders data
     user_insertion_orders = UserInsertionOrder.objects.all()
     user_insertion_orders_instances =[
@@ -132,11 +130,11 @@ def task_upload_io_real_spents(file_path):
         user_insertion_orders_instances,
         columns = ['insertion_order', 'insertion_order_id'])
   
-    df = pd.merge(df, user_insertion_orders_instances_df,
+    df = pd.merge(df_import, user_insertion_orders_instances_df,
         on='insertion_order', how='left')
     df.drop('insertion_order', axis=1, inplace=True)
     df.rename({'insertion_order_id': 'insertion_order'}, axis=1, inplace=True)
-   
+   # Remove line that does not match (na values)
     df = df[~df['insertion_order'].isna()]
     if df.empty:
         msg = "Dataframe is Empty. No insertion order is uploaded"
@@ -171,10 +169,10 @@ def task_upload_io_real_spents(file_path):
         msg = e.__cause__
         raise Exception(msg)
     else:
-        msg += "Data successfully imported {} insertions orders.".format(
-            df.shape[0]
+        msg += "Data successfully imported {} insertions orders \
+            sur un total de {}".format(df.shape[0], df_import.shape[0]
         )
-        raise Exception(msg)
+        return msg
     
 
 def upload_io_real_spents(request):

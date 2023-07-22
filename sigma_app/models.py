@@ -37,6 +37,7 @@ https://www.webforefront.com/django/setuprelationshipsdjangomodels.html
 
 """
 import datetime
+import time
 from django.db import models
 from django.contrib.auth.models import User
 from django.core.validators import RegexValidator
@@ -419,8 +420,8 @@ class AsynchroneTask(models.Model):
     status = models.SmallIntegerField(
         default=0, choices=STATUS_CHOICES)
     result = models.TextField(null=True, blank=True)
-    total_rows = models.PositiveBigIntegerField()
-    valid_rows = models.PositiveBigIntegerField()
+    total_rows = models.PositiveBigIntegerField(null=True)
+    valid_rows = models.PositiveBigIntegerField(null=True)
     dsp = models.ForeignKey(
         BatchName, db_column='dsp',
         on_delete=models.CASCADE, null=True)
@@ -442,21 +443,18 @@ class AsynchroneTask(models.Model):
         return self.STATUS_CHOICES[self.status][1]
 
     def get_time_taken(self):
-        seconds = self.time_taken.total_seconds()
-        hours = seconds // 3600
-        minutes = seconds // 60
+        td_in_seconds = self.time_taken.total_seconds()
+        hours, remainder = divmod(td_in_seconds, 3600)
+        minutes, seconds = divmod(remainder, 60)
+        hours = int(hours)
+        minutes = int(minutes)
         seconds = int(seconds)
-        if minutes >= 60:
-            return "{} h {} mn {} s".format(
-                hours, minutes, seconds
-            )
-        if minutes > 0 and minutes < 60:
-            return "{} mn {} s".format(
-                minutes, seconds
-            )
-        if  minutes < 1:
-            return "{} s".format(seconds)
-    
+        if minutes < 10:
+            minutes = "0{}".format(minutes)
+        if seconds < 10:
+            seconds = "0{}".format(seconds)
+        return "{}:{}:{}".format(hours, minutes,seconds)
+
 
 class File(models.Model):
     """File uploader or streamed of the corresponding batch.

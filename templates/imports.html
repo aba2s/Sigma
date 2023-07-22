@@ -1,5 +1,6 @@
 {% extends 'index.html' %}
 {% load static %}
+{% load humanize %}
 
 {% block content %}
     {% include 'messages.html' %}
@@ -25,11 +26,10 @@
                             <th>Time Taken</th>
                             <th></th>
                             <th></th>
-                            <th></th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr class="item filtered">
+                        <tr>
                             <td>
                                 <button type="button" class="btn btn-default btn-lg accordion-toggle"
                                 data-bs-toggle="collapse" data-bs-target=".demo1">
@@ -38,11 +38,11 @@
                             </td>
                             <td>DSPs</td>
                             <td>{{user}}</td>
-                            <td>A faire</td>
-                            <td>25</td>
-                            <td>20</td>
-                            <td>{{date}}</td>
-                            <td>{{timetaken}}</td>
+                            <td>{{ last_task.get_status }}</td>
+                            <td>{{ last_task.total_rows }}</td>
+                            <td>{{ last_task.valid_rows }}</td>
+                            <td>{{ last_task.start_date|naturaltime }}</td>
+                            <td>{{ last_task.get_time_taken }}</td>
                             <td>
                                 <button class="play-btn" aria-label="Importer les données du batch">
                                     <a href="{% url 'import-consolidated-dsp' %}"><i class="fa fa-play"></i></i></a>

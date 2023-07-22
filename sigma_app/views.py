@@ -17,10 +17,11 @@ def home(request):
 @login_required
 def imports(request):
     batchs = BatchName.objects.get(id="00000000-0000-0000-0000-000000000001")
-    tasks = batchs.asynchronetask_set.order_by('-start_date')[:15]
+    tasks = batchs.asynchronetask_set.order_by('-start_date')[:8]
     context = {
         'batchs': batchs,
-        'tasks': tasks
+        'tasks': tasks,
+        'last_task': tasks.first()
     }
     return render(request, 'imports.html' , context)
 

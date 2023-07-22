@@ -17,10 +17,15 @@ def str_hook(task):
     asynchrone_task = AsynchroneTask.objects.get(id=task.id)
     asynchrone_task.time_taken = timedelta(seconds=task.time_taken())
     asynchrone_task.result = str(task.result)
-
+    
     if task.success:
         asynchrone_task.status = AsynchroneTask.SUCCESSED
+        # Get file number of rows and valid rows ingested in database
+        res = [int(i) for i in str(task.result).split() if i.isdigit()]
+        asynchrone_task.total_rows = res[0]
+        asynchrone_task.valid_rows = res[1] 
     else:
         asynchrone_task.status = AsynchroneTask.FAILED
-
+        asynchrone_task.total_rows = 0
+        asynchrone_task.valid_rows = 0
     asynchrone_task.save()
