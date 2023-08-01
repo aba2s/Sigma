@@ -163,3 +163,12 @@ Q_CLUSTER = {
         'db': 0, }
 } 
 
+# email configs
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_FROM = 'abass.s.digitial@gmail.com'
+EMAIL_HOST_USER = 'abass.s.digital@gmail.com'
+EMAIL_HOST_PASSWORD = 'zasinjpvftaeitnt'
+PASSWORD_RESET_TIMEOUT = 14400

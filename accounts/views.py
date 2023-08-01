@@ -4,7 +4,7 @@ from .forms import RegisterForm
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
 from django.db.models import Q
-
+from django.conf import settings
 from django.contrib.auth import get_user_model
 from django.template.loader import render_to_string
 from django.contrib.sites.shortcuts import get_current_site
@@ -14,23 +14,21 @@ from django.core.mail import EmailMessage
 from .tokens import account_activation_token
 
 
+
 def register(request):
 	# request.POST: return a QueryDict of form field values
 	if request.method == 'POST':
 		# Let's create a form instance from POST data
 		form = RegisterForm(request.POST)
-		print(form.is_valid())
 		if form.is_valid():
-			# save form in the memory not in database  
-			user = form.save(commit=False)  
-			user.is_active = False 
+			# save form in the memory not in database
+			user = form.save(commit=False)
+			user.is_active = False
 			user.save()
 			# form.save()
 			# Sending mail to activate the account
-			activateEmail(request, user, form.cleaned_data.get('email'))
-			username = form.cleaned_data.get('username')
-			msg = "An account was created for {}".format(username)
-			messages.success(request, msg)
+			# activateEmail(request, user, form.cleaned_data.get('email'))
+			activateEmail(request, user, settings.EMAIL_FROM)
 			return redirect('login')
 		else:
 			data = request.POST.dict() # form fields value
@@ -45,7 +43,7 @@ def register(request):
 				except Exception as e:
 					# Check if email has already been taken
 					messages.error(request, e)
-					return redirect('register')	
+					return redirect('register')
 				else:
 					if username:
 						msg = "Username <{}> already exists.".format(
@@ -63,7 +61,7 @@ def register(request):
 				msg = "Passwords do NOT match."
 				messages.error(request, msg)
 				return redirect('register')
-			# if any others trouble		
+			# if any others trouble
 			else:
 				print(request.POST)
 				msg2 = "Password cant'be a commonly used password."
@@ -77,9 +75,10 @@ def register(request):
 	else:
 		form = RegisterForm()
 		context = {
-			'form': form
+			'form': form,
 		}
 		return render(request, 'accounts/register.html', context )
+
 
 def login_view(request):
 	if request.method == 'POST':
@@ -104,6 +103,10 @@ def logout_view(request):
     return redirect('login')
 
 def activateEmail(request, user, to_email):
+    """
+	This module is for sending an email to the admin, notifiying him
+	that an account has been created and is waiting for validation.
+	"""
     mail_subject = 'Activate your user account.'
     message = render_to_string('accounts/activate_account_email.html', {
         'user': user.username,
@@ -114,11 +117,14 @@ def activateEmail(request, user, to_email):
     })
     email = EmailMessage(mail_subject, message, to=[to_email])
     if email.send():
-        messages.success(request, f'Dear <b>{user}</b>, please go to you email <b>{to_email}</b> inbox and click on \
-            received activation link to confirm and complete the registration. <b>Note:</b> Check your spam folder.')
+        msg = "Account created, an email has been sent to the administrator \
+		    for validation. You will be notified once done."
+        messages.success(request, msg)
     else:
-        messages.error(request, f'Problem sending confirmation email to {to_email}, check if you typed it correctly.')
-	
+        msg = "Problem sending confirmation email to {}, \
+			check if you typed it correctly.".format(to_email)
+        messages.error(request, msg)
+
 def activate(request, uidb64, token):
     User = get_user_model()
     try:
@@ -131,10 +137,16 @@ def activate(request, uidb64, token):
         user.is_active = True
         user.save()
 
-        messages.success(request, 'Thank you for your email confirmation. Now you can login your account.')
-        return redirect('login')
+        mail_subject = "User account activated."
+        message = render_to_string('accounts/confirmation_activate_account_email.html', {
+			'user': user.username,
+		})
+        email = EmailMessage(mail_subject, message, to=[user.email])
+        if email.send():
+            msg = "Thank you for the confirmation. Account is now acitvated."
+            messages.success(request, msg)
+            return redirect('login')
     else:
         messages.error(request, 'Activation link is invalid!')
-    
-    return redirect('homepage')
+
     return redirect('login')
