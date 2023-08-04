@@ -3,7 +3,7 @@
     margin-top: auto;
     margin-bottom: auto;
     color: #fff;
-    background: #29335C;
+    background: var(--info);
     /*background: var(--blue);*/
     position: relative;
     display: flex;

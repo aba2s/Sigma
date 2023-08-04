@@ -41,7 +41,7 @@ main {
 }
 
 :root {
-    --info: #5bc0de;
+    --info: #06A3DA;
     --blue: #29335C;
     --green: #339989;
     --red: #D1495B;
@@ -129,4 +129,9 @@ td {
   padding: 3px;
   color: white;
   font-weight: bold;
+}
+
+/*for the navbar header (navbar.html)*/
+.navbar {
+  background: var(--info);
 }

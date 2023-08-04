@@ -6,13 +6,14 @@ from django.contrib.auth.decorators import login_required
 from .models import *
 from django.template import loader
 
+
+
+
 def home(request):
     if request.user.is_authenticated:
         return render(request, 'home.html')
     else:
-        msg = 'You are not logged. Please log in first !'
-        messages.error(request, msg)
-        return redirect('login')
+        return render(request, 'hp/index.html')
 
 @login_required
 def imports(request):

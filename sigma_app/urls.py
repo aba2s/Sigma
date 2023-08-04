@@ -21,9 +21,10 @@ urlpatterns = [
     path('user_campaign_naming_tools/', cnt.user_campaign_naming_tools,
         name='user_campaign_naming_tools'),
     path('insertion_order/<str:pk>/create_user_insertion_order_by_dsp/',
-        dsp.create_user_insertion_order_by_dsp, name='create_user_insertion_order_by_dsp'),
+        dsp.create_user_insertion_order_by_dsp,
+        name='create_user_insertion_order_by_dsp'),
     path('insertion_order/<str:pk>/details/',
         insertion_orders.user_insertion_order_details,
         name='user_insertion_order_details'),
-    
+
 ]
