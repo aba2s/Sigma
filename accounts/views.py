@@ -1,3 +1,4 @@
+import ast # json
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from .forms import RegisterForm
@@ -17,45 +18,33 @@ from .tokens import account_activation_token
 
 def register(request):
 	# request.POST: return a QueryDict of form field values
+	
 	if request.method == 'POST':
 		# Let's create a form instance from POST data
 		form = RegisterForm(request.POST)
+		data = request.POST.dict() # form fields value
+		user = User.objects.filter(
+			Q(username=data['username']) | Q(email=data['email']))
+		
 		if form.is_valid():
+			# If the user already exists
+			if user.exists():
+				msg = "Address email already exists."
+				return redirect('register')
+
 			# save form in the memory not in database
 			user = form.save(commit=False)
 			user.is_active = False
-			user.save()
-			# form.save()
 			# Sending mail to activate the account
-			# activateEmail(request, user, form.cleaned_data.get('email'))
-			activateEmail(request, user, settings.EMAIL_FROM)
+			activateEmail(request, user)
+			user.save()
 			return redirect('login')
 		else:
-			data = request.POST.dict() # form fields value
-			user = User.objects.filter(
-				Q(username=data['username']) | Q(email=data['email']))
-			# If the user already exists
 			if user.exists():
-				# Check if username or email adress has already been taken
-				try:
-					username = user[0].username
-					email = user[0].email
-				except Exception as e:
-					# Check if email has already been taken
-					messages.error(request, e)
-					return redirect('register')
-				else:
-					if username:
-						msg = "Username <{}> already exists.".format(
-							username
-						)
-						messages.error(request, msg)
-						return redirect('register')
-					if email:
-						msg = "Email <{}> already exists.".format(
-							username
-						)
-						messages.error(request, msg)
+				msg = "Username already taken."
+				messages.error(request, msg)
+				return redirect('register')
+
 			# If passwords didn't match
 			elif data['password1'] != data['password2']:
 				msg = "Passwords do NOT match."
@@ -63,14 +52,10 @@ def register(request):
 				return redirect('register')
 			# if any others trouble
 			else:
-				print(request.POST)
-				msg2 = "Password cant'be a commonly used password."
-				msg3 = "Password can't be entirely numeric"
-				msg4 = "Password can't be too similar to your other personal."
-				# To have each message in separate li balise:
-				messages.error(request, msg2)
-				messages.error(request, msg3)
-				messages.error(request, msg4)
+				msg = "Password does not meet the criteria. it must \
+					contain at least one lowercase, one uppercase\
+					one number and one special character."
+				messages.error(request, msg)
 				return redirect('register')
 	else:
 		form = RegisterForm()
@@ -100,9 +85,9 @@ def login_view(request):
 
 def logout_view(request):
     logout(request)
-    return redirect('login')
+    return redirect('home')
 
-def activateEmail(request, user, to_email):
+def activateEmail(request, user):
     """
 	This module is for sending an email to the admin, notifiying him
 	that an account has been created and is waiting for validation.
@@ -115,14 +100,15 @@ def activateEmail(request, user, to_email):
         'token': account_activation_token.make_token(user),
         'protocol': 'https' if request.is_secure() else 'http'
     })
-    email = EmailMessage(mail_subject, message, to=[to_email])
+    email = EmailMessage(mail_subject, message, 
+		to=ast.literal_eval(settings.ADMINISTRATEURS_EMAILS))
     if email.send():
         msg = "Account created, an email has been sent to the administrator \
 		    for validation. You will be notified once done."
         messages.success(request, msg)
     else:
         msg = "Problem sending confirmation email to {}, \
-			check if you typed it correctly.".format(to_email)
+			check if you typed it correctly." #.format(to_email)
         messages.error(request, msg)
 
 def activate(request, uidb64, token):

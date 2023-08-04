@@ -193,5 +193,5 @@ def upload_io_real_spents(request):
     )
     asynchrone_task.save() 
     messages.success(request, "Task successfully started.")
-    time.sleep(10)
+    #time.sleep(5)
     return redirect('imports')

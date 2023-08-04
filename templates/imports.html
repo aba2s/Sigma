@@ -42,7 +42,7 @@
                             <td>{{ last_task.total_rows }}</td>
                             <td>{{ last_task.valid_rows }}</td>
                             <td>{{ last_task.start_date|naturaltime }}</td>
-                            <td>{{ last_task.time_taken }}</td>
+                            <td>{% if task.time_taken %}{{ last_task.get_time_taken }}{% endif %}</td>
                             <td>
                                 <button class="play-btn" aria-label="Importer les données du batch">
                                     <a href="{% url 'import-consolidated-dsp' %}"><i class="fa fa-play"></i></i></a>
