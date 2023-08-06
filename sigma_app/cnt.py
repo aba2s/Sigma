@@ -51,10 +51,12 @@ def create_campaign_naming_tool(request):
             messages.success(request, msg)
             return redirect('user_campaign_naming_tools')
         else:
-            messages.error(request, form.errors['__all__'])
+            # messages.error(request, form.errors['__all__'])
+            messages.error(request, form.errors)
             return render(request, 'form.html', {'form': form})
-    
+ 
     context = {
         'form': form,
+        'is_create_campaign_naming_tool': True
     }
     return render(request, 'form.html', context)

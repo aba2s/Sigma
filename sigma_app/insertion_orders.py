@@ -72,14 +72,17 @@ def create_user_insertion_order(request):
                 return redirect('user_insertion_orders', request.user.id)
             else:
                 return render(request, 'form.html', {'form': form})
-        else:
-            form = UserInsertionOrderForm(
+        
+        form = UserInsertionOrderForm(
             current_user,
             initial={
                 'user': current_user
-            })
-
-            return render(request, 'form.html', {'form': form})
+        })
+        context = {
+            'form': form,
+            'is_create_user_insertion_order': True
+        }
+        return render(request, 'form.html', context)
     else:
         msg = 'You are not logged. Please log in first !'
         messages.error(request, msg)
