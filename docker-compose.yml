@@ -1,0 +1,61 @@
+version: "3.9"
+services:
+  db:
+    container_name: postgresql
+    image: postgres:15
+    restart: unless-stopped
+    ports:
+      - "5432:5432"
+    env_file:
+      - .env
+    volumes:
+      - ./db-data:/var/lib/postgresql/data:cached
+  web:
+    container_name: web
+    # image: aba2s/sigma
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    entrypoint: /sigma/docker-entrypoint.sh
+    restart: unless-stopped
+    env_file:
+      - .env
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    volumes:
+      - .:/sigma
+  redis:
+    container_name: redis
+    image: redis:alpine
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
+    volumes:
+      - ./redis:/data:Z
+  worker:
+    container_name: worker
+    # image: aba2s/sigma
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    entrypoint: /sigma/worker-entrypoint.sh
+    depends_on:
+      - web
+      - redis
+    env_file:
+      - .env
+  pgadmin:
+    container_name: pgadmin
+    image: dpage/pgadmin4:6.20
+    restart: unless-stopped
+    env_file:
+      - .env
+    volumes:
+      - ./pgadmin:/var/lib/pgadmin
+    ports:
+      - '8001:80'
+    depends_on:
+      - db
+      - web

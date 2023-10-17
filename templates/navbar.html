@@ -18,7 +18,7 @@
       </li>
 
       <li class="nav-item active">
-        <a class="nav-link" href="{% url 'user_campaign_naming_tools' %}">CNT</a>
+        <a class="nav-link" href="{% url 'user_campaign_naming_tools' user.pk %}">CNT</a>
       </li>
 
       <li class="nav-item active">
@@ -28,7 +28,7 @@
       <li class="nav-item active">
         <a class="nav-link" href="{% url 'create_user_insertion_order_by_dsp'  user.pk %}">DSP</a>
       </li>
-
+      {% if request.resolver_match.view_name == 'user_campaign_naming_tools' or request.resolver_match.view_name == 'user_insertion_orders' %}
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
           role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -36,15 +36,26 @@
         </a>
         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
           <li>
+            {% if request.resolver_match.view_name == 'user_campaign_naming_tools' %}
             <!--link that trigger the modal -->
-            <a  class="dropdown-item" hx-get="{% url 'create_campaign_naming_tool' %}" hx-target="#dialog">
+            <a  class="dropdown-item" hx-get="{% url 'create_campaign_naming_tool' %}" hx-target="#dialog"> 
               Campaign naming tool
             </a>
-            <br>
+            <a  class="dropdown-item" hx-get="{% url 'bulk_create_campaign_naming_tool' %}" hx-target="#dialog"> 
+              Bulk create CNTs
+            </a>
+            {% endif %}
+           
+            {% if request.resolver_match.view_name == 'user_insertion_orders' %}
             <!--link that trigger the modal -->
             <a  class="dropdown-item" hx-get="{% url 'create_user_insertion_order' %}" hx-target="#dialog">
               Insertion order
             </a>
+            <a  class="dropdown-item" hx-get="{% url 'bulk_create_user_insertion_order' %}" hx-target="#dialog"> 
+              Bulk create IOs
+            </a>
+            {% endif %}
+      {% endif %}
           </li>
         </ul>
       </li>
@@ -56,7 +67,8 @@
       <i class="fa fa-power-off"></i>
     </a>
   </span>
-  <!-- The following script is for the insertion order and cnt modal. The js code that handle that modal popup is in index.html-->
+  <!-- The following script is for the insertion order and cnt modal. 
+    The js code that handle that modal popup is in index.html-->
   <!-- Placeholder for the modal -->
   <div id="modal" class="modal fade">
     <div id="dialog" class="modal-dialog" hx-target="this"></div>
@@ -71,7 +83,6 @@
     </div>
   </div>
 </nav>
-
 
 {% endblock content %}
 

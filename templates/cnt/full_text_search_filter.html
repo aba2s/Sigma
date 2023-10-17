@@ -1,5 +1,4 @@
 <div class="container my-4 post-wrapper" id="full-text-search">
-
   <!-- Search Start -->
   <div class="jumbotron border shadow">
     <div class="row">
@@ -13,7 +12,9 @@
                  <i class="fa fa-search" aria-hidden="true"></i>
               </button>
               <button class="btn btn-primary btn-lg">
-                <i class="fa fa-eraser" aria-hidden="true"></i>
+                <i class="fa fa-eraser" aria-hidden="true">
+                  <a href="{% url 'user_campaign_naming_tools' user.pk %}"></a>
+                </i>
               </button>
               <button class="btn btn-info btn-lg" id="btn-advanced-filter">
                 <i class="fa fa-sliders" aria-hidden="true"></i></button>
@@ -29,12 +30,17 @@
     <hr>
     <div class="col-md">
       <div class="card card-body">
-        <table class="table table-sm">
-          <tr>
-            <th>Insertion order name</th>
-            <th>Date created</th>
-          </tr>
-
+        <table class="#">
+          <thead>
+            <tr>
+              <th>Insertion order name</th>
+              <th>Date created</th>
+              <th>Copy</th>
+              <th>Edit</th>
+              <th>Delete</th>
+            </tr>
+          </thead>
+          <tbody>
           {% for cnt in user_cnts_full_text_search %}
           <tr>
             <td>{{cnt}}</td>
@@ -46,7 +52,8 @@
             <td><a class="btn btn-sm btn-danger" href="">
               <i class="far fa-trash-alt"></i></a></td>
           <tr>
-            {% endfor %}
+          {% endfor %}
+          </tbody>
         </table>
       </div>
     </div>

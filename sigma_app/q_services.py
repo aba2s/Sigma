@@ -1,5 +1,6 @@
 from datetime import timedelta
 from .models import AsynchroneTask
+from django_q.models import Task
 
 """
 This module is about django-q services. It will
@@ -14,10 +15,18 @@ We will need to import the async_task function. It takes 3 arguments:
 
 def str_hook(task):
     """Hook for async task that return a string."""
+    # Get task from django_q_task table (Task model)
+    # django_q_task = Task.objects.get(id=task.id.hex)
+    print("#####################################")
+    print("Hook starting")
+    print("#####################################")
     asynchrone_task = AsynchroneTask.objects.get(id=task.id)
+    if not asynchrone_task:
+        asynchrone_task.id = task.id
     asynchrone_task.time_taken = timedelta(seconds=task.time_taken())
     asynchrone_task.result = str(task.result)
-    
+    # asynchrone_task.task_id = django_q_task
+
     if task.success:
         asynchrone_task.status = AsynchroneTask.SUCCESSED
         # Get file number of rows and valid rows ingested in database

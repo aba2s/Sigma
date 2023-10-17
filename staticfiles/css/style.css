@@ -130,3 +130,40 @@ td {
   color: white;
   font-weight: bold;
 }
+
+/*for the navbar header (navbar.html)*/
+.navbar, .status {
+  background: var(--info);
+}
+
+/* for the status */
+.status {
+  background: var(--info);
+}
+
+table {
+  width: 100%; 
+  border-collapse: collapse; 
+  /* color: var(--info); */
+  background: #F5F5F5;
+}
+
+thead {
+padding: 3px;
+font-weight: bold;
+color: white;
+background: var(--info);
+}
+
+th {
+  padding: 1.4rem;
+}
+
+tr {
+  border-bottom: solid 1px var(--lt-gray);
+}
+
+td {
+text-align: center;
+padding: 1.1rem 1.4rem;
+}

@@ -99,7 +99,7 @@ class CampaignNamingToolForm(forms.ModelForm):
         }
 
 
-class CampaignNamingToolFileForm(forms.Form):
+class UploadFileForm(forms.Form):
     file = forms.FileField()
 
 
@@ -150,10 +150,6 @@ class UserInsertionOrderForm(forms.ModelForm):
             self.fields['campaign_naming_tool'].queryset = queryset
 
 
-class UserInsertionOrdersBulkCreateForm(forms.Form):
-    file = forms.FileField()
-
-
 class UserInsertionOrderByDspForm(forms.ModelForm):
     start_date = forms.DateField(widget=DateInput)
     end_date = forms.DateField(widget=DateInput)
@@ -168,14 +164,6 @@ class UserInsertionOrderByDspForm(forms.ModelForm):
             queryset = UserInsertionOrder.objects.filter(user=current_user)
             self.fields['insertion_order'].queryset = queryset
 
-
-class InsertionOrderByDSPBulkCreateForm(forms.Form):
-    file = forms.FileField()
-
-
 class InsertionOrdersFileForm(forms.Form):
     file = forms.FileField()
 
-
-class CampaignNamingToolBulKCreateForm(forms.Form):
-    file = forms.FileField()

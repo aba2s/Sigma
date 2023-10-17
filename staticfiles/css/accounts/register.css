@@ -9,8 +9,8 @@ body,
 			width: 350px;
 			margin-top: auto;
 			margin-bottom: auto;
-            color: #fff;
-			background: #06A3DA;
+      		color: #fff;
+			background: var(--info);
 			position: relative;
 			display: flex;
 			justify-content: center;

@@ -9,7 +9,7 @@ body,
 			width: 350px;
 			margin-top: auto;
 			margin-bottom: auto;
-      color: #fff;
+      		color: #fff;
 			background: var(--info);
 			position: relative;
 			display: flex;

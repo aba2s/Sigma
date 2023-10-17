@@ -25,12 +25,14 @@ FIXTURE_DIRS = [str(BASE_DIR.joinpath('fixtures'))]
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-6+gxctmj5@&vkb#ehw2y2o$(o^#y1dgnqp%4wtq$d(vmeoz-!x'
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# DEBUG = True
+DEBUG = bool(os.environ.get("DEBUG", default=0))
 
-ALLOWED_HOSTS = []
+# ALLOWED_HOSTS = []
+ALLOWED_HOSTS = os.environ.get("DJANGO_ALLOWED_HOSTS").split(' ')
 
 
 # Application definition
@@ -92,11 +94,11 @@ WSGI_APPLICATION = 'sigma_project.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.environ.get('NAME'),
-        'USER': os.environ.get('USER'),
-        'PASSWORD': os.environ.get('PASSWORD'),
-        'HOST': os.environ.get('HOST'),
-        'PORT': os.environ.get('PORT')
+        'NAME': os.environ.get('POSTGRES_NAME'),
+        'USER': os.environ.get('POSTGRES_USER'),
+        'PASSWORD': os.environ.get('POSTGRES_PASSWORD'),
+        'HOST': os.environ.get('POSTGRES_HOST', '127.0.0.1'),
+        'PORT': os.environ.get('POSTGRES_PORT')
     }
 }
 
@@ -129,8 +131,6 @@ TIME_ZONE = 'Europe/Paris'
 
 USE_I18N = True
 
-
-
 USE_TZ = True
 
 
@@ -146,7 +146,7 @@ STATIC_ROOT = str(BASE_DIR.joinpath('staticfiles'))
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 CRISPY_TEMPLATE_PACK = "bootstrap4"
-IMPORTS_PATH = 'data/imports/'
+IMPORTS_PATH = '/sigma/data/imports/'
 
 DATE_INPUT_FORMATS = "%d-%m-%Y"
 
@@ -162,9 +162,10 @@ Q_CLUSTER = {
     'cpu_affinity': 1,
     'label': 'Django Q',
     'redis': {
-        'host': '127.0.0.1',
+        'host': 'redis',
         'port': 6379,
-        'db': 0, }
+        'db': 0,
+    }
 } 
 
 # email configs

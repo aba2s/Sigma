@@ -1,8 +1,12 @@
+import csv
+import json
 from datetime import date
 from django.contrib.auth.models import User
+from django.db import IntegrityError
 from .filters import *
 from .forms import *
 from django.shortcuts import render, redirect
+from django.http import HttpResponse
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.db.models import Sum, F, Case, When, DecimalField
@@ -68,8 +72,17 @@ def create_user_insertion_order(request):
                 form.save()
                 msg = "«{}» have been successfully created !".format(
                 form.instance)
-                messages.success(request, msg)
-                return redirect('user_insertion_orders', request.user.id)
+                # messages.success(request, msg)
+                # return redirect('user_insertion_orders', request.user.id)
+                return HttpResponse(
+                status=204,
+                headers={
+                    'HX-Trigger': json.dumps({
+                        "InsertionOrderListChanged": True,
+                        "showMessage": msg
+                    })
+                }
+            )
             else:
                 return render(request, 'form.html', {'form': form})
         
@@ -155,3 +168,63 @@ def user_insertion_order_details(request, pk):
     }
 
     return render(request, 'insertion_orders/details.html', context)
+
+def bulk_create_user_insertion_order(request):
+    if request.method == 'POST':
+        current_user = request.user
+        cnts = CampaignNamingTool.objects.filter(user=current_user)
+        cnts_instance_dict = {
+            cnt.__str__(): cnt for cnt in cnts
+        }
+        form = UploadFileForm(request.POST, request.FILES)
+        if form.is_valid():
+            file = request.FILES['file']
+            if file.name.endswith('.csv'):
+                data_file = file.read().decode(
+                    encoding="utf-8",
+                    errors='ignore').splitlines()
+                data = csv.DictReader(data_file, delimiter=';', quoting=csv.QUOTE_NONE)
+                user_insertion_orders_list = list()
+                for row in data:
+                    try:
+                        cnt = cnts_instance_dict[row['insertion_order']]
+                    except KeyError:
+                        pass
+                    else:
+                        kpi = str(cnt).split("-")[-1]
+                        user_insertion_order_instance = UserInsertionOrder(
+                            user=current_user,
+                            campaign_naming_tool=cnt,
+                            budget=row['budget'],
+                            kpi=kpi,
+                            goal_value=row['goal_value'],
+                            start_date=row['start_date'],
+                            end_date=row['end_date'],
+                        )
+                        user_insertion_orders_list.append(
+                            user_insertion_order_instance)
+                try:
+                    UserInsertionOrder.objects.bulk_create(
+                        user_insertion_orders_list)
+                except IntegrityError:
+                    msg = "Insertion Orders already exist"
+                    messages.warning(request, msg)
+                    return redirect('bulk_create_user_insertion_order')
+                else:
+                    msg = "Insertion orders successfully uploaded"
+                    messages.success(request, msg)
+                    return redirect('user_insertion_orders')
+         
+            else:
+                msg = "File format is not recognized.\
+                       It must be a csv format !"
+                messages.error(request, msg)
+                return redirect('bulk_create_user_insertion_order')
+
+    form = UploadFileForm()
+    context = {
+        'form': form,
+        'is_create_campaign_naming_tool': True
+    }
+    return render(request, 'upload.html', context)
+

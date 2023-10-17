@@ -17,6 +17,7 @@ def home(request):
 
 @login_required
 def imports(request):
+    ''' Batch or datastream'''
     batchs = BatchName.objects.get(id="00000000-0000-0000-0000-000000000001")
     tasks = batchs.asynchronetask_set.order_by('-start_date')[:8]
     context = {
