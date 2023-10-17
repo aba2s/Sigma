@@ -42,6 +42,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.core.validators import RegexValidator
 from django.core.exceptions import ValidationError
+from django_q.models import Task
 
 
 # How to Create a Date Form Field in a Django form
@@ -413,7 +414,10 @@ class AsynchroneTask(models.Model):
         (SUCCESSED, 'Sucessed'),
         (FAILED, 'Failed'),
     )
-    id = models.UUIDField(primary_key=True)
+    # id = models.UUIDField(primary_key=True)
+    id = models.CharField(max_length=32, primary_key=True, editable=False)
+    task = models.ForeignKey(Task,
+        on_delete=models.CASCADE, null=True) # from django_q_task table
     start_date = models.DateTimeField(auto_now_add=True)
     title = models.CharField(max_length=200, null=True)
     time_taken = models.DurationField(null=True)

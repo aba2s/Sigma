@@ -1,55 +1,33 @@
-{% extends 'index.html' %}
-
 {% block content %}
+<form hx-post="{{ request.path }}" hx-headers='{"X-CSRFToken":"{{ csrf_token }}"}' class="modal-content">
+   {% csrf_token %}
+   <div class="modal-header">
 
-  <button type="button" class="btn btn-default btn-lg" data-bs-toggle="modal"
-    data-bs-target="#formModal"><i class="fa fa-cog"></i>
-  </button>
+      {% if is_create_user_insertion_order %}
+         <h3 id="modal-title">USER INSERTION ORDER</h3>
+      {% endif %}
 
-<div class="modal fade" id="formModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-    	<div class="modal-header">			
-			{% if 'create_campaign' in  request.get_full_path %}
-				<h6 class="modal-title">Creating Insertion order with Campaign Naming Tool</h6>
-
-			{% elif 'create_user_insertion_order' in request.get_full_path %}
-				<h4 class="modal-title">Filling Insertion order attributes. </h4>
-
-			{% elif 'insertion_order_by_dsp' in request.get_full_path %}
-				<h4 class="modal-title">Campaign By DSP. </h4>
-			{% endif %}
-
-				<button type="button" class="btn btn-lg close" data-bs-dismiss="modal" aria-label="Close">
-					<span aria-hidden="true">&times;</span>
-				</button>
-		
-     	</div>
-
-      <div class="modal-body">
-        <form class="#" method="post" enctype="multipart/form-data">
-					{% csrf_token %}
-					{% for field in form %}
-					<div class="row">
-						<!-- div for displaying label --->
-						<div class="col-md-2">
-							{{ field.label_tag }}
-						</div>
-	         			<!--- div for displaying input fields -->
-						<div class="col-md-10 mb-3">
-							{{ field }}
-						</div>
-					</div>
-					{% endfor %}
-
-					<!-- Modal footer -->
-					<div class="modal-footer">
-						<button type="submit" class="btn btn-success" name="button">Create</button>
-						<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-					</div>
-		</form>
-      </div>
-    </div>
-  </div>
-</div>
+      {% if is_create_campaign_naming_tool %}
+         <h3 id="modal-title">USER INSERTION ORDER WITH CNT </h3>
+      {% endif %}
+      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+   </div>
+   <div class="modal-body">
+      {% for field in form %}
+		<div class="row">
+		   <!-- div for displaying label --->
+			<div class="col-md-2">{{ field.label_tag }}</div>
+	      <!--- div for displaying input fields -->
+		   <div class="col-md-10 mb-3">{{ field }}</div>
+		</div>
+		{% endfor %}
+   </div>
+   {% include 'messages.html' %}
+   <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+      Cancel
+      </button>
+      <button type="submit" class="btn btn-primary">Save</button>
+   </div>
+</form>
 {% endblock %}

@@ -1,0 +1,17 @@
+.git
+.gitignore
+.docker
+sigma_app/migrations
+Pipfile
+Pipfile.lock
+*.pyc
+__pycache__
+db.sqlite3
+.idea
+*.DS_Store
+.env/
+env/
+.venv/
+venv/
+# Local Postgresql data
+db-data

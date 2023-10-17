@@ -1,4 +1,3 @@
-from datetime import date
 from sqlalchemy.types import Integer
 from sqlalchemy.types import Float
 from sqlalchemy.types import String
@@ -9,6 +8,7 @@ from django.conf import settings
 from django.http import JsonResponse
 from django.shortcuts import redirect
 from django.shortcuts import get_object_or_404
+from django.contrib.auth.models import User
 from django.contrib import messages
 from sqlalchemy import create_engine
 from sqlalchemy.exc import IntegrityError
@@ -24,14 +24,14 @@ database_name = settings.DATABASES['default']['NAME']
 host = settings.DATABASES['default']['HOST']
 port = settings.DATABASES['default']['PORT']
 
-# PYTHON FUNCTION TO CONNECT TO THE MYSQL DATABASE AND
+# PYTHON FUNCTION TO CONNECT TO THE POSTGRESQL DATABASE AND
 # RETURN THE SQLACHEMY ENGINE OBJECT
 def get_connection():
     database_url = "postgresql://{user}:{password}@{host}:{port}/{database_name}".format(
         user=user,
         password=password,
-        host = 'localhost',
-        port = 5432,
+        host = host,
+        port = port,
         database_name=database_name,
     )
     engine = create_engine(database_url, echo=False)
@@ -137,7 +137,8 @@ def task_upload_io_real_spents(file_path):
    # Remove line that does not match (na values)
     df = df[~df['insertion_order'].isna()]
     if df.empty:
-        msg = "Dataframe is Empty. No insertion order is uploaded"
+        msg = "Dataframe is Empty. No insertion order is uploaded.\
+            Make sure user insertion orders are setted up."
         # return msg
         print(traceback.print_exception)
         raise Exception(msg)
@@ -176,10 +177,28 @@ def task_upload_io_real_spents(file_path):
     
 
 def upload_io_real_spents(request):
+    '''
+    This function is used to offload task by two way:
+     - manually: user can launch this function by hitting the play button
+     - scheduling: there is a scheduled task that run this function.
+     * That why we split the current user undo two situation: user
+        making the request as current_user and admin. We assume that
+        scheduled task can be done only admin users.
+     * For scheduling the task, we can do it:
+      - in the admin interface as in as it can be donne in a ETL
+      - or create a management command that will create a scheduler.
+    '''
+    try:
+        current_user = request.user
+        message = True
+    except Exception:
+        current_user = User.objects.get(username='admin')
+        message = False
+
     batch_name = get_object_or_404(BatchName,
         pk="00000000-0000-0000-0000-000000000001"
      )
-    file_path = settings.IMPORTS_PATH + 'dbm.csv'
+    file_path = settings.IMPORTS_PATH + 'dsps.csv'
     task_id = async_task(
         task_upload_io_real_spents,
         file_path,
@@ -189,9 +208,10 @@ def upload_io_real_spents(request):
         id=task_id,
         title= 'Importing Consolidated DSPs data',
         dsp=batch_name,
-        user=request.user
+        user=current_user
+        # user=request.user
     )
     asynchrone_task.save() 
-    messages.success(request, "Task successfully started.")
-    #time.sleep(5)
-    return redirect('imports')
+    if message:
+        messages.success(request, "Task successfully started.")
+        return redirect('imports')

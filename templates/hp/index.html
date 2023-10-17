@@ -24,16 +24,6 @@
 
     <!-- Template Stylesheet -->
     <link href="{% static 'hp/css/style.css' %}" rel="stylesheet">
-
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <link rel="stylesheet" href="{% static 'css/accounts/login.css' %}">
-    <link rel="stylesheet" href="{% static 'css/accounts/register.css' %}">
-    <style>
-        .modal-backdrop {
-            position: relative;
-            z-index: -1
-        }
-    </style>
 </head>
 
 <body>
@@ -52,26 +42,9 @@
 
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav ms-auto py-0">
-                  <!--link that trigger the modal -->
-                    <a  hx-get="{% url 'register' %}" hx-target="#dialog" class="nav-item nav-link">
-                      Register
-                    </a>
-                    <a hx-get="{% url 'login' %}" hx-target="#dialog" class="nav-item nav-link">Login</a>
+                    <a class="nav-link" href="{% url 'register' %}" target="_blank">Register</a>
+                    <a class="nav-link" href="{% url 'login' %}" target="_blank">Login</a>
                     <a href="#" class="nav-item nav-link">Contact</a>
-
-                    <!-- Placeholder for the modal -->
-                    <div id="modal" class="modal fade">
-                        <div id="dialog" class="modal-dialog" hx-target="this"></div>
-                      </div>
-                      <!-- Empty toast to show the message -->
-                      <div class="toast-container position-fixed top-0 end-0 p-3">
-                        <div id="toast" class="toast align-items-center text-white bg-success border-0" role="alert" aria-live="assertive" aria-atomic="true">
-                          <div class="d-flex">
-                            <div id="toast-body" class="toast-body"></div>
-                            <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
-                          </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </nav>
@@ -179,12 +152,9 @@
     <script src="{% static '/hp/lib/counterup/counterup.min.js' %}"></script>
     <script src="{% static 'hp/lib/owlcarousel/owl.carousel.min.js' %}"></script>
 
+    
     <!-- Template Javascript -->
     <script src="{% static 'hp/js/main.js' %}"></script>
-    <!-- Pour le formulaire register -->
-    <script src="{% static 'js/dialog.js' %}"></script>
-    <script src="{% static 'js/toast.js' %}"></script>
-
 </body>
 
 </html>

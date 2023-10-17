@@ -21,21 +21,28 @@
         <div class="col-md">
             <h5>CAMPAIGNS</h5>
             <div class="card card-body">
-                <table class="table table-sm">
-                    <tr>
-                        <th></th>
-                        <th>Insertion order name</th>
-                        <th>Start date</th>
-                        <th>End date</th>
-                        <th>Budget</th>
-                        <th>KPI</th>
-                        <th>Goal value</th>
-                    </tr>
-                    {% for insertion_order in insertion_orders %}
+                <table class="#">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Insertion order name</th>
+                            <th>Start date</th>
+                            <th>End date</th>
+                            <th>Budget</th>
+                            <th>KPI</th>
+                            <th>Goal value</th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody hx-trigger="InsertionOrderListChanged from:body"
+                    hx-get="{% url 'user_insertion_orders' request.user.id %}">
+                        {% for insertion_order in insertion_orders %}
                       <tr>
                         <td><a class="btn btn-sm btn-success" 
                             href="{% url 'user_insertion_order_details' insertion_order.pk %}">
-                            <i class="fas fa-plus-circle"></i></td>
+                            <i class="fas fa-plus-circle"></i></a>
+                        </td>
                         <td>{{insertion_order.campaign_naming_tool}}</td>
                         <td>{{insertion_order.start_date}}</td>
                         <td>{{insertion_order.end_date}}</td>
@@ -48,6 +55,7 @@
                             href="#"><i class="far fa-trash-alt"></i></a></td>
                       <tr>
                     {% endfor %}
+                    </tbody>
                 </table>
             </div>
         </div>
