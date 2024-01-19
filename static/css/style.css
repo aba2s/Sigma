@@ -1,0 +1,164 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+html,
+html a {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004)
+}
+
+html {
+    font-size: 62.5%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+header {
+  box-shadow: 0 4px 10px 0 rgb(126 138 204 / 20%);
+}
+
+.logo {
+  max-width: 170px;
+}
+
+main {
+  padding: 0 40px;
+  font-size: 1.6rem;
+}
+
+:root {
+    --info: #06A3DA;
+    --blue: #29335C;
+    --green: #339989;
+    --red: #D1495B;
+    --lt-gray: #D9D9D9;
+    --dk-gray: #918585;
+    --yellow: #F0CD6A;
+    --cyan: #74cfbf;
+}
+
+h1 {
+    font-size: 2.4rem;
+    color: var(--blue);
+}
+
+button {
+  padding: 1.4rem 2.1rem;
+  border: 1px solid var(--blue);
+  background: white;
+  border-radius: 7px;
+  font-weight: bold;
+  color: var(--blue);
+  font-size: 1.6rem;
+  cursor: pointer;
+}
+
+.refresh-container button {
+  display: flex;
+  align-items: center;
+}
+
+.refresh-container button svg {
+  margin-left: 5px;
+}
+
+.component {
+  max-width: 1250px;
+  margin: 40px auto;
+}
+
+.alert {
+  color: var(--red);
+  border: 1px solid var(--red);
+  background: rgb(209, 73, 91, 0.1);
+  font-size: 1.6rem;
+  margin-bottom: 30px;
+  padding: 1.4rem 2.1rem;
+}
+
+.alert.success {
+  color: var(--green);
+  border: 1px solid var(--green);
+  background: rgb(51, 153, 137, 0.1);
+}
+
+.alert.warning {
+  color: var(--yellow);
+  border: 1px solid var(--yellow);
+  background: rgb(240,205,106, 0.1);
+}
+
+td {
+  max-width: 20vw;
+}
+
+.play-btn svg {
+  transform: rotate(90deg);
+}
+
+.play-btn svg path {
+  fill: var(--green);
+}
+
+.hiddenRow {
+  padding: 0 !important;
+  background-color:white
+}
+
+.nav-link {
+  font-size: 15px;
+  padding: 3px;
+  color: white;
+  font-weight: bold;
+}
+
+/*for the navbar header (navbar.html)*/
+.navbar, .status {
+  background: var(--info);
+}
+
+/* for the status */
+.status {
+  background: var(--info);
+}
+
+table {
+  width: 100%; 
+  border-collapse: collapse; 
+  /* color: var(--info); */
+  background: #F5F5F5;
+}
+
+thead {
+padding: 3px;
+font-weight: bold;
+color: white;
+background: var(--info);
+}
+
+th {
+  padding: 1.4rem;
+}
+
+tr {
+  border-bottom: solid 1px var(--lt-gray);
+}
+
+td {
+text-align: center;
+padding: 1.1rem 1.4rem;
+}

@@ -1,0 +1,19 @@
+[flake8]
+exclude = 
+    # Sigma app
+    sigma_app/migrations,
+    sigma_app/tests.py,
+    sigma_app/admin.py
+    sigma_project/settings.py,
+
+    # Account app
+    accounts/models.py
+    accounts/admin.py
+    accounts/tests.py
+
+    # Virtual Environnement
+    Scripts,
+    Lib
+
+max-line-length = 119
+ignore = E402,E501

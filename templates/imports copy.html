@@ -1,0 +1,83 @@
+{% extends 'index.html' %}
+{% load static %}
+{% load humanize %}
+
+{% block content %}
+    <div>
+        <main>
+            <section class="component">
+                <button type="button" class="btn btn-default btn-xs">
+                    <a><i class="fa fa-plus"></i></a>
+                </button>
+                <br/>
+                
+                <table class="items-list">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>DSP</th>
+                            <th>User</th>
+                            <th>Status</th>
+                            <th>Total Rows</th>
+                            <th>Valid Rows</th>
+                            <th>Date</th>
+                            <th>Time Taken</th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <button type="button" class="btn btn-default btn-lg accordion-toggle"
+                                data-bs-toggle="collapse" data-bs-target=".demo1">
+                                    <i class="fa fa-eye"></i>
+                                </button>
+                            </td>
+                            <td>DSPs</td>
+                            <td>{{user}}</td>
+                            <td>{{ last_task.get_status }}</td>
+                            <td>{{ last_task.total_rows }}</td>
+                            <td>{{ last_task.valid_rows }}</td>
+                            <td>{{ last_task.start_date|naturaltime }}</td>
+                            <td>{% if task.time_taken %}{{ last_task.get_time_taken }}{% endif %}</td>
+                            <td>
+                                <button class="play-btn" aria-label="Importer les données du batch">
+                                    <a href="{% url 'import-consolidated-dsp' %}"><i class="fa fa-play"></i></i></a>
+                                </button>
+                            </td>
+                            <td>
+                                <label class="switch">
+                                    <span class="toggle-label-title">Sélectionner le batch</span>
+                                    <input type="checkbox">
+                                    <span class="slider round"></span>
+                                </label>
+                            </td>
+                        </tr>
+
+                        {% if tasks %}
+                            {% for task in tasks %}
+                            <tr id="row-task-{{ task.id }}">
+                                {% include 'task.html' %}
+                            </tr>
+                            {% endfor %}
+                        {% endif %}
+
+                    </tbody>
+                </table>
+            </section>
+            <div class="play-selection">
+                <button>Bulk batchs</button>
+            </div>
+        </main>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="{% static 'js/refresh_tag.js' %}"></script>
+    {% for task in tasks %}
+    {% if task.status == task.INPROGRESS %}
+    <script>
+        refreshTag("{% url 'fetch_task' task.id %}", "#row-task-{{ task.id }}", 1000);        
+    </script>
+    {% endif %}
+    {% endfor %}
+{% endblock %}

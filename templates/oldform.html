@@ -1,0 +1,16 @@
+{% load crispy_forms_tags %}
+
+{% include 'messages.html' %}
+{% block content %}
+
+	<h4> Upload Insertion orders file</h4>
+  <hr>
+  <form class="" action="" method="post" enctype="multipart/form-data"> {% csrf_token %}
+    <div class="mb-3">
+      {{form}}
+      <button type="submit" class="btn btn-success" name="button" onclick='progressBar()'>Upload</button>
+      <button type="button" class="btn btn-danger">Cancel</button>
+    </div>
+  </form>
+
+{% endblock %}

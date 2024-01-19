@@ -1,0 +1,58 @@
+[
+    {
+        "model": "sigma_app.BatchName",
+        "pk": 1,
+        "fields": {
+            "dsp": "DSPs"
+        }
+    },
+    {
+        "model": "sigma_app.BatchName",
+        "pk": 2,
+        "fields": {
+            "dsp": "DV360"
+        }
+    },
+    {
+        "model": "sigma_app.BatchName",
+        "pk": 3,
+        "fields": {
+            "dsp": "Xandr"
+        }
+    },
+    {
+        "model": "sigma_app.BatchName",
+        "pk": 4,
+        "fields": {
+            "dsp": "FreeWheel"
+        }
+    },
+    {
+        "model": "sigma_app.BatchName",
+        "pk": 5,
+        "fields": {
+            "dsp": "Dynadmic"
+        }
+    },
+    {
+        "model": "sigma_app.BatchName",
+        "pk": 6,
+        "fields": {
+            "dsp": "TubeMogul"
+        }
+    },
+    {
+        "model": "sigma_app.BatchName",
+        "pk": 7,
+        "fields": {
+            "dsp": "Facebook Ads"
+        }
+    },
+    {
+        "model": "sigma_app.BatchName",
+        "pk": 8,
+        "fields": {
+            "dsp": "TheTradeDesk"
+        }
+    }
+]

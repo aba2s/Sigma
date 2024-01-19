@@ -1,0 +1,58 @@
+{% extends 'index.html' %}
+{% load humanize %}
+
+{% block content %}
+	{% include './status.html' %}
+	<br>
+	<div class="row">
+		<div class="col-md-12">
+			<h5>{{insertion_order}}</h5>
+			<br>
+			<div class="card card-body">
+				<table class="#">
+					<thead>
+						<tr>
+							<th></th>
+							<th>DSP</th>
+							<th>Budget</th>
+							<th>Spent budget</th>
+							<th>% delivery</th>
+							<th>Impressions</th>
+							<th>Clicks</th>
+							<th>Click rate</th>
+							<th>Arrival rate</th>
+							<th></th>
+							<th></th>
+						</tr>
+					</thead>
+					
+					<tbody>
+						{% for pt in pivot_table %}
+						<tr>
+							<td><a class="btn btn-sm btn-success" href="">
+								<i class="fas fa-plus-circle"></i></a>
+							</td>
+							<td>{{pt.dsp}}</td>
+							<td>{{pt.budget|intcomma}}</td>
+							<td>{{pt.spent_budget|intcomma}}</td>
+							<td>{{pt.delivery|floatformat}}%</td>
+							<td>{{pt.impression|intcomma}}</td>
+							<td>{{pt.clicks|intcomma}}</td>
+							<td>{{pt.click_rate|floatformat:2}}%</td>
+							<td>{{pt.arrival_rate|floatformat:2}}%</td>
+							<td><a class="btn btn-sm btn-success" href=""> <i class="fa fa-pencil-alt"></i></a></td>
+							<td><a class="btn btn-sm btn-danger" href=""><i class="fa fa-trash-alt"></i></a></td>
+						</tr>
+					{% endfor %}
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+
+	<div class="row"> 
+		<div class="col" id='pivot-table-container' data-url = "#"></div>
+		<div class="col" id="pivot-chart-container"></div>
+	</div>
+
+{% endblock content %}

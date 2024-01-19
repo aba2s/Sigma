@@ -1,0 +1,15 @@
+sigma_app/migrations
+Pipfile
+Pipfile.lock
+db.sqlite3
+.env
+data
+db-data
+pgadmin
+redis
+
+# Virtual environnement
+pyvenv.cfg
+Scripts
+Lib
+sigma_app/imports/io_real_spents.py

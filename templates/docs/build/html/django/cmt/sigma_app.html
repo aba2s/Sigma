@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PostgreSQL &mdash; Sigma  documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Introduction" href="../../cat.html" />
+    <link rel="prev" title="Database and tables" href="modules.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Sigma
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Campaign Monitoring Tool</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../cmt.html">Introduction</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">Database and tables</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">PostgreSQL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-sigma_app.models">Models</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#sigma_app.models.AsynchroneTask"><code class="docutils literal notranslate"><span class="pre">AsynchroneTask</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#sigma_app.models.AsynchroneTask.DoesNotExist"><code class="docutils literal notranslate"><span class="pre">AsynchroneTask.DoesNotExist</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#sigma_app.models.AsynchroneTask.MultipleObjectsReturned"><code class="docutils literal notranslate"><span class="pre">AsynchroneTask.MultipleObjectsReturned</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#sigma_app.models.BatchName"><code class="docutils literal notranslate"><span class="pre">BatchName</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#sigma_app.models.BatchName.DoesNotExist"><code class="docutils literal notranslate"><span class="pre">BatchName.DoesNotExist</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#sigma_app.models.BatchName.MultipleObjectsReturned"><code class="docutils literal notranslate"><span class="pre">BatchName.MultipleObjectsReturned</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#sigma_app.models.CampaignNamingTool"><code class="docutils literal notranslate"><span class="pre">CampaignNamingTool</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#sigma_app.models.CampaignNamingTool.DoesNotExist"><code class="docutils literal notranslate"><span class="pre">CampaignNamingTool.DoesNotExist</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#sigma_app.models.CampaignNamingTool.MultipleObjectsReturned"><code class="docutils literal notranslate"><span class="pre">CampaignNamingTool.MultipleObjectsReturned</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#sigma_app.models.DV360"><code class="docutils literal notranslate"><span class="pre">DV360</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#sigma_app.models.DV360.DoesNotExist"><code class="docutils literal notranslate"><span class="pre">DV360.DoesNotExist</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#sigma_app.models.DV360.MultipleObjectsReturned"><code class="docutils literal notranslate"><span class="pre">DV360.MultipleObjectsReturned</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#sigma_app.models.Dynamic"><code class="docutils literal notranslate"><span class="pre">Dynamic</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#sigma_app.models.Dynamic.DoesNotExist"><code class="docutils literal notranslate"><span class="pre">Dynamic.DoesNotExist</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#sigma_app.models.Dynamic.MultipleObjectsReturned"><code class="docutils literal notranslate"><span class="pre">Dynamic.MultipleObjectsReturned</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#sigma_app.models.File"><code class="docutils literal notranslate"><span class="pre">File</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#sigma_app.models.File.DoesNotExist"><code class="docutils literal notranslate"><span class="pre">File.DoesNotExist</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#sigma_app.models.File.MultipleObjectsReturned"><code class="docutils literal notranslate"><span class="pre">File.MultipleObjectsReturned</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#sigma_app.models.FreeWheel"><code class="docutils literal notranslate"><span class="pre">FreeWheel</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#sigma_app.models.FreeWheel.DoesNotExist"><code class="docutils literal notranslate"><span class="pre">FreeWheel.DoesNotExist</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#sigma_app.models.FreeWheel.MultipleObjectsReturned"><code class="docutils literal notranslate"><span class="pre">FreeWheel.MultipleObjectsReturned</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#sigma_app.models.IncomingCampaigns"><code class="docutils literal notranslate"><span class="pre">IncomingCampaigns</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#sigma_app.models.IncomingCampaigns.DoesNotExist"><code class="docutils literal notranslate"><span class="pre">IncomingCampaigns.DoesNotExist</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#sigma_app.models.IncomingCampaigns.MultipleObjectsReturned"><code class="docutils literal notranslate"><span class="pre">IncomingCampaigns.MultipleObjectsReturned</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#sigma_app.models.InsertionOrdersRealSpents"><code class="docutils literal notranslate"><span class="pre">InsertionOrdersRealSpents</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#sigma_app.models.InsertionOrdersRealSpents.DoesNotExist"><code class="docutils literal notranslate"><span class="pre">InsertionOrdersRealSpents.DoesNotExist</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#sigma_app.models.InsertionOrdersRealSpents.MultipleObjectsReturned"><code class="docutils literal notranslate"><span class="pre">InsertionOrdersRealSpents.MultipleObjectsReturned</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#sigma_app.models.UserInsertionOrder"><code class="docutils literal notranslate"><span class="pre">UserInsertionOrder</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#sigma_app.models.UserInsertionOrder.DoesNotExist"><code class="docutils literal notranslate"><span class="pre">UserInsertionOrder.DoesNotExist</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#sigma_app.models.UserInsertionOrder.MultipleObjectsReturned"><code class="docutils literal notranslate"><span class="pre">UserInsertionOrder.MultipleObjectsReturned</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#sigma_app.models.UserInsertionOrderByDsp"><code class="docutils literal notranslate"><span class="pre">UserInsertionOrderByDsp</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#sigma_app.models.UserInsertionOrderByDsp.DoesNotExist"><code class="docutils literal notranslate"><span class="pre">UserInsertionOrderByDsp.DoesNotExist</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#sigma_app.models.UserInsertionOrderByDsp.MultipleObjectsReturned"><code class="docutils literal notranslate"><span class="pre">UserInsertionOrderByDsp.MultipleObjectsReturned</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#sigma_app.models.Xandr"><code class="docutils literal notranslate"><span class="pre">Xandr</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#sigma_app.models.Xandr.DoesNotExist"><code class="docutils literal notranslate"><span class="pre">Xandr.DoesNotExist</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#sigma_app.models.Xandr.MultipleObjectsReturned"><code class="docutils literal notranslate"><span class="pre">Xandr.MultipleObjectsReturned</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-sigma_app.forms">Forms</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#sigma_app.forms.CampaignNamingToolForm"><code class="docutils literal notranslate"><span class="pre">CampaignNamingToolForm</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#sigma_app.forms.CampaignNamingToolForm.media"><code class="docutils literal notranslate"><span class="pre">CampaignNamingToolForm.media</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#sigma_app.forms.DateInput"><code class="docutils literal notranslate"><span class="pre">DateInput</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sigma_app.forms.InsertionOrdersFileForm"><code class="docutils literal notranslate"><span class="pre">InsertionOrdersFileForm</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#sigma_app.forms.InsertionOrdersFileForm.media"><code class="docutils literal notranslate"><span class="pre">InsertionOrdersFileForm.media</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#sigma_app.forms.UploadFileForm"><code class="docutils literal notranslate"><span class="pre">UploadFileForm</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#sigma_app.forms.UploadFileForm.media"><code class="docutils literal notranslate"><span class="pre">UploadFileForm.media</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#sigma_app.forms.UserInsertionOrderByDspForm"><code class="docutils literal notranslate"><span class="pre">UserInsertionOrderByDspForm</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#sigma_app.forms.UserInsertionOrderByDspForm.media"><code class="docutils literal notranslate"><span class="pre">UserInsertionOrderByDspForm.media</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#sigma_app.forms.UserInsertionOrderForm"><code class="docutils literal notranslate"><span class="pre">UserInsertionOrderForm</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#sigma_app.forms.UserInsertionOrderForm.media"><code class="docutils literal notranslate"><span class="pre">UserInsertionOrderForm.media</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-sigma_app.views">Views</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#sigma_app.views.imports"><code class="docutils literal notranslate"><span class="pre">imports()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Campaign Automation Tool</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../cat.html">Introduction</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Pipe Automation Tool</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../cbt.html">Introduction</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Sigma</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="modules.html">Database and tables</a></li>
+      <li class="breadcrumb-item active">PostgreSQL</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/django/cmt/sigma_app.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="postgresql">
+<h1>PostgreSQL<a class="headerlink" href="#postgresql" title="Link to this heading"></a></h1>
+<p>In this project, we are using PostgreSQL as our database. Django supports PostgreSQL 12 and higher.
+psycopg 3.1.8+ or psycopg2 2.8.4+ is required, though the latest psycopg 3.1.8+ is recommended.</p>
+<div class="admonition-note admonition">
+<p class="admonition-title">Note!</p>
+<p>Support for psycopg2 is likely to be deprecated and removed at some point in the future.
+<strong>Changed in Django 4.2:</strong> support for psycopg 3.1.8+ was added.</p>
+</div>
+<p>Refer to initial to django set up to see how to add postgresql as database in settings file.</p>
+</section>
+<section id="module-sigma_app.models">
+<span id="models"></span><h1>Models<a class="headerlink" href="#module-sigma_app.models" title="Link to this heading"></a></h1>
+<p>Models in Django are equivalents to tables in SQL. A model is the single,
+definitive source of information about data. It contains the essential
+fields and behaviors of the data we’re storing. Generally, each model
+maps to a single database table.</p>
+<p>The basis:</p>
+<ul class="simple">
+<li><p>Each model is a Python class that subclasses <strong>django.db.models.Model</strong>.</p></li>
+<li><p>Each attribute of the model represents a database field.</p></li>
+<li><p>With all of this Django gives you an automatically-generated
+database-access PAI.</p></li>
+</ul>
+<p><strong>Quick example:</strong>
+This example model defines a <strong>Person</strong>, which hase a <strong>first_name</strong>
+and <strong>last_name</strong>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">django.db</span> <span class="kn">import</span> <span class="n">models</span>
+
+<span class="k">class</span> <span class="nc">Person</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">first_name</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
+    <span class="n">last_name</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>All model relationship create dependencies between one another, so an important
+behavior is
+what happens to the other party when one party is removed. The on_delete option
+is designed
+for this purpose, to determine what to do with records on the other side of a
+relationship
+when one side is removed. The on_delete option is available for all three
+relationship model
+data types. Here is an exellent book about this topic
+<a class="reference external" href="https://www.webforefront.com/django/setuprelationshipsdjangomodels.html">https://www.webforefront.com/django/setuprelationshipsdjangomodels.html</a></p>
+<dl class="py class">
+<dt class="sig sig-object py" id="sigma_app.models.AsynchroneTask">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sigma_app.models.</span></span><span class="sig-name descname"><span class="pre">AsynchroneTask</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">task</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_date</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_taken</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">status</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">result</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">total_rows</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">valid_rows</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dsp</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">user</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sigma_app.models.AsynchroneTask" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Model</span></code></p>
+<dl class="py exception">
+<dt class="sig sig-object py" id="sigma_app.models.AsynchroneTask.DoesNotExist">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DoesNotExist</span></span><a class="headerlink" href="#sigma_app.models.AsynchroneTask.DoesNotExist" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ObjectDoesNotExist</span></code></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="sigma_app.models.AsynchroneTask.MultipleObjectsReturned">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">MultipleObjectsReturned</span></span><a class="headerlink" href="#sigma_app.models.AsynchroneTask.MultipleObjectsReturned" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">MultipleObjectsReturned</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="sigma_app.models.BatchName">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sigma_app.models.</span></span><span class="sig-name descname"><span class="pre">BatchName</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dsp</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sigma_app.models.BatchName" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Model</span></code></p>
+<dl class="py exception">
+<dt class="sig sig-object py" id="sigma_app.models.BatchName.DoesNotExist">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DoesNotExist</span></span><a class="headerlink" href="#sigma_app.models.BatchName.DoesNotExist" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ObjectDoesNotExist</span></code></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="sigma_app.models.BatchName.MultipleObjectsReturned">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">MultipleObjectsReturned</span></span><a class="headerlink" href="#sigma_app.models.BatchName.MultipleObjectsReturned" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">MultipleObjectsReturned</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="sigma_app.models.CampaignNamingTool">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sigma_app.models.</span></span><span class="sig-name descname"><span class="pre">CampaignNamingTool</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sigma_app.models.CampaignNamingTool" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Model</span></code></p>
+<p>The goal of Campaign Naming Tool is to help account mangers
+to plan their campaigns and to follow nomenclature guidelines
+and thus avoid bugs or missing campaigns. Because campaigns
+are case sensitives in the workflow process. So every bad
+named or misnamed campaign are ignored and it won’t be
+displayed in the users insertions orders. Plase use this
+formular to create your campaign for the first time.</p>
+<div class="admonition-important admonition">
+<p class="admonition-title">Important</p>
+<p>If the campaign does not respect the guidelines, you
+can’t follow it here. It will be missing in the monitoring.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>user</strong> (<em>owner</em><em> or </em><em>in charge</em><em> of </em><em>the campaign.</em>) – </p></li>
+<li><p><strong>year</strong> (<em>year and month when launching campaign online.</em>) – </p></li>
+<li><p><strong>month</strong> (<em>year and month when launching campaign online.</em>) – </p></li>
+<li><p><strong>advertiser</strong> (<em>advertiser</em><em> of </em><em>the campaign.</em>) – </p></li>
+<li><p><strong>name</strong> (<em>name</em><em> of </em><em>the campaign.</em>) – </p></li>
+<li><p><strong>device</strong> (<em>device campaign must be served</em><em> (</em><em>Desktop</em><em>, </em><em>Mobile</em><em>, </em><em>tablette</em><em>)</em><em>.</em>) – </p></li>
+<li><p><strong>type_of_format</strong> (<em>format that campaign must be served</em><em> (</em><em>IAB</em><em>, </em><em>Video</em><em>, </em><em>etc</em><em>)</em>) – </p></li>
+<li><p><strong>kpi</strong> (<em>KPI</em><em> of </em><em>the campaign</em><em> (</em><em>CPM</em><em>, </em><em>CPC</em><em>, </em><em>CPV</em><em>, </em><em>CPA</em><em>, </em><em>etc</em><em>)</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><em>an Insertion Order object composed by the concatenation of all</em></p></li>
+<li><p><em>these parameters</em></p></li>
+</ul>
+</p>
+</dd>
+</dl>
+<dl class="py exception">
+<dt class="sig sig-object py" id="sigma_app.models.CampaignNamingTool.DoesNotExist">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DoesNotExist</span></span><a class="headerlink" href="#sigma_app.models.CampaignNamingTool.DoesNotExist" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ObjectDoesNotExist</span></code></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="sigma_app.models.CampaignNamingTool.MultipleObjectsReturned">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">MultipleObjectsReturned</span></span><a class="headerlink" href="#sigma_app.models.CampaignNamingTool.MultipleObjectsReturned" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">MultipleObjectsReturned</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="sigma_app.models.DV360">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sigma_app.models.</span></span><span class="sig-name descname"><span class="pre">DV360</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">date</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">advertiser</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">insertion_order</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">strategy</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">creative</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">budget</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">impressions</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">clicks</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">conversions</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">post_clicks_conversions</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">post_views_conversions</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dsp</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sigma_app.models.DV360" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">InsertionOrdersCommonFields</span></code></p>
+<dl class="py exception">
+<dt class="sig sig-object py" id="sigma_app.models.DV360.DoesNotExist">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DoesNotExist</span></span><a class="headerlink" href="#sigma_app.models.DV360.DoesNotExist" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ObjectDoesNotExist</span></code></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="sigma_app.models.DV360.MultipleObjectsReturned">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">MultipleObjectsReturned</span></span><a class="headerlink" href="#sigma_app.models.DV360.MultipleObjectsReturned" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">MultipleObjectsReturned</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="sigma_app.models.Dynamic">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sigma_app.models.</span></span><span class="sig-name descname"><span class="pre">Dynamic</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">date</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">advertiser</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">insertion_order</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">strategy</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">creative</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">budget</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">impressions</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">clicks</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">conversions</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">post_clicks_conversions</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">post_views_conversions</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dsp</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sigma_app.models.Dynamic" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">InsertionOrdersCommonFields</span></code></p>
+<dl class="py exception">
+<dt class="sig sig-object py" id="sigma_app.models.Dynamic.DoesNotExist">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DoesNotExist</span></span><a class="headerlink" href="#sigma_app.models.Dynamic.DoesNotExist" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ObjectDoesNotExist</span></code></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="sigma_app.models.Dynamic.MultipleObjectsReturned">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">MultipleObjectsReturned</span></span><a class="headerlink" href="#sigma_app.models.Dynamic.MultipleObjectsReturned" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">MultipleObjectsReturned</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="sigma_app.models.File">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sigma_app.models.</span></span><span class="sig-name descname"><span class="pre">File</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sigma_app.models.File" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Model</span></code></p>
+<p>File uploader or streamed of the corresponding batch.
+:task AsynchroneTask: the task the file belongs to.
+:title str: Title of the file, as shown on the interface.
+:location FileField: Location of the file on the server.</p>
+<dl class="py exception">
+<dt class="sig sig-object py" id="sigma_app.models.File.DoesNotExist">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DoesNotExist</span></span><a class="headerlink" href="#sigma_app.models.File.DoesNotExist" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ObjectDoesNotExist</span></code></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="sigma_app.models.File.MultipleObjectsReturned">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">MultipleObjectsReturned</span></span><a class="headerlink" href="#sigma_app.models.File.MultipleObjectsReturned" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">MultipleObjectsReturned</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="sigma_app.models.FreeWheel">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sigma_app.models.</span></span><span class="sig-name descname"><span class="pre">FreeWheel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">date</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">advertiser</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">insertion_order</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">strategy</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">creative</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">budget</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">impressions</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">clicks</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">conversions</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">post_clicks_conversions</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">post_views_conversions</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dsp</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sigma_app.models.FreeWheel" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">InsertionOrdersCommonFields</span></code></p>
+<dl class="py exception">
+<dt class="sig sig-object py" id="sigma_app.models.FreeWheel.DoesNotExist">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DoesNotExist</span></span><a class="headerlink" href="#sigma_app.models.FreeWheel.DoesNotExist" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ObjectDoesNotExist</span></code></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="sigma_app.models.FreeWheel.MultipleObjectsReturned">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">MultipleObjectsReturned</span></span><a class="headerlink" href="#sigma_app.models.FreeWheel.MultipleObjectsReturned" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">MultipleObjectsReturned</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="sigma_app.models.IncomingCampaigns">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sigma_app.models.</span></span><span class="sig-name descname"><span class="pre">IncomingCampaigns</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sigma_app.models.IncomingCampaigns" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Model</span></code></p>
+<p>Managers or consultants can attribute campaigns to users
+start_date, end_date, name, KPI, advertiser, user(am, consultant),
+description etc
+with IO file containing the signed budget.
+Push notification de la part du consultant à ou vers l’account qui
+gere la campagne.</p>
+<dl class="py exception">
+<dt class="sig sig-object py" id="sigma_app.models.IncomingCampaigns.DoesNotExist">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DoesNotExist</span></span><a class="headerlink" href="#sigma_app.models.IncomingCampaigns.DoesNotExist" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ObjectDoesNotExist</span></code></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="sigma_app.models.IncomingCampaigns.MultipleObjectsReturned">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">MultipleObjectsReturned</span></span><a class="headerlink" href="#sigma_app.models.IncomingCampaigns.MultipleObjectsReturned" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">MultipleObjectsReturned</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="sigma_app.models.InsertionOrdersRealSpents">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sigma_app.models.</span></span><span class="sig-name descname"><span class="pre">InsertionOrdersRealSpents</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sigma_app.models.InsertionOrdersRealSpents" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">InsertionOrdersCommonFields</span></code></p>
+<p>This is a very important part. This table contains all user campaigns’s
+data. The data content impressions, clicks, budget, etc. It’s gived by
+day for the last week. It’s the consolidated data of all DSP.</p>
+<div class="admonition-note admonition">
+<p class="admonition-title">Note</p>
+<p>Only campaigns respecting <strong>Camapign Naming Tool</strong> guidelines will
+be displayed if they have been served impressions. IF the campaign does
+not serve, it wont be displayed here.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>date</strong> (<em>daily campaign's delivery</em>) – </p></li>
+<li><p><strong>dsp</strong> (<em>the Demand Side Platform</em><em> or </em><em>the partner</em>) – </p></li>
+<li><p><strong>advertiser</strong> (<em>advertiser</em><em> of </em><em>the campaign</em>) – </p></li>
+<li><p><strong>insertion_order</strong> (<em>lauched insertion order</em>) – </p></li>
+<li><p><strong>strategy</strong> (<em>campaign's strategies</em><em> (</em><em>context</em><em>,</em>) – comportemental,socio-demo)</p></li>
+<li><p><strong>creative</strong> (<em>creative that campaign must be</em>) – served (pave, megaban, etc)</p></li>
+<li><p><strong>kpi</strong> (<em>KPI</em><em> of </em><em>the campaign</em><em> (</em><em>CPM</em><em>, </em><em>CPC</em><em>, </em><em>CPV</em><em>, </em><em>CPA</em><em>,</em>) – etc)</p></li>
+<li><p><strong>impressions</strong> (<em>served impressions during that day</em>) – </p></li>
+<li><p><strong>clicks</strong> (<em>clicks generated during that day</em>) – </p></li>
+<li><p><strong>conversions</strong> (<em>conversions registred during that day</em>) – </p></li>
+<li><p><strong>post_clicks_conversions</strong> (<em>conversions generated after clicking</em>) – </p></li>
+<li><p><strong>post_views_conversions</strong> (<em>conversions generated after seeing</em>) – an impression</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>many Insertion Orders with metrics.</p>
+</dd>
+</dl>
+<dl class="py exception">
+<dt class="sig sig-object py" id="sigma_app.models.InsertionOrdersRealSpents.DoesNotExist">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DoesNotExist</span></span><a class="headerlink" href="#sigma_app.models.InsertionOrdersRealSpents.DoesNotExist" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ObjectDoesNotExist</span></code></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="sigma_app.models.InsertionOrdersRealSpents.MultipleObjectsReturned">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">MultipleObjectsReturned</span></span><a class="headerlink" href="#sigma_app.models.InsertionOrdersRealSpents.MultipleObjectsReturned" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">MultipleObjectsReturned</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="sigma_app.models.UserInsertionOrder">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sigma_app.models.</span></span><span class="sig-name descname"><span class="pre">UserInsertionOrder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sigma_app.models.UserInsertionOrder" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Model</span></code></p>
+<p>This table contains only the insertion order of logged user.
+The one who created the insertions order. Doing thus, user
+can only see her/his campaigns. So logged user doesn’t have
+access to others users’s campaigns. It make the UI more fluide
+compared to other tools like Datorama.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>user</strong> (<em>owner</em><em> or </em><em>in charge</em><em> of </em><em>the campaign.</em>) – </p></li>
+<li><p><strong>campaign_naming_tool</strong> (<em>the insertion order object we created</em>) – with CNT</p></li>
+<li><p><strong>budget</strong> (<em>the signed budget for the entire</em>) – duration of the campaign.</p></li>
+<li><p><strong>kpi</strong> (<em>KPI</em><em> of </em><em>the campaign</em><em> (</em><em>CPM</em><em>, </em><em>CPC</em><em>, </em><em>CPV</em><em>,</em>) – CPA, etc)</p></li>
+<li><p><strong>goal_value</strong> (<em>goal</em><em> of </em><em>the campaign to reach.</em>) – </p></li>
+<li><p><strong>start_date</strong> (<em>campaign start day.</em>) – </p></li>
+<li><p><strong>end_date</strong> (<em>campaign end day.</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>an Insertion Order object.</p>
+</dd>
+</dl>
+<dl class="py exception">
+<dt class="sig sig-object py" id="sigma_app.models.UserInsertionOrder.DoesNotExist">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DoesNotExist</span></span><a class="headerlink" href="#sigma_app.models.UserInsertionOrder.DoesNotExist" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ObjectDoesNotExist</span></code></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="sigma_app.models.UserInsertionOrder.MultipleObjectsReturned">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">MultipleObjectsReturned</span></span><a class="headerlink" href="#sigma_app.models.UserInsertionOrder.MultipleObjectsReturned" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">MultipleObjectsReturned</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="sigma_app.models.UserInsertionOrderByDsp">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sigma_app.models.</span></span><span class="sig-name descname"><span class="pre">UserInsertionOrderByDsp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sigma_app.models.UserInsertionOrderByDsp" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Model</span></code></p>
+<p>Here we split the signed budget filled in <strong>User Insertion Orders table</strong>
+between DSP or partners. At the end campaing the whole budget must be
+equal to the signed budget.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>user</strong> (<em>owner</em><em> or </em><em>in charge</em><em> of </em><em>the campaign.</em>) – </p></li>
+<li><p><strong>insertion_order</strong> (<em>the insertion order object we created.</em>) – </p></li>
+<li><p><strong>dsp</strong> (<em>the Demand Side Platform</em><em> or </em><em>the partner.</em>) – </p></li>
+<li><p><strong>budget</strong> (the budget we want to put in this <strong>DSP</strong>.) – </p></li>
+<li><p><strong>start_date</strong> (<em>campaign start day.</em>) – </p></li>
+<li><p><strong>end_date</strong> (<em>campaign end day.</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>an Insertion Order object.</p>
+</dd>
+</dl>
+<dl class="py exception">
+<dt class="sig sig-object py" id="sigma_app.models.UserInsertionOrderByDsp.DoesNotExist">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DoesNotExist</span></span><a class="headerlink" href="#sigma_app.models.UserInsertionOrderByDsp.DoesNotExist" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ObjectDoesNotExist</span></code></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="sigma_app.models.UserInsertionOrderByDsp.MultipleObjectsReturned">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">MultipleObjectsReturned</span></span><a class="headerlink" href="#sigma_app.models.UserInsertionOrderByDsp.MultipleObjectsReturned" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">MultipleObjectsReturned</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="sigma_app.models.Xandr">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sigma_app.models.</span></span><span class="sig-name descname"><span class="pre">Xandr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">date</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">advertiser</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">insertion_order</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">strategy</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">creative</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">budget</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">impressions</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">clicks</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">conversions</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">post_clicks_conversions</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">post_views_conversions</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dsp</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sigma_app.models.Xandr" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">InsertionOrdersCommonFields</span></code></p>
+<dl class="py exception">
+<dt class="sig sig-object py" id="sigma_app.models.Xandr.DoesNotExist">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DoesNotExist</span></span><a class="headerlink" href="#sigma_app.models.Xandr.DoesNotExist" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ObjectDoesNotExist</span></code></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="sigma_app.models.Xandr.MultipleObjectsReturned">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">MultipleObjectsReturned</span></span><a class="headerlink" href="#sigma_app.models.Xandr.MultipleObjectsReturned" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">MultipleObjectsReturned</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-sigma_app.forms">
+<span id="forms"></span><h1>Forms<a class="headerlink" href="#module-sigma_app.forms" title="Link to this heading"></a></h1>
+<p>Here we define all our forms</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="sigma_app.forms.CampaignNamingToolForm">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sigma_app.forms.</span></span><span class="sig-name descname"><span class="pre">CampaignNamingToolForm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">files=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">auto_id='id_%s'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prefix=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">initial=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">error_class=&lt;class</span> <span class="pre">'django.forms.utils.ErrorList'&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">label_suffix=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">empty_permitted=False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">instance=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_required_attribute=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">renderer=None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sigma_app.forms.CampaignNamingToolForm" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ModelForm</span></code></p>
+<dl class="py property">
+<dt class="sig sig-object py" id="sigma_app.forms.CampaignNamingToolForm.media">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">media</span></span><a class="headerlink" href="#sigma_app.forms.CampaignNamingToolForm.media" title="Link to this definition"></a></dt>
+<dd><p>Return all media required to render the widgets on this form.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="sigma_app.forms.DateInput">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sigma_app.forms.</span></span><span class="sig-name descname"><span class="pre">DateInput</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">attrs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">format</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sigma_app.forms.DateInput" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">DateInput</span></code></p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="sigma_app.forms.InsertionOrdersFileForm">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sigma_app.forms.</span></span><span class="sig-name descname"><span class="pre">InsertionOrdersFileForm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">files=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">auto_id='id_%s'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prefix=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">initial=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">error_class=&lt;class</span> <span class="pre">'django.forms.utils.ErrorList'&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">label_suffix=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">empty_permitted=False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field_order=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_required_attribute=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">renderer=None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sigma_app.forms.InsertionOrdersFileForm" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Form</span></code></p>
+<dl class="py property">
+<dt class="sig sig-object py" id="sigma_app.forms.InsertionOrdersFileForm.media">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">media</span></span><a class="headerlink" href="#sigma_app.forms.InsertionOrdersFileForm.media" title="Link to this definition"></a></dt>
+<dd><p>Return all media required to render the widgets on this form.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="sigma_app.forms.UploadFileForm">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sigma_app.forms.</span></span><span class="sig-name descname"><span class="pre">UploadFileForm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">files=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">auto_id='id_%s'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prefix=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">initial=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">error_class=&lt;class</span> <span class="pre">'django.forms.utils.ErrorList'&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">label_suffix=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">empty_permitted=False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field_order=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_required_attribute=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">renderer=None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sigma_app.forms.UploadFileForm" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Form</span></code></p>
+<dl class="py property">
+<dt class="sig sig-object py" id="sigma_app.forms.UploadFileForm.media">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">media</span></span><a class="headerlink" href="#sigma_app.forms.UploadFileForm.media" title="Link to this definition"></a></dt>
+<dd><p>Return all media required to render the widgets on this form.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="sigma_app.forms.UserInsertionOrderByDspForm">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sigma_app.forms.</span></span><span class="sig-name descname"><span class="pre">UserInsertionOrderByDspForm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">current_user</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sigma_app.forms.UserInsertionOrderByDspForm" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ModelForm</span></code></p>
+<dl class="py property">
+<dt class="sig sig-object py" id="sigma_app.forms.UserInsertionOrderByDspForm.media">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">media</span></span><a class="headerlink" href="#sigma_app.forms.UserInsertionOrderByDspForm.media" title="Link to this definition"></a></dt>
+<dd><p>Return all media required to render the widgets on this form.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="sigma_app.forms.UserInsertionOrderForm">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sigma_app.forms.</span></span><span class="sig-name descname"><span class="pre">UserInsertionOrderForm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">current_user</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sigma_app.forms.UserInsertionOrderForm" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ModelForm</span></code></p>
+<dl class="py property">
+<dt class="sig sig-object py" id="sigma_app.forms.UserInsertionOrderForm.media">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">media</span></span><a class="headerlink" href="#sigma_app.forms.UserInsertionOrderForm.media" title="Link to this definition"></a></dt>
+<dd><p>Return all media required to render the widgets on this form.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-sigma_app.views">
+<span id="views"></span><h1>Views<a class="headerlink" href="#module-sigma_app.views" title="Link to this heading"></a></h1>
+<dl class="py function">
+<dt class="sig sig-object py" id="sigma_app.views.imports">
+<span class="sig-prename descclassname"><span class="pre">sigma_app.views.</span></span><span class="sig-name descname"><span class="pre">imports</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sigma_app.views.imports" title="Link to this definition"></a></dt>
+<dd><p>Batch or datastream</p>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="modules.html" class="btn btn-neutral float-left" title="Database and tables" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../../cat.html" class="btn btn-neutral float-right" title="Introduction" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, A. NDIAYE.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

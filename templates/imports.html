@@ -1,0 +1,81 @@
+{% extends 'index.html' %}
+{% load static %}
+{% load humanize %}
+
+{% block content %}
+    <div>
+        <main>
+            <section class="component">
+                <button type="button" class="btn btn-default btn-xs">
+                    <a><i class="fa fa-plus"></i></a>
+                </button>
+                <br/>
+                
+                <table class="items-list">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>DSP</th>
+                            <th>User</th>
+                            <th>Status</th>
+                            <th>Total Rows</th>
+                            <th>Valid Rows</th>
+                            <th>Date</th>
+                            <th>Time Taken</th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for batch in batchs %}
+                        <tr>
+                            <td>
+                                <button type="button" class="btn btn-default btn-lg accordion-toggle"
+                                data-bs-toggle="collapse" data-bs-target=".{{batch.dsp}}">
+                                    <i class="fa fa-eye"></i>
+                                </button>
+                            </td>
+                            <td>{{batch.dsp}}</td>
+                            <td>{{user}}</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>
+                                <button class="play-btn" aria-label="Importer les données du batch">
+                                    <a href="{% url 'import-dsp-spents' batch.pk %}"><i class="fa fa-play"></i></i></a>
+                                    
+                                </button>
+                            </td>
+                            <td>
+                                <label class="switch">
+                                    <span class="toggle-label-title">Sélectionner le batch</span>
+                                    <input type="checkbox">
+                                    <span class="slider round"></span>
+                                </label>
+                            </td>
+                        </tr>
+                            {% for _, tasks_of_a_batch in tasks.items %}
+                                {% for task in tasks_of_a_batch %}
+                                {% if task.batch_name.dsp == batch.dsp %}
+                                <tr id="row-task-{{ task.id }}">
+                                    {% include 'task.html' %}
+                                </tr>
+                                {% endif %}
+                                {% endfor %}
+                            {% endfor %}
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </section>
+            <div class="play-selection">
+                <button>Bulk batchs</button>
+            </div>
+        </main>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="{% static 'js/refresh_tag.js' %}"></script>
+    
+    
+{% endblock %}
