@@ -377,7 +377,6 @@ class DV360(InsertionOrdersCommonFields):
             "date",
             "advertiser",
             "insertion_order",
-            "impressions",
         ]
         verbose_name_plural = "DV360"
         # verbose_name_plural = "companies" his simply makes
@@ -396,8 +395,7 @@ class Xandr(InsertionOrdersCommonFields):
         unique_together = [
             "date",
             "advertiser",
-            "insertion_order",
-            "impressions",
+            "insertion_order"
         ]
         verbose_name_plural = "Xandr"
 
@@ -413,8 +411,7 @@ class Dynamic(InsertionOrdersCommonFields):
         unique_together = [
             "date",
             "advertiser",
-            "insertion_order",
-            "impressions",
+            "insertion_order"
         ]
         verbose_name_plural = "Dynamic"
 
@@ -431,7 +428,6 @@ class FreeWheel(InsertionOrdersCommonFields):
             "date",
             "advertiser",
             "insertion_order",
-            "impressions",
         ]
         verbose_name_plural = "FreeWheel"
 
@@ -492,7 +488,6 @@ class InsertionOrdersRealSpents(InsertionOrdersCommonFields):
             "advertiser",
             "dsp",
             "insertion_order",
-            "impressions",
         ]
         verbose_name_plural = "DSPs"
         # unique_together = [field.name for field in \
@@ -589,6 +584,13 @@ class File(models.Model):
     class Meta:
         db_table = "File"
 
+
+# class Comments(models.Model):
+#     '''
+#     for adding comments on user insertion order to help people understand
+#     when the AM is missing.
+#     '''
+#     pass
 
 '''class Manager(User):
     """Managers have to add users under their management to their account.

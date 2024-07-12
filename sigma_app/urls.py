@@ -2,6 +2,7 @@ from django.urls import path
 from .views import fetch_task
 from .views import imports
 from .views import home
+from .views import data_processing_batchs
 from .views import documentation
 from .imports import io_real_spents
 from .imports import dsp_spents
@@ -59,4 +60,10 @@ urlpatterns = [
         insertion_orders.user_insertion_order_details,
         name="user_insertion_order_details",
     ),
+
+    # DATA PROCESSING BATCHS
+    path(
+        "data_processing_batchs/", data_processing_batchs, 
+        name='data_processing_batchs'
+    )
 ]

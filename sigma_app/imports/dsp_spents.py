@@ -1,6 +1,7 @@
 import pandas as pd
 from django.db import connection
 from sqlalchemy.exc import IntegrityError
+from sqlalchemy.dialects.postgresql import insert
 from . import static # static variables
 from .static import get_connection
 from django.contrib import messages
@@ -19,6 +20,20 @@ try:
     engine = get_connection()
 except Exception as e:
     print("Connection could not be made due to the following error: \n", e)
+
+
+def upsert(table, con, keys, data_iter):
+    
+    data = [dict(zip(keys, row)) for row in data_iter]
+    insert_statement = insert(table.table).values(data)
+    upsert_statement = insert_statement.on_conflict_do_update(
+        constraint=f"{table.table.name}_pkey",
+        set_={c.key: c for c in insert_statement.excluded},
+    )
+
+    print(upsert_statement)
+    con.execute(upsert_statement)
+
 
 
 def task_upload_dsp_spents(file_path, pk):
@@ -92,21 +107,21 @@ def task_upload_dsp_spents(file_path, pk):
     if df.empty:
         msg = "Dataframe is Empty. No insertion order is uploaded.\
             Make sure user insertion orders are setted up."
-        # print(traceback.print_exception)
         raise Exception(msg)
 
     try:    
         df.to_sql(
-            dsp, # Xandr._meta.db_table,
+            dsp, 
             if_exists="append",
             index=False,
             dtype=dtype,
             chunksize=1000,
             con=engine,
+            method=upsert
         )
-    except IntegrityError as e:
-        # msg = "{}: Duplicated rows are not authorized".format(e.__cause__)
-        msg = "Duplicated rows are not authorized."
+    except IntegrityError:
+        # Alternative to_sql metohod
+        msg = "Duplicated rows are not authorized"
         raise Exception(msg)
     
     except Exception as e:
@@ -134,7 +149,7 @@ def upload_dsp_spents(request, pk):
         messages.error(request, msg)
         return redirect('imports')
 
-    file_path = settings.IMPORTS_PATH + "dsps" + ".csv"
+    file_path = settings.IMPORTS_PATH + "dsp" + ".csv"
 
     task_id = async_task(
         task_upload_dsp_spents,
@@ -155,3 +170,5 @@ def upload_dsp_spents(request, pk):
     return redirect('imports')
 
  
+def handle_duplicated_insertion_order():
+    pass

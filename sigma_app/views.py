@@ -17,7 +17,6 @@ def home(request):
 @login_required
 def imports(request):
     """Batch or datastream"""
-    # batch = BatchName.objects.get(id="00000000-0000-0000-0000-000000000001")
     batchs = BatchName.objects.all()
 
     tasks_dict = {}
@@ -31,6 +30,9 @@ def imports(request):
     }
     return render(request, "imports.html", context)
 
+
+def data_processing_batchs(request):
+    return render(request, 'data_processing.html')
 
 def status_details(request):
     return render(request, "modal.html")
